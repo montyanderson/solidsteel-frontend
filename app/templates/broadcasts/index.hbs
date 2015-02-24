@@ -1,0 +1,12 @@
+<ul>
+  {{#each}}
+    <li>
+      {{#link-to 'broadcast' this}}
+        {{session_name}},
+        {{broadcast_date}}
+      {{/link-to}}
+    </li>
+  {{else}}
+    <li>No broadcasts found.</li>
+  {{/each}}
+</ul>
