@@ -1,4 +1,17 @@
-<h1>{{session_name}} - {{formatted-date broadcast_date 'MMMM Do, YYYY [at] h:mm a'}}</h1>
+<h1>{{session_name}} {{broadcast_id}}</h1>
+
+<ul>
+  {{#each mix in broadcast.mixes}}
+    <li>
+
+        {{mix.name}} - 
+        {{mix.part}}
+
+    </li>
+  {{else}}
+    <li>No mixes found.</li>
+  {{/each}}
+</ul>
 
 <p>
   Updated at: {{formatted-date updatedAt 'MMMM Do, YYYY [at] h:mm a'}}

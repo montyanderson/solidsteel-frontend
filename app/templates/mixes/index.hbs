@@ -1,0 +1,11 @@
+<ul>
+  {{#each}}
+    <li>
+      {{#linkTo 'mix' broadcast mix}}
+        {{name}}, {{part}}
+      {{/linkTo}}
+    </li>
+  {{else}}
+    <li>No mixes found.</li>
+  {{/each}}
+</ul>

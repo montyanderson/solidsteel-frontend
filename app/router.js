@@ -7,7 +7,15 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('broadcasts', function() {
-    this.resource('broadcast', { path: '/:broadcast_id' });
+    this.resource('broadcast', { path: '/:broadcast_id' }, function() {
+      this.resource('mixes', function() {
+        this.resource('mix', { path: '/:mix_id' }, function() {
+          this.resource('tracks', function() {
+            this.resource('track', { path: '/:track_id' });
+          });
+        });
+      });
+    });
   });
 });
 

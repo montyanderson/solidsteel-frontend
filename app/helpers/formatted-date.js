@@ -1,4 +1,4 @@
-/* global moment:true */
+ /* global moment:true */
 
 import Ember from 'ember';
 
