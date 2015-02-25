@@ -1,0 +1,55 @@
+#play-container {
+	height: 200px;
+	display: none;
+}
+
+#play {
+	float: left;
+	width: 100%;
+	
+	left: 0px;
+	position: relative;
+
+	/* for info bar slide */
+	-webkit-transition: left 300ms ease;
+	-o-transition: left 300ms ease;
+	-ms-transition: left 300ms ease;
+	transition: left 300ms ease;
+}
+
+.play {
+	background: asset_url("player-lines.png");
+	height: 22px;
+	margin-left: 50px;
+}
+
+.firstPlay {
+	-webkit-transform: scaleY(0);
+	-o-transform: scaleY(0);
+	-ms-transform: scaleY(0);
+	transform: scaleY(0);
+
+	/* for info bar slide */
+	-webkit-transition: -webkit-transform 0.26s ease-out, left 300ms ease;
+	-o-transition: -o-transform 0.26s ease, left 300ms ease;
+	-ms-transition: -ms-transform 0.26s ease, left 300ms ease;
+	transition: transform 0.26s ease, left 300ms ease;
+}
+
+#playDetails {
+	display: none;
+	position: absolute;
+	left: 168px;
+	top: 32px;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+@media (max-width: 600px) {
+	#playDetails {
+		left: 32px;
+		top: 80px;
+		font-size: 16px;
+		line-height: 18px;
+	}
+}

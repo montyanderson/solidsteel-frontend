@@ -1,0 +1,72 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: #fff;
+	color: #fff;
+	border: 8px solid #fff;
+	font-family: 'Decima Pro';
+	/*font-family: 'Decima Pro';
+	font-family: 'Decima Pro Bold';*/
+}
+
+#container {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+#inner-container {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+
+	html,
+	body,
+	#container {
+		overflow-y: scroll;
+	}
+
+	#container {
+		display: table;
+		width: 100%;
+		height: 100%;
+	}
+
+	#inner-container {
+		width: 100%;
+	}
+
+	body {
+		border: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	.hideWhenSmall {
+		display: none;
+	}
+}
+
+::selection{ background-color: transparent;}
+::moz-selection{ background-color: transparent;}
+::webkit-selection{ background-color: transparent;}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+a {
+	color: #2e2e33;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: inherit;
+}

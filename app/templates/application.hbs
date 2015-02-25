@@ -1,10 +1,248 @@
-<h2>Solid Steel frontend</h2>
+<nav>
+	<p id="home"><img src="<%= asset_url 'icons/list.svg' %>"></p>
+	<p id="search"><img src="<%= asset_url 'icons/magnifying-glass.svg' %>"></p>
+	<p id="playing">
+		<img id="playButton" src="<%= asset_url 'icons/bar-graph.svg' %>">
+		<img id="pauseButton" src="<%= asset_url 'icons/pause.svg' %>">
+	</p>
+</nav>
 
-<ul>
-  <li>{{link-to 'Home' 'index'}}</li>
+<div id="playDetails">
+	<p>27-12-13<br />Bonobo, DK, Coldcut, DJ Cheeba, DJ Food, DJ Moneyshot, Hexstatic</p>	
+</div>
+
+
+
+<div id="container">
+	<div id="inner-container">
+
+		<div id="timeline" class="push">
+			<!-- 2010s -->
+			<div class="decade current-decade">
+				<div class="year">2015</div>
+				<div class="year">14</div>
+				<div class="year">13</div>
+				<div class="year">12</div>
+				<div class="year">11</div>
+				<div class="year"><span class="showWhenBig">20</span>10</div>
+			</div>
+
+			<!-- 00s -->
+			<div class="decade">
+				<div class="year"><span class="hideWhenSmall">20</span>09</div>
+				<div class="year">08</div>
+				<div class="year">07</div>
+				<div class="year">06</div>
+				<div class="year">05</div>
+				<div class="year">04</div>
+				<div class="year">03</div>
+				<div class="year">02</div>
+				<div class="year">01</div>
+				<div class="year">2000</div>
+			</div>
+
+			<!-- 90s -->
+			<div class="decade">
+				<div class="year"><span class="hideWhenSmall">19</span>99</div>
+				<div class="year">98</div>
+				<div class="year">97</div>
+				<div class="year">96</div>
+				<div class="year">95</div>
+				<div class="year">94</div>
+				<div class="year">93</div>
+				<div class="year">92</div>
+				<div class="year">91</div>
+				<div class="year">1990</div>
+			</div>
+
+			<!-- earlier/other -->
+			<div class="decade">
+				<div class="year">1989</div>
+				<div class="year">1988</div>
+			</div>
+		</div>
+
+		<div id="play" class="play firstPlay" style="display:none">
+			
+		</div>
+
+		<div id="search-form" style="display:none">
+			<form>
+				<input type="text" placeholder="Search by artist, track, date" />
+				<span></span>
+			</form>
+		</div>
+
+		<div id="search-timeline" class="push">
+			<!-- 2010s -->
+			<div class="decade current-decade">
+				<div class="year">2015</div>
+				<div class="year">14</div>
+				<div class="year current">13</div>
+				<div class="year current">12</div>
+				<div class="year current">11</div>
+				<div class="year">2010</div>
+
+			</div>
+
+			<!-- 00s -->
+			<div class="decade">
+				<div class="year"><span class="hideWhenSmall">20</span>09</div>
+				<div class="year current">08</div>
+				<div class="year">07</div>
+				<div class="year">06</div>
+				<div class="year">5</div>
+				<div class="year">04</div>
+				<div class="year">03</div>
+				<div class="year">02</div>
+				<div class="year">01</div>
+				<div class="year">2000</div>
+			</div>
+
+			<!-- 90s -->
+			<div class="decade">
+				<div class="year"><span class="hideWhenSmall">19</span>99</div>
+				<div class="year">8</div>
+				<div class="year">7</div>
+				<div class="year">6</div>
+				<div class="year">5</div>
+				<div class="year">4</div>
+				<div class="year">3</div>
+				<div class="year">2</div>
+				<div class="year">1</div>
+				<div class="year">1990</div>
+			</div>
+
+			<!-- earlier/other -->
+			<div class="decade">
+				<div class="year">1988</div>
+				<div class="year">1989</div>
+			</div>
+		</div>
+
+		<div id="menu" class="panel" role="navigation">
+			<h3>2013</h3>
+			<div>
+				<p>DEC</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolpariatur.</a></p>
+			</div>
+			<div>
+				<p>NOV</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labo at laborum.</a></p>
+			</div>
+			<div>
+				<p>OCT</p>
+				<p><a href="#" onclick="play()">Sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore deserunt mollit anim id est laborum.</a></p>
+			</div>
+			<div>
+				<p>SEP</p>
+				<p><a href="#" onclick="play()">Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
+			</div>
+			<div>
+				<p>AUG</p>
+				<p><a href="#" onclick="play()">oluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
+			</div>
+			<div>
+				<p>JUL</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amet, iatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
+			</div>
+			<div>
+				<p>JUN</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amet, consectetur adipisicuptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
+			</div>
+			<div>
+				<p>MAY</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor son ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
+			</div>
+			<div>
+				<p>APR</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitfficia deserunt mollit anim id est laborum.</a></p>
+			</div>
+			<div>
+				<p>MAR</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation lla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
+			</div>
+			<div>
+				<p>FEB</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor tion ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
+			</div>
+			<div>
+				<p>JAN</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor ion ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute iruulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a></p>
+			</div>
+		</div>
+
+
+
+
+
+		<div id="search-menu" class="panel" role="navigation">
+			<h3>Search results for <b>"bonobo"</b></h3>
+			<div>
+				<p style="text-decoration:underline">2013</p>
+				<p>DEC</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut</a></p>
+				<br />
+			</div>
+			<div>
+				<p style="text-decoration:underline">2012</p>
+				<p>JUN</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut</a></p>
+				<br />
+			</div>
+			<div>
+				<p style="text-decoration:underline">2011</p>
+				<p>OCT</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a></p>
+				<p>JUN</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut</a></p>
+				<br />
+			</div>
+			<div>
+				<p style="text-decoration:underline">2008</p>
+				<p>MAR</p>
+				<p><a href="#" onclick="play()">Lorem ipsum dolor sit amco laboris nisi ut olor sit amco laboris nisi ut enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</a></p>
+				<br />
+			</div>
+		</div>
+	</div>
+</div>
+<nav id="social">
+  <p id="fb"><a href="#">facebook</a></p>
+  <p id="tw"><a href="#">twitter</a></p>
+  <p id="vm"><a href="#">vimeo</a></p>
+</nav>
+
+
+
+
+
+
+  <!--<li>{{link-to 'Home' 'index'}}</li>
   <li>{{link-to 'Broadcasts' 'broadcasts'}}</li>
-</ul>
-
-<hr>
+  <h1>{{broadcast.session_name}}</h1>
+  -->
 
 {{outlet}}

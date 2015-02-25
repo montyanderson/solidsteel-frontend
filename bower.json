@@ -1,5 +1,5 @@
 {
-  "name": "solid-steel-frontend",
+  "name": "my-new-app",
   "dependencies": {
     "jquery": "^1.11.1",
     "ember": "1.10.0",

@@ -1,0 +1,35 @@
+nav {
+	position: absolute;
+	top: 32px;
+	left: 32px;
+}
+
+nav p {
+	display: inline;
+	float: left;
+	margin-left: 16px;
+}
+
+nav p:first-of-type {
+	margin-left: 0px;
+}
+
+nav img {
+	display: block;
+	color: #fff;
+	width: 32px;
+	vertical-align: top;
+}
+
+nav img:hover {
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+#playing img {
+	position: absolute;
+}
+
+#pauseButton {
+	display: none;
+}

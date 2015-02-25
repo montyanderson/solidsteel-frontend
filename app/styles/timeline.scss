@@ -1,0 +1,128 @@
+#timeline {
+	-webkit-transform: scaleY(1);
+	-o-transform: scaleY(1);
+	-ms-transform: scaleY(1);
+	transform: scaleY(1);
+
+	/* for info bar slide */
+	-webkit-transition: width 300ms ease, -webkit-transform 0.26s ease-out;
+	-o-transition: width 300ms ease, -o-transform 0.26s ease;
+	-ms-transition: width 300ms ease, -ms-transform 0.26s ease;
+	transition: width 300ms ease, transform 0.26s ease;
+}
+
+
+#timeline {
+	float: left;
+	width: 100%;
+	padding: 0 128px;
+	position: relative;
+}
+
+.decade {
+	float: left;
+	// border-bottom: 3px solid #fff;
+	width: 100%;
+	margin: 0 0 60px 0;
+}
+
+.current-decade {
+	.year {
+		width: 20%; /* 100 / (number of years in decade so far -1) */
+	}
+
+	.year:first-of-type,
+	.year:last-of-type {
+		width: 10%; /* split year width above into two for first and last years */
+	}
+}
+
+.year {
+	float: right;
+	width: 11.11%;
+	text-align: center;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.year:first-of-type,
+.year:last-of-type {
+	width: 5.55%;
+	text-align: right;
+}
+
+.year:last-of-type {
+	text-align: left;
+}
+
+.year a {
+	display: block;
+}
+
+.year:hover {
+	cursor: pointer;
+}
+
+#search-timeline .year {
+	cursor: default;
+}
+
+.year:hover {
+	font-weight: bold;
+	border-bottom: 2px solid rgba(255,255,255, 1);
+}
+
+
+@media (max-width: 600px) {
+	#timeline:not(.alt-timeline),
+	#search-timeline:not(.alt-timeline) {
+		width: 15% !important;
+		padding: 0;
+		margin-top: 96px;
+		border-right: 1px solid #fff;
+		
+	}
+
+	.decade {
+		position: relative;
+		left: 5px;
+	}
+
+	#timeline:not(.alt-timeline) .decade,
+	#timeline:not(.alt-timeline) .year {
+		width: 100% !important;
+		text-align: left !important;
+	}
+
+	#timeline:not(.alt-timeline) .year {
+		margin-bottom: 20px;
+		padding-left: 2px;
+		border-bottom: 0;
+		text-align: right !important;
+		background-image: asset_url("icons/circle.svg");
+		background-repeat: no-repeat;
+		background-position: 100% 50%;
+		background-size: 10px 10px;
+		padding-right: 20px;
+	}
+
+	#timeline:not(.alt-timeline) .decade {
+		margin: 0;
+	}
+
+	#menu,
+	#search-menu {
+		width: 80% !important;
+	}
+
+	#timeline.alt-timeline,
+	#timeline.alt-search-timeline {
+		width: 100% !important;
+		padding: 0;
+		overflow-x: scroll;
+	}
+
+	#timeline.alt-timeline .decade {
+		padding: 0 50px;
+		width: 200%;
+	}
+}
