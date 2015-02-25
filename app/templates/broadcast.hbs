@@ -1,11 +1,11 @@
 <h1>{{session_name}} {{broadcast_id}}</h1>
 
 <ul>
-  {{#each mix in broadcast.mixes}}
+  {{#each mix in mixes}}
     <li>
 
-        {{mix.name}} - 
-        {{mix.part}}
+        mixname: {{mix.name}} - 
+        mixpart: {{mix.part}}
 
     </li>
   {{else}}
