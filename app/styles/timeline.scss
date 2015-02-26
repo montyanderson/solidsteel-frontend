@@ -1,4 +1,5 @@
 #timeline {
+	display: none;
 	-webkit-transform: scaleY(1);
 	-o-transform: scaleY(1);
 	-ms-transform: scaleY(1);
@@ -111,6 +112,7 @@
 
 	#menu,
 	#search-menu {
+		display: none;
 		width: 80% !important;
 	}
 

@@ -23,8 +23,8 @@ test('root lists the latest broadcast', function(assert){
 });
 
 test('root lists all the mixes in the latest broadcast', function(assert){
-  assert.expect(2);
+  assert.expect(1);
   visit('/').then(function() {
-    assert.equal(find('div#latest ul li').length, 3, 'The first page should have all the latest mixes');
+    assert.equal(find('div#latest ul li').length, 4, 'The first page should have all the latest mixes');
   });
 });

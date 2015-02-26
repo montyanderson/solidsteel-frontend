@@ -5,5 +5,5 @@ export default DS.Model.extend({
   broadcast_date: DS.attr('date'),
   createdAt: DS.attr('date'),
   updatedAt: DS.attr('date'),
-  mixes: DS.hasMany('mix', {embedded: 'always'})
+  mixes: DS.hasMany('mix')
 });
