@@ -1,20 +1,15 @@
-<h1>THIS IS THE INDEX TEMPLATE</h1>
-
-lorem ipsum and so on
-
 <div id="latest" class="playDetails">
-	  <h1>{{model.session_name}}</h1>
-	  <ul>
-	  {{#each mix in model.mixes}}
-	  	<li>- {{mix.name}}</li>
-	  {{/each}}
-	  </ul>
+	<h1>{{model.session_name}}</h1>
+	<ul>
+	{{#each mix in model.mixes}}
+		<li>- {{mix.name}}</li>
+	{{/each}}
+	</ul>
 </div>
 
-<div id="play" class="play">
-		
+{{#each mix in model.mixes}}
+<div id="play" class="play">		
 </div>
+{{/each}}
 
-<p>index outlet</p>
 {{outlet}}
-<p>after index outlet</p>

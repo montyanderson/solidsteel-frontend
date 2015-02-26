@@ -1,13 +1,18 @@
-<h1>--- THIS IS THE APPLICATION TEMPLATE ---</h1>
+<nav>
+	<p id="home"><img src="/assets/images/list.svg"></p>
+	{{#link-to "search"}}
+		<p id="search"><img src="/assets/images/magnifying-glass.svg"></p>
+	{{/link-to}}
+	<p id="playing">
+		<img id="playButton" src="/assets/images/bar-graph.svg">
+		<img id="pauseButton" src="/assets/images/pause.svg">
+	</p>
+</nav>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-<p>this is the APPLICATION outlet:</p>
-{{outlet}}
-<p>this is after the APPLICATION outlet</p>
+ <div id="container">
+	<div id="inner-container">
+		{{outlet}}
+	</div>
+</div>
