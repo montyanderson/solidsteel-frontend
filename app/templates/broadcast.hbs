@@ -1,20 +1,22 @@
-<h1>{{session_name}} {{broadcast_id}}</h1>
-
-<ul>
+<div id="latest" class="playDetails">
+  <h1>{{model.session_name}}</h1>
+  <ul>
   {{#each mix in mixes}}
-    <li>
-
-        mixname: {{mix.name}} - 
-        mixpart: {{mix.part}}
-
-    </li>
+    <li>- {{mix.name}}</li>
   {{else}}
-    <li>No mixes found.</li>
+  <li>No mixes found.</li>
   {{/each}}
-</ul>
+  </ul>
+</div>
 
-<p>
-  Updated at: {{formatted-date updatedAt 'MMMM Do, YYYY [at] h:mm a'}}
-  <br>
-  Created at: {{formatted-date createdAt 'MMMM Do, YYYY [at] h:mm a'}}
-</p>
+{{#each mix in model.mixes}}
+<div id="play" class="play">    
+</div>
+{{/each}}
+
+{{#link-to "tracks"}}
+  show tracklist
+{{/link-to}}
+
+
+{{outlet}}

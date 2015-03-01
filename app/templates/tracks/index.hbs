@@ -1,0 +1,17 @@
+<div id="tracklisting">
+	<ul>
+	{{#each mix in model.mixes}}
+	  <li>{{mix.name}}
+	    <ul>
+	  {{#each track in mix.tracks}}
+	 	  <li>{{ track.title }}</li>
+	  {{else}}
+	    <li>No tracks found.</li>
+	  {{/each}}
+	 	</ul>
+	 </li>
+	{{else}}
+	  <li>No mixes found.</li>
+	{{/each}}
+	</ul>
+</div>

@@ -1,18 +1,32 @@
 <nav>
-	<p id="home"><img src="/assets/images/list.svg"></p>
+	{{#link-to "broadcasts"}}
+		<p id="home"><img src="/assets/images/list.svg"></p>
+	{{/link-to}}
+		
 	{{#link-to "search"}}
 		<p id="search"><img src="/assets/images/magnifying-glass.svg"></p>
 	{{/link-to}}
+
+	{{#link-to "index"}}
 	<p id="playing">
 		<img id="playButton" src="/assets/images/bar-graph.svg">
 		<img id="pauseButton" src="/assets/images/pause.svg">
 	</p>
+	{{/link-to}}
 </nav>
 
-
+<div id="playDetails">
+	<p>this will show the currently playing track</p>	
+</div>
 
  <div id="container">
 	<div id="inner-container">
 		{{outlet}}
 	</div>
 </div>
+
+<nav id="social">
+	<p id="fb"><a href="#">facebook</a></p>
+	<p id="tw"><a href="#">twitter</a></p>
+	<p id="vm"><a href="#">vimeo</a></p>
+</nav>
