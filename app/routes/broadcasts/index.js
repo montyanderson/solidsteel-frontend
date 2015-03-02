@@ -4,22 +4,18 @@ export default Ember.Route.extend({
 
   controllerName: "broadcasts",
 
-  setupController: function(controller, model) {
-  	console.log(controller);
-    controller.set('model', model);
-  },
-
   model: function(params) {
-  	console.log('in model: ' + this.get("controller.year"));
-    return this.store.find('broadcast', {year: this.get('controller.year')});
+    if (!params.year) {
+      return false;
+    }
+    return this.store.find('broadcast', {year: params.year});
   },
 
   actions: {
     queryParamsDidChange: function(params) {
+      this.set('controller.panelOpen', true);
       console.log("queryParamsDidChange : was " + this.get('controller.year')); 
       console.log("queryParamsDidChange : will be " + (params.year || 'default value'));
-
-      //this.get('controller').set('year', params.year)
       this.refresh();
     }
   }
