@@ -6,7 +6,12 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('search');
+  this.route('top50');
+  this.route('about');
+  this.route('a-z');
+  this.resource('search', function(){
+    this.route('results', {path: ':keyword'});
+  });
   this.resource('broadcasts', function() {
     this.resource('broadcast', { path: '/:broadcast_id' }, function() {
       this.resource('mixes', function() {

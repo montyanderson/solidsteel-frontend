@@ -1,7 +1,7 @@
 <div id="timeline" class="push">
       <!-- 2010s -->
       <div class="decade current-decade">
-        <div class="year">2015</div>
+        <div class="year"><a href="/broadcasts?year=2015">2015</a></div>
         <div class="year">14</div>
         <div class="year">13</div>
         <div class="year">12</div>
@@ -45,16 +45,3 @@
     </div>
 
     {{outlet}}
-
-<ul>
-  {{#each}}
-    <li>
-      {{#link-to 'broadcast' this}}
-        {{session_name}},
-        {{broadcast_date}}
-      {{/link-to}}
-    </li>
-  {{else}}
-    <li>No broadcasts found.</li>
-  {{/each}}
-</ul>
