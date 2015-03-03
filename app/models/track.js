@@ -2,7 +2,8 @@ import DS from 'ember-data';
 
 var Track = DS.Model.extend({
   title: DS.attr('string'),
-  artist: DS.attr('date'),
+  artist: DS.attr('string'),
+  recordLabel: DS.attr('string'),
   mix: DS.belongsTo('mix', { async: true})
 });
 
