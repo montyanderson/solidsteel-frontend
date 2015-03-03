@@ -23,6 +23,6 @@ Mix.reopenClass({FIXTURES : [
 		name: "mix c",
 		tracks: [7, 8, 9, 10]
 	}
-]})
+]});
 
 export default Mix;

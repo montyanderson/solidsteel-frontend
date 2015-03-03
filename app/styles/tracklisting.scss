@@ -1,3 +1,30 @@
+#btn-tracklisting {
+	font-size: 20px;
+	position: absolute;
+	top: $borderWidth + 24;
+	letter-spacing: 1px;
+	right: $borderWidth + 40;
+	display: inline;
+	width: auto;
+	height: 24px;
+	-ms-transform: rotate(-90deg); /* IE 9 */
+    -ms-transform-origin: 100% 0; /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    -webkit-transform-origin: 100% 0; /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+    transform-origin: 100% 0;
+    line-height: 16px;
+}
+
+#btn-tracklisting span {
+	display: block;
+	-webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+    -ms-transform:rotate(180deg);
+    transform:rotate(180deg);
+}
+
 #tracklisting {
 	position: absolute;
 	width: 50%;

@@ -24,6 +24,6 @@ Broadcast.reopenClass({FIXTURES : [
 		session_name: "broadcast c",
 		mixes: [1, 2, 3]
 	}
-]})
+]});
 
 export default Broadcast;

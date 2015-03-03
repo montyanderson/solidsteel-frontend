@@ -51,6 +51,6 @@ Track.reopenClass({FIXTURES : [
 		id: 11,
 		title: "track k"
 	}
-]})
+]});
 
 export default Track;

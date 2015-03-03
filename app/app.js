@@ -12,6 +12,9 @@ var App = Ember.Application.extend({
   LOG_TRANSITIONS: true
 });
 
+var inflector = Ember.Inflector.inflector;
+inflector.uncountable('search'); //only makes call to /advice
+
 loadInitializers(App, config.modulePrefix);
 
 export default App;
