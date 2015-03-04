@@ -14,6 +14,7 @@ Router.map(function() {
     this.route('results', {path: ':keyword'});
   });
   this.resource('broadcasts', function() {
+    this.route('latest');
     this.resource('broadcast', { path: '/:broadcast_id' }, function() {
       this.resource('mixes', function() {
         this.resource('mix', { path: '/:mix_id' }, function() {
