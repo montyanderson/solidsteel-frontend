@@ -1,3 +1,9 @@
+body, div, p, span {
+	font-family: 'Decima Pro';
+	/*font-family: 'Decima Pro';
+	font-family: 'Decima Pro Bold';*/
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Decima Mono X';
 
@@ -9,6 +15,11 @@ h1, h2, h3, h4, h5, h6 {
 	text-decoration: underline;
 	font-weight: normal;
 	margin-bottom: 24px;
+}
+
+b {
+	font-family: 'Decima Pro Bold';
+	font-weight: normal;
 }
 
 #timeline,

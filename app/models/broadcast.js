@@ -3,6 +3,7 @@ import DS from 'ember-data';
 var Broadcast = DS.Model.extend({
   session_name: DS.attr('string'),
   broadcast_date: DS.attr('date'),
+  altnotes: DS.attr('string'),
   createdAt: DS.attr('date'),
   updatedAt: DS.attr('date'),
   mixes: DS.hasMany('mix', { async: true})

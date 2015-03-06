@@ -1,4 +1,4 @@
-<nav>
+<nav class="wide">
 	{{#link-to "broadcasts"}}
 		<p id="home"><img src="/assets/images/list.svg"></p>
 	{{/link-to}}
@@ -12,30 +12,29 @@
 		<img id="playButton" src="/assets/images/bar-graph.svg">
 	</p>
 	{{/link-to}}
+</nav>
 
+ 
+		{{outlet}}
+
+<nav id="extra">
 	{{#link-to "about"}}
 		<p id="search"><img src="/assets/images/list.svg"></p>
 	{{/link-to}}
 
-	{{#link-to "top50"}}
-		<p id="search"><img src="/assets/images/magnifying-glass.svg"></p>
-	{{/link-to}}
+	<br />
 
 	{{#link-to "a-z"}}
 		<p id="search"><img id="playButton" src="/assets/images/bar-graph.svg"></p>
 	{{/link-to}}
+
+	{{#link-to "top50"}}
+		<p id="search">50 classic mixes</p>
+	{{/link-to}}
+	
 </nav>
 
- <div id="container">
-	<div id="inner-container">
-		<div id="playDetails">
-			<p>this will show the currently playing track</p>	
-		</div>
-		{{outlet}}
-	</div>
-</div>
-
-<nav id="social">
+<nav id="social" class="wide">
 	<p id="fb"><a href="#">facebook</a></p>
 	<p id="tw"><a href="#">twitter</a></p>
 	<p id="vm"><a href="#">vimeo</a></p>

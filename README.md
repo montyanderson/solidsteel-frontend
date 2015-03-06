@@ -1,7 +1,4 @@
-# My-new-app
-
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+# Solid Steel Frontend
 
 ## Prerequisites
 
@@ -25,9 +22,8 @@ You will need the following things properly installed on your computer.
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
+## API / Fixtures
+* See /app/adaptors/application.js for configuring a live API endpoint or using local fixtures for your data
 
 ### Running Tests
 
@@ -41,7 +37,8 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+* `ember build --environment production`
+* `scp -r dist/* user@IP.IP.IP.IP:/path/to/dir`
 
 ## Further Reading / Useful Links
 

@@ -103,6 +103,10 @@ input[type="text"]:hover {
   border-bottom: 2px solid rgba(255,255,255, 1);
 }
 
+.results a {
+  color: black;
+}
+
 @media (max-width: 600px) {
   input[type="text"] {
     font-size: 16px;

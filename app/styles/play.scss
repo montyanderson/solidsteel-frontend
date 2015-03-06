@@ -1,34 +1,34 @@
-#play-container {
-	height: 200px;
-	display: none;
-}
-
-#play {
-	float: left;
-	width: 100%;
-	
-	left: 0px;
-	position: relative;
-
-	/* for info bar slide */
-	-webkit-transition: left 300ms ease;
-	-o-transition: left 300ms ease;
-	-ms-transition: left 300ms ease;
-	transition: left 300ms ease;
-}
-
-.play {
-	background: url("/assets/images/player-lines.png");
-	height: 22px;
-	margin-left: 50px;
-}
-
-.playDetails {
+#playDetails {
 	position: absolute;
 	left: 268px;
-	top: 64px;
+	top: 32px;
 	font-size: 14px;
 	line-height: 16px;
+}
+
+#players {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	background: url(/assets/images/ss-logo.jpg) 0 0 / contain no-repeat;
+	padding-left: 120px;
+}
+
+.player {
+	display: table-cell;
+}
+
+.player .wave {
+	height: 22px;
+	background: url("/assets/images/player-lines.png");
+}
+
+.player p:nth-child(3) {
+	border-left: 1px solid #fff;
+}
+
+.player p:nth-child(n+3) {
+	padding-left: 8px;
 }
 
 @media (max-width: 600px) {

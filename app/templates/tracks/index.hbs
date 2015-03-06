@@ -1,7 +1,14 @@
-<div id="tracklisting">
+<div id="tracklisting" {{bind-attr class="showingTracklisting:panel-open:panel-closed"}}>
+	<span {{action 'togglePanel'}}>close panel</span>
+
+	<br />
+	
+	<p {{bind-attr class="showingTracks:current"}}{{ action 'toggleTracksSynopsis'}}>tracklist</p>
+	<p {{bind-attr class="showingTracks::current"}}{{ action 'toggleTracksSynopsis'}}>synopsis</p>
 	<ul>
+	<li {{bind-attr class="showingTracks:disabled:enabled"}}>{{model.altnotes}}</li>
 	{{#each mix in model.mixes}}
-	  <li><h2>{{mix.name}}</h2>
+	  <li {{bind-attr class="showingTracks:enabled:disabled"}}><h2>{{mix.name}}</h2>
 	    <ul>
 	  {{#each track in mix.tracks}}
 	 	  <li>{{ track.title }} / {{ track.artist }} / {{ track.recordLabel }}</li>

@@ -28,7 +28,7 @@
 #tracklisting {
 	position: absolute;
 	width: 50%;
-	right: -100px;
+	right: 0;
 	top: 8px;
 	bottom: 8px;
 	background: white;
@@ -42,4 +42,23 @@
 
 #tracklisting.panel-open {
 	width: 50%;
+}
+
+#tracklisting>p {
+	float: left;
+	width: 50%;
+	background: gray;
+	cursor: pointer;
+}
+
+#tracklisting>p.current {
+	background: white;
+}
+
+.disabled {
+	display: none;
+}
+
+.enabled {
+	display: block;
 }

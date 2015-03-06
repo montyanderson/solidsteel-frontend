@@ -1,21 +1,25 @@
-{{model}}
-<div id="latest" class="playDetails">
-  <h1>{{model.session_name}}</h1>
-  <ul>
-  {{#each mix in mixes}}
-    <li>- {{mix.name}}</li>
-  {{else}}
-  <li>No mixes found.</li>
-  {{/each}}
-  </ul>
+<div id="playDetails">
+	<p><b>NOW PLAYING</b></p>
+	<p>{{formatted-date model.broadcast_date 'DD-MM-YY'}} {{model.session_name}}</p>	
 </div>
 
-{{#each mix in model.mixes}}
-<div id="play" class="play">    
+<div id="container">
+	<div id="inner-container">
+		<div id="players">
+		{{#each mix in mixes}}
+			<div class="player">
+				<p>01:38</p>
+				<p class="wave"></p>
+				<p>PART {{mix.part}}</p>
+				<p>{{mix.name}}</p>
+			</div>
+
+		{{/each}}
+		</div>
+
+		{{#link-to 'tracks' model id="btn-tracklisting"}}<span>+TRACKLIST</span>{{/link-to}}
+
+	</div>
 </div>
-{{/each}}
-
-{{#link-to "tracks" model id="btn-tracklisting"}}<span>+TRACKLIST</span>{{/link-to}}
-
 
 {{outlet}}
