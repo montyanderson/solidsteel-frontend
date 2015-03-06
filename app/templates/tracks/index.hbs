@@ -1,25 +1,22 @@
 <div id="tracklisting" {{bind-attr class="showingTracklisting:panel-open:panel-closed"}}>
-	<span {{action 'togglePanel'}}>close panel</span>
+	<div>
+		<span {{action 'togglePanel'}}>close panel</span>
+		<br />
+		<p {{bind-attr class="showingTracks:current"}}{{ action 'toggleTracksSynopsis'}}><b>tracklist</b></p>
+		<p {{bind-attr class="showingTracks::current"}}{{ action 'toggleTracksSynopsis'}}><b>synopsis</b></p>
+	</div>
+	<div {{bind-attr class="showingTracks:disabled:enabled"}}>{{model.altnotes}}</div>
 
-	<br />
-	
-	<p {{bind-attr class="showingTracks:current"}}{{ action 'toggleTracksSynopsis'}}>tracklist</p>
-	<p {{bind-attr class="showingTracks::current"}}{{ action 'toggleTracksSynopsis'}}>synopsis</p>
-	<ul>
-	<li {{bind-attr class="showingTracks:disabled:enabled"}}>{{model.altnotes}}</li>
-	{{#each mix in model.mixes}}
-	  <li {{bind-attr class="showingTracks:enabled:disabled"}}><h2>{{mix.name}}</h2>
-	    <ul>
-	  {{#each track in mix.tracks}}
-	 	  <li>{{ track.title }} / {{ track.artist }} / {{ track.recordLabel }}</li>
-	  {{else}}
-	    <li>No tracks found.</li>
-	  {{/each}}
-	 	</ul>
-	 	<hr />
-	 </li>
-	{{else}}
-	  <li>No mixes found.</li>
-	{{/each}}
-	</ul>
+	<div {{bind-attr class="showingTracks:enabled:disabled"}}>
+		{{#each mix in model.mixes}}
+			<h2><b>Part {{mix.part}}</b> {{mix.name}}</h2>
+			{{#each track in mix.tracks}}
+		    	<p>{{_view.contentIndex}} &nbsp;&nbsp; <b>{{ track.title }}</b> / {{ track.artist }} / {{ track.recordLabel }}</p>
+		  	{{else}}
+		    	<p>No tracks found.</p>
+		  	{{/each}}
+		{{else}}
+			<p>No mixes found.</p>
+		{{/each}}
+	</div>
 </div>

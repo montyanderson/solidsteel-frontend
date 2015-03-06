@@ -34,6 +34,15 @@
 	background: white;
 	color: black;
 	overflow: scroll;
+	box-sizing: border-box;
+}
+
+#tracklisting div {
+	padding: 0 24px;
+}
+
+#tracklisting div:nth-of-type(1) {
+	padding: 0 8px;
 }
 
 #tracklisting.panel-closed {
@@ -44,15 +53,46 @@
 	width: 50%;
 }
 
-#tracklisting>p {
+#tracklisting div:nth-child(1) p {
 	float: left;
 	width: 50%;
-	background: gray;
+	background: #f1f1f1;
 	cursor: pointer;
+	padding: 16px 8px;
 }
 
-#tracklisting>p.current {
+#tracklisting div:nth-child(1) p.current {
 	background: white;
+}
+
+#tracklisting h2 {
+	clear: left;
+	margin-top: 24px;
+}
+
+#tracklisting h2 {
+	font-family: 'Decima Pro';
+	margin-bottom: 0;
+}
+
+#tracklisting h2,
+#tracklisting p {
+	font-size: 14px;
+}
+
+#tracklisting p,
+#tracklisting h2 {
+	border-bottom: 1px solid #ddd;
+	padding: 8px 0;
+}
+
+#tracklisting div:nth-child(1) p {
+	padding: 16px 8px;
+	border-bottom: 0;
+}
+
+#tracklisting>p:first-of-type {
+	padding-left: 0;
 }
 
 .disabled {
