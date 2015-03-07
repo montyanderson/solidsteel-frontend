@@ -1,7 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  beforeModel: function() {
-    this.transitionTo('/broadcasts/latest');
+
+  model: function(params) {
+    return this.store.find('broadcast', 'latest');
+  },
+
+  afterModel: function(model) {
+  	this.transitionTo('broadcast', model);
   }
+
 });

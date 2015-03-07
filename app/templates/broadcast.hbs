@@ -3,7 +3,7 @@
 	<p>{{formatted-date model.broadcast_date 'DD-MM-YY'}} {{model.session_name}}</p>	
 </div>
 
-<div id="container">
+<div id="container" {{bind-attr class="showingTracks"}}>
 	<div id="inner-container">
 		<div id="players">
 		{{#each mix in mixes}}
@@ -17,7 +17,9 @@
 		{{/each}}
 		</div>
 
-		{{#link-to 'tracks' model id="btn-tracklisting"}}<span>+TRACKLIST</span>{{/link-to}}
+		<p {{action 'toggleTrax'}} id="btn-tracklisting"><span>{{plusMinus}}TRACKLIST</span></p>
+
+
 
 	</div>
 </div>

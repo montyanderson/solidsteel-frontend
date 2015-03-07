@@ -26,7 +26,6 @@
 }
 
 #tracklisting {
-	position: absolute;
 	width: 50%;
 	right: 0;
 	top: 8px;
@@ -50,7 +49,7 @@
 }
 
 #tracklisting.panel-open {
-	width: 50%;
+	display: table-cell;
 }
 
 #tracklisting div:nth-child(1) p {
