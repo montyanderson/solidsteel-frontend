@@ -47,8 +47,18 @@
     </div>
 
     <div id="tracklisting" {{bind-attr class=":results panelOpen:panel-open:panel-closed"}}>
-      {{#each broadcast in model}}
-        <div>{{#link-to "broadcast" broadcast (query-params year="null")}}{{broadcast.session_name}}&nbsp;/&nbsp;{{formatted-date broadcast.broadcast_date 'MMMM Do, YYYY'}}{{/link-to}}</div>
+      {{#each group in groupedContent}}
+        <div class="month">
+        <h3>{{group.key}}</h3>
+        {{#each cont in group.content}}
+          {{#link-to 'broadcast' cont.id (query-params year="null")}}
+          <p>{{cont.broadcast_date}}</p>
+          <p>{{cont.session_name}}</p>
+          {{/link-to}}
+          <br />
+        {{/each}}
+        <br /><br />
+        </div>
       {{/each}}
     </div>
   </div>
