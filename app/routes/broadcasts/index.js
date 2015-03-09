@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import ResetScroll from '../../mixins/resetscroll';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ResetScroll, {
 
   queryParams: {
     year: {
@@ -12,6 +13,10 @@ export default Ember.Route.extend({
     if(params.year && params.year !== undefined) {
       return this.store.find('broadcast', {year: params.year || "null"});
     }
+  },
+
+  afterModel: function(){
+    this.activate();
   }
 
 });
