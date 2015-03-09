@@ -1,2 +1,4 @@
-<p>{{model.broadcast_date}}</p>
-<p>{{model.session_name}}</p>
+{{#link-to 'broadcast' model}}
+	<p>{{model.broadcast_date}}</p>
+	<p>{{model.session_name}}</p>
+{{/link-to}}

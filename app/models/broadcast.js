@@ -6,7 +6,7 @@ var Broadcast = DS.Model.extend({
   altnotes: DS.attr('string'),
   createdAt: DS.attr('date'),
   updatedAt: DS.attr('date'),
-  mixes: DS.hasMany('mix', { async: true})
+  mixes: DS.hasMany('mix')
 });
 
 Broadcast.reopenClass({FIXTURES : [
