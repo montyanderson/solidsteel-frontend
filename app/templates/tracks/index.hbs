@@ -1,8 +1,7 @@
-<div id="tracklisting" {{bind-attr class="showingTracklisting:panel-open:panel-closed"}}>
-	<div>
-		<br />
-		<p {{bind-attr class="showingTracks:current"}}{{ action 'toggleTracksSynopsis'}}><b>tracklist</b></p>
-		<p {{bind-attr class="showingTracks::current"}}{{ action 'toggleTracksSynopsis'}}><b>synopsis</b></p>
+<div id="tracks-in-mix" {{bind-attr class=":sidepanel showingTracklisting:panel-open:panel-closed"}}>
+	<div class="tabs">
+		<p {{bind-attr class="showingTracks:current"}}{{ action 'toggleTracksSynopsis'}}><b>Tracklist</b></p>
+		<p {{bind-attr class="showingTracks::current"}}{{ action 'toggleTracksSynopsis'}}><b>Synopsis</b></p>
 	</div>
 	<div {{bind-attr class="showingTracks:disabled:enabled"}}>{{model.altnotes}}</div>
 
@@ -10,7 +9,7 @@
 		{{#each mix in model.mixes}}
 			<h2><b>Part {{mix.part}}</b> {{mix.name}}</h2>
 			{{#each track in mix.tracks}}
-		    	<p>{{_view.contentIndex}} &nbsp;&nbsp; <b>{{ track.title }}</b> / {{ track.artist }} / {{ track.recordLabel }}</p>
+		    	<p>{{twofigurecounter _view.contentIndex}} &nbsp;&nbsp; <b>{{ track.title }}</b> / {{ track.artist }} / {{ track.recordLabel }}</p>
 		  	{{else}}
 		    	<p>No tracks found.</p>
 		  	{{/each}}

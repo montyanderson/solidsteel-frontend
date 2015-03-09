@@ -5,6 +5,10 @@
 	-webkit-transition: -webkit-transform 300ms ease-out;
 }
 
+#container.showing-results {
+  width: 50%;
+}
+
 input {
 	width: 100%;
 }

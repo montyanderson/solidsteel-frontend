@@ -1,22 +1,60 @@
+/*
+
+font-family: 'Decima Pro';
+font-family: 'Decima Pro Bold';
+font-family: 'Decima Mono X Bold';
+font-family: 'Decima Mono X Light';
+font-family: 'Decima Mono X';
+
+*/
+
 body, div, p, span {
 	font-family: 'Decima Pro';
-	/*font-family: 'Decima Pro';
-	font-family: 'Decima Pro Bold';*/
+}
+
+h1, h2, h3, h4, h5, h6,
+.sidepanel p {
+	font-family: 'Decima Mono X';
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Decima Mono X';
-	// font-family: 'Decima Mono X Bold';
-	// font-family: 'Decima Mono X Light';
-	// font-family: 'Decima Mono X';
 	font-size: 24px;
 	font-weight: normal;
 	margin-bottom: 24px;
 }
 
+h2 {
+	font-size: 36px;
+}
+
+p {
+	font-size: 16px;
+}
+
 b {
 	font-family: 'Decima Pro Bold';
 	font-weight: normal;
+}
+
+.sidepanel h2 {
+	text-decoration: underline;
+}
+
+.sidepanel a {
+	color: #2e2e33;
+}
+
+#tracks-in-mix p {
+	font-family: "Decima Pro";
+}
+
+#tracks-in-mix h2 {
+	font-family: "Decima Pro";
+	font-size: 16px;
+	line-height: 24px;
+	text-decoration: none;
+	margin-bottom: 0;
+
 }
 
 #timeline,

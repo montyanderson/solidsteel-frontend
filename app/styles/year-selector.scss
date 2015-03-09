@@ -1,0 +1,20 @@
+#year-selector {
+	float: right;
+	background: rgba(255 ,255, 255, 0.7);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	overflow-y: scroll;
+	width: 160px;
+	padding-left: 16px;
+}
+
+#year-selector p {
+	font-family: "Decima Pro";
+	font-size: 36px;
+}
+
+#year-selector p a {
+	color: $mainGreyText;
+}

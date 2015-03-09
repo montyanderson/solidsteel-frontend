@@ -2,16 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
-  controllerName: "broadcasts",
-
-  model: function(params) {
-    return this.store.find('broadcast', {year: params.year || "null"});
+  queryParams: {
+    year: {
+      refreshModel: true
+    }
   },
 
-  actions: {
-    queryParamsDidChange: function(params) {
-      this.set('controller.panelOpen', true);
-      this.refresh();
+  model: function(params) {
+    if(params.year && params.year !== undefined) {
+      return this.store.find('broadcast', {year: params.year || "null"});
     }
   }
 

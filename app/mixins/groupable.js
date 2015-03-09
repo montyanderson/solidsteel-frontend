@@ -17,6 +17,7 @@ export default Ember.Mixin.create({
     ungroupedContent.forEach(function(item) {
       var foundGroup, group, groupKey;
       group = groupCallback.call(model, item);
+
       if (!(groupKey = group.get('key'))) {
         return;
       }
@@ -32,6 +33,9 @@ export default Ember.Mixin.create({
 
 
     // returns array of groups?
+
+    console.log(groupedContent);
+    
     return groupedContent;
   }).property('group', 'ungroupedContent.@each')
 });

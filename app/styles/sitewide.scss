@@ -1,5 +1,6 @@
 html, body {
 	height: 100%;
+	overflow: hidden;
 }
 
 body {
@@ -68,4 +69,12 @@ a {
 a:hover {
 	text-decoration: underline;
 	color: inherit;
+}
+
+.disabled {
+	display: none;
+}
+
+.enabled {
+	display: block;
 }

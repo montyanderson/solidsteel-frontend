@@ -25,79 +25,63 @@
     transform:rotate(180deg);
 }
 
-#tracklisting {
+.sidepanel {
 	width: 50%;
 	right: 0;
 	top: 8px;
 	bottom: 8px;
-	background: white;
+	background: #fafafa;
 	color: black;
 	overflow: scroll;
 	box-sizing: border-box;
-}
-
-#tracklisting div {
-	padding: 0 24px;
-}
-
-#tracklisting div:nth-of-type(1) {
-	padding: 0 8px;
-}
-
-#tracklisting.panel-closed {
-	width: 0;
-}
-
-#tracklisting.panel-open {
 	position: fixed;
+	padding: 88px $bigBorderWidth 0;
 }
 
-#tracklisting div:nth-child(1) p {
+#tracks-in-mix p,
+#tracks-in-mix h2 {
+	border-bottom: 1px solid #ddd;
+	padding: 8px 0 12px 0;
+}
+
+#tracks-in-mix .tabs p {
+	padding: 16px 0 16px 32px;
+}
+
+#tracks-in-mix h2 {
+	clear: left;
+}
+
+#search-results.sidepanel>div,
+.month div {
+	margin-bottom: 24px;
+}
+
+.tabs {
+	background: #f1f1f1;
+	float: left;
+	width: 100%;
+}
+
+.tabs .current {
+	background: #fafafa;
+}
+
+.tabs p {
 	float: left;
 	width: 50%;
-	background: #f1f1f1;
-	cursor: pointer;
-	padding: 16px 8px;
-}
-
-#tracklisting div:nth-child(1) p.current {
-	background: white;
-}
-
-#tracklisting h2 {
-	clear: left;
-	margin-top: 24px;
-}
-
-#tracklisting h2 {
-	font-family: 'Decima Pro';
-	margin-bottom: 0;
-}
-
-#tracklisting h2,
-#tracklisting p {
-	font-size: 14px;
-}
-
-#tracklisting p,
-#tracklisting h2 {
-	border-bottom: 1px solid #ddd;
-	padding: 8px 0;
-}
-
-#tracklisting div:nth-child(1) p {
-	padding: 16px 8px;
-	border-bottom: 0;
-}
-
-#tracklisting>p:first-of-type {
-	padding-left: 0;
-}
-
-.disabled {
-	display: none;
-}
-
-.enabled {
 	display: block;
+}
+
+#tracks-in-mix {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#tracks-in-mix>div:nth-child(n+2){
+	margin: 0 32px;
+}
+
+#tracks-in-mix .tabs p {
+	border-bottom: none;
 }

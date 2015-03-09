@@ -11,8 +11,9 @@
 @import "nav";
 @import "timeline";
 @import "broadcast";
-@import "tracklisting";
+@import "sidepanel";
 @import "extra";
+@import "year-selector";
 
 .ember-view {
 	height: 100%;
