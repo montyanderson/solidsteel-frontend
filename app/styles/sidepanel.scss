@@ -30,12 +30,12 @@
 	right: 0;
 	top: 8px;
 	bottom: 8px;
-	background: #fafafa;
+	background: #fefeff;
 	color: black;
 	overflow: scroll;
 	box-sizing: border-box;
 	position: fixed;
-	padding: 88px $bigBorderWidth 0;
+	padding: 88px 0 0 0;
 }
 
 #tracks-in-mix p,
@@ -52,9 +52,64 @@
 	clear: left;
 }
 
-#search-results.sidepanel>div,
-.month div {
+#search-results.sidepanel>div {
 	margin-bottom: 24px;
+}
+
+.month>div {
+	height: 64px;
+}
+
+.month>div,
+#broadcasts-by-month h2 {
+	padding: 0 $bigBorderWidth 0;
+}
+
+.month>div:last-of-type {
+	margin-bottom: 24px;
+}
+
+.month div:hover {
+	background: #f1f1f1;
+	padding: 0;
+}
+
+.month div span {
+	text-decoration: none;
+	cursor: default;
+	display: table;
+	width: 100%;
+}
+
+.play-button {
+	width: 64px;
+	height: 64px;
+	background: #fafafa;
+	display: table-cell;
+	vertical-align: middle
+}
+
+.info-button {
+	display: table-cell;
+	vertical-align: middle;
+	width: 64px;
+	height: 64px;
+	cursor: pointer;
+}
+
+.month .play-button:hover {
+	cursor: pointer;
+	background: #fafafa;
+}
+
+.mix-in-sidepanel {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 0px;
+}
+
+span:hover .mix-in-sidepanel {
+	padding-left: 16px;
 }
 
 .tabs {
