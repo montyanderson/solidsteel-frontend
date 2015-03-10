@@ -1,7 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  
+  needs: ['application'],
+
+  setAppBg: function(path){
+    this.get('controllers.application').set('bgImgPath', path);
+  },
+
   showingTracks: false,
 
   plusMinus: "+",

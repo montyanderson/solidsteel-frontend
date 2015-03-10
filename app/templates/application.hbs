@@ -14,8 +14,7 @@
 	{{/link-to}}
 </nav>
 
- 
-		{{outlet}}
+{{outlet}}
 
 <nav id="extra">
 	{{#link-to "about"}}
@@ -39,3 +38,6 @@
 	<p id="tw"><a href="#">twitter</a></p>
 	<p id="vm"><a href="#">vimeo</a></p>
 </nav>
+
+<div {{ bind-attr style="myStyle"}}>
+</div>
