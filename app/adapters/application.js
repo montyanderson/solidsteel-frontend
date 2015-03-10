@@ -7,6 +7,6 @@ var Adapt = DS.ActiveModelAdapter.extend({
   host: window.MyNewApp.API_HOST
 });
 
-var Adapt =  DS.FixtureAdapter;
+//var Adapt =  DS.FixtureAdapter;
 
 export default Adapt;
