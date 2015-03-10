@@ -85,3 +85,15 @@
 #tracks-in-mix .tabs p {
 	border-bottom: none;
 }
+
+#broadcasts-by-month h2 {
+	text-transform: uppercase;
+}
+
+.month p {
+	margin: 0;
+}
+
+.month p:nth-of-type(2) {
+	font-family: 'Decima Pro', Helvetica, sans-serif;
+}

@@ -6,16 +6,16 @@ export default Ember.View.extend({
 
   tagName: 'div',
 
-  mouseEnter: function(event) {
-    this.wait = window.setTimeout(this.woop, 1000);
-  },
+  hover: false,
 
-  mouseLeave: function(event) {
-    window.clearTimeout(this.wait);
-  },
+  // mouseEnter: function(event) {
+  //   this.wait = window.setTimeout(this.woop, 1000);
+  // },
 
-  woop: function(){
-  	console.log('play mix after 1 second hover? and show play/pause button here?');
-  }
+  // mouseLeave: function(event) {
+  //   window.clearTimeout(this.wait);
+  // },
+  mouseEnter: function() { this.set('hover', true); },
+  mouseLeave: function() { this.set('hover', false); }
 
 });

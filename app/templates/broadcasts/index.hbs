@@ -78,17 +78,12 @@
 </div>
 
 <div id="broadcasts-by-month" {{bind-attr class=":sidepanel showingResults:enabled:disabled"}}>
-  <h2>{{year}}</h2>
   {{#each group in groupedContent}}
     <div class="month">
-    <h3>{{group.group.key}}</h3>
+    <h2>{{group.group.key}}</h2>
     {{#each cont in group.content}}
-      
       {{render "SidepanelMix" cont}}
-
-
     {{/each}}
-    <br /><br />
     </div>
   {{/each}}
 </div>

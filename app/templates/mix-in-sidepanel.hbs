@@ -1,4 +1,8 @@
 {{#link-to 'broadcast' model}}
-	<p>{{model.broadcast_date}}</p>
+	{{#if view.hover}}
+	<button style="float: left; margin-right: 20px;">play</button>
+	{{/if}}
+
+	<p>{{ formatted-date model.broadcast_date 'DD-MM-YY' }}</p>
 	<p>{{model.session_name}}</p>
 {{/link-to}}
