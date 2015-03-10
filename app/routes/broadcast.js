@@ -20,7 +20,7 @@ export default Ember.Route.extend({
         sound.play();
       });
 
-      controller.setAppBg(model.serialize().mixes[0].img);
+      controller.setAppBg(model.serialize().mixes[0].image);
 
     });
 
