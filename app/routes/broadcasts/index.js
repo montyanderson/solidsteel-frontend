@@ -11,12 +11,13 @@ export default Ember.Route.extend(ResetScroll, {
 
   model: function(params) {
     if(params.year && params.year !== undefined) {
+      this.year = params.year;
       return this.store.find('broadcast', {year: params.year || "null"});
     }
   },
 
   afterModel: function(){
-    this.activate();
+    this.activate(this.year);
   }
 
 });

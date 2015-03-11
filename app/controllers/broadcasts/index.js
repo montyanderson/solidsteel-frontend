@@ -21,18 +21,6 @@ export default Ember.ArrayController.extend(Groupable, {
 
   showingResults: function(){
     return (this.year !== null);
-  }.property('year'),
-
-  actions: {
-
-    'mouseenter' : function(){
-      console.log('in');
-    },
-
-    'mouseleave' : function(){
-      console.log('out');
-    },    
-
-  }
+  }.property('year')
 
 });

@@ -30,11 +30,6 @@ export default Ember.Mixin.create({
       }
       return foundGroup.get('content').pushObject(item);
     });
-
-
-    // returns array of groups?
-
-    console.log(groupedContent);
     
     return groupedContent;
   }).property('group', 'ungroupedContent.@each')

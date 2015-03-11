@@ -40,7 +40,7 @@
 
 #tracks-in-mix p,
 #tracks-in-mix h2 {
-	border-bottom: 1px solid #ddd;
+	border-bottom: 3px solid #ddd;
 	padding: 8px 0 12px 0;
 }
 
@@ -106,6 +106,7 @@
 	display: table-cell;
 	vertical-align: middle;
 	padding-left: 0px;
+	height: 64px;
 }
 
 span:hover .mix-in-sidepanel {
