@@ -14,18 +14,12 @@ export default Ember.Route.extend({
   },
 
   setupController: function(controller, model){
-    model.reload().then(function(){
-      var soundcloudTrackId = model.serialize().mixes[0].url;
-      SC.stream("/tracks/"+soundcloudTrackId, function(sound){
-        sound.play();
-      });
-
-      controller.setAppBg(model.serialize().mixes[0].image);
-
+    model.get('mixes').reload().then(function(){
+    //   controller.setCurrentMix();
     });
 
     controller.set('model', model);
-    
+    controller.setCurrentMix();
   }
   
 });
