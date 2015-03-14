@@ -6,21 +6,13 @@
 <div id="container" {{bind-attr class="showingTracks"}}>
 	<div id="inner-container">
 		<div id="players">
+		
 		{{#each mix in model.mixes}}
-			<div class="player">
-				<p>01:38</p>
-				<p class="wave"></p>
-				<p>PART {{mix.part}}</p>
-				<p>{{mix.name}}</p>
-			</div>
-
+			{{ render 'mix' mix }}
 		{{/each}}
 		</div>
 
 		<p {{action 'toggleTrax'}} id="btn-tracklisting"><span>{{plusMinus}}TRACKLIST</span></p>
-
-
-
 	</div>
 </div>
 

@@ -1,30 +1,34 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  needs: ['application'],
-
-  itemController: 'mix',
 
   showingTracks: false,
 
   plusMinus: "+",
 
-  currentPart: 1,
+  currentPart: null,
 
-  setCurrentMix: function(){
-
-    //console.log(this.get('controllers'));
-    console.log(this.get('model.mixes').objectAt(0));
-    
-
-    this.get('controllers').forEach(function(itemController){
-      console.log(itemController);
+  setCurrentMix: function(mixNumber){
+    // make all mixes not current
+    this.get('model.mixes').forEach(function(mix){
+      mix.set('isCurrent', false);
     });
-    //console.log(this.get('content').get('mixes').objectAt(0).get('name'));
 
-    // this.get('content').get('mixes').forEach(function(m){
-    //   console.log(m.get('name'));
-    // })
+    // increment current mix
+    if (mixNumber !== undefined) {
+      this.currentPart = mixNumber;
+    } else {
+      this.currentPart ++;
+    }
+
+    // don't try to play a mix that doesn't exist
+    if(this.currentPart >= this.get('model.mixes').get('length')){
+      this.currentPart = 0;
+    }
+
+    // set current mix by setting an attribute on one of the Mix models - this
+    // will make the mix conttoller respond by playing its model's audio
+    this.get('model.mixes').objectAt(this.currentPart).set('isCurrent', true);
   },
 
   actions: {

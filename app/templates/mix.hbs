@@ -1,2 +1,6 @@
-<h1>mix: {{name}}</h1>
-<h2>part: {{part}} </h2>
+<div {{bind-attr class=":player model.isCurrent"}}>
+	<p>01:38</p>
+	<p class="wave"></p>
+	<p {{action 'makeCurrent' }}>PART {{mix.part}}</p>
+	<p {{action 'makeCurrent' }}>{{mix.name}}</p>
+</div>
