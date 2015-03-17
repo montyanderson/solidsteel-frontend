@@ -12,14 +12,15 @@ export default Ember.Controller.extend({
     // make all mixes not current
     this.get('model.mixes').forEach(function(mix){
       mix.set('isCurrent', false);
+      mix.set('progress', 0);
     });
 
-    // increment current mix
+    // increment current mix, or play the first one if none specified
     if (mixNumber !== undefined) {
-      this.currentPart = mixNumber.get('part');;
+      this.currentPart = mixNumber.get('part')-1;
     } else {
       if (this.currentPart == undefined) {
-        this.currentPart = 2;
+        this.currentPart = 0;
       } else {
         this.currentPart++;
       }

@@ -28,32 +28,6 @@ export default Ember.Controller.extend({
 
           //sound.setVolume(0)
 
-
-
-
-
-
-
-          /*
-          *
-          *
-          *
-          *
-          *   why doesn't audiowave view start animating when
-          *   new mix is clicked on?
-          *
-          *   it only ever animates the first canvas!
-          *
-          */
-
-
-
-
-
-
-
-
-
           self.set('model.progress', 0 );
 
           sound.play({
