@@ -3,7 +3,7 @@ import DS from 'ember-data';
 var Mix = DS.Model.extend({
   name: DS.attr(),
   part: DS.attr(),
-  url: DS.attr(),
+  soundcloudId: DS.attr(),
   image: DS.attr(),
   broadcast: DS.belongsTo('broadcast', { async: true}),
   tracks: DS.hasMany('track', { async: true}),

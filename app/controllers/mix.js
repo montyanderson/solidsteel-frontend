@@ -13,27 +13,84 @@ export default Ember.Controller.extend({
       window.sound.stop();
     }
 
+    // play this mix's soundcloud audio
     if(this.get('model.isCurrent')) {
-      // play this mix's soundcloud audio
-      SC.stream("/tracks/"+this.get('model.url'), function(sound){
-        window.sound = sound;
-        window.sound.play();
-        console.log(window.sound);
-      });
+
+      self = this;
+
+      //SC.whenStreamingReady(function() {
+        SC.stream("/tracks/"+self.get('model.soundcloudId'), function(sound){
+          
+          window.sound = sound;
+
+          // store ref to soundcloud on model
+          self.set('model.sound', sound);
+
+          //sound.setVolume(0)
+
+
+
+
+
+
+
+          /*
+          *
+          *
+          *
+          *
+          *   why doesn't audiowave view start animating when
+          *   new mix is clicked on?
+          *
+          *   it only ever animates the first canvas!
+          *
+          */
+
+
+
+
+
+
+
+
+
+          self.set('model.progress', 0 );
+
+          sound.play({
+            whileplaying: function() {
+              // update playhead position
+              self.set('model.progress', this.position );
+            },
+
+            whileloading: function() {
+              // update duration display
+              self.set('model.duration', sound.durationEstimate);
+            }
+
+          });
+        });
+      //});
 
       // set background image for htis mix, if there is an image
       if(this.get('model.image')) {
-        console.log(this.get('model.image'));
         this.get('controllers.application').set('bgImgPath', this.get('model.image'));
       }
+
     }
     
   }.observes("model.isCurrent").on('init'),
 
   actions: {
 
-    makeCurrent: function(){
-      this.parentController.setCurrentMix();
+    makeCurrent: function(mix){
+      this.parentController.setCurrentMix(mix);
+    },
+
+    skip: function(model, position){
+      if(model.id != self.get('model.id')) {
+        this.send('makeCurrent', model);
+      }
+      self.get('model.sound').setPosition( self.get('model.duration')*position);
     }
 
   }

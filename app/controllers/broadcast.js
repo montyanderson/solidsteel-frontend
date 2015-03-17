@@ -16,9 +16,13 @@ export default Ember.Controller.extend({
 
     // increment current mix
     if (mixNumber !== undefined) {
-      this.currentPart = mixNumber;
+      this.currentPart = mixNumber.get('part');;
     } else {
-      this.currentPart ++;
+      if (this.currentPart == undefined) {
+        this.currentPart = 2;
+      } else {
+        this.currentPart++;
+      }
     }
 
     // don't try to play a mix that doesn't exist

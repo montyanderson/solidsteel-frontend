@@ -1,6 +1,6 @@
 <div {{bind-attr class=":player model.isCurrent"}}>
-	<p>01:38</p>
-	<p class="wave"></p>
-	<p {{action 'makeCurrent' }}>PART {{mix.part}}</p>
-	<p {{action 'makeCurrent' }}>{{mix.name}}</p>
+	<p>{{ formatted-time model.duration }}</p>
+	{{ view 'audiowave' model }}
+	<p {{action 'makeCurrent' model }}>PART {{model.part}}</p>
+	<p {{action 'makeCurrent' model }}>{{model.name}}</p>
 </div>

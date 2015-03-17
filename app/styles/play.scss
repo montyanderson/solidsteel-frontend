@@ -10,21 +10,29 @@
 	display: table;
 	width: 100%;
 	table-layout: fixed;
-	background: url(/assets/images/ss-logo.jpg) 0 0 / contain no-repeat;
-	padding-left: 120px;
+	background: url(/assets/images/ss-logo.jpg) 24px 0 / contain no-repeat;
+	padding-left: 144px;
 }
 
 .player {
 	display: table-cell;
+	vertical-align: middle;
 }
 
-.player .wave {
-	height: 22px;
-	background: url("/assets/images/player-lines.png");
+.player canvas {
+	height: 36px;
+	width: 310px;
+	display: block;
+}
+
+.player p {
+	margin: 0;
 }
 
 .player p:nth-child(3) {
-	border-left: 1px solid #fff;
+	position: relative;
+	top: -4px;
+	border-left: 2px solid rgba(255, 255, 255, 0.7);
 }
 
 .player p:nth-child(n+3) {

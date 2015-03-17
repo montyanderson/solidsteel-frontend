@@ -20,7 +20,7 @@ export default Ember.Route.extend({
     // });
     
     controller.set('model', model);
-    controller.setCurrentMix(0);
+    controller.setCurrentMix();
   }
   
 });
