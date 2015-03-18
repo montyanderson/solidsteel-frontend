@@ -1,13 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  needs: ['application'],
+  needs: ['application', 'broadcast'],
 
   init: function(){
     
   },
 
   play: function(){
+    
+    console.log('aply now!');
+
     
     if(window.sound) {
       window.sound.stop();
@@ -45,9 +48,14 @@ export default Ember.Controller.extend({
         });
       //});
 
-      // set background image for htis mix, if there is an image
-      if(this.get('model.image')) {
-        this.get('controllers.application').set('bgImgPath', this.get('model.image'));
+      // set background image for this mix, if there one...
+      if(this.get('model.background_image')) {
+        this.get('controllers.application').set('bgImgPath', this.get('model.background_image'));
+      }
+
+      // set mix image for this mix, if there is one...
+      if(this.get('model.mix_image')) {
+        this.get('controllers.broadcast').set('mixImgPath', this.get('model.mix_image'));
       }
 
     }

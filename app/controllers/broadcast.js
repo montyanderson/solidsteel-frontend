@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ENV from '../config/environment';
 
 export default Ember.Controller.extend({
 
@@ -7,6 +8,12 @@ export default Ember.Controller.extend({
   plusMinus: "+",
 
   currentPart: null,
+
+  mixStyle: function(){
+    return ENV.APP.API_HOST + this.get('mixImgPath')
+  }.property("mixImgPath"),
+
+  mixImgPath: null,
 
   setCurrentMix: function(mixNumber){
     // make all mixes not current

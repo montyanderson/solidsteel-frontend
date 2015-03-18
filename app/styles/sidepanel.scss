@@ -54,6 +54,7 @@
 
 #search-results.sidepanel>div {
 	margin-bottom: 24px;
+	height: 64px;
 }
 
 .month>div {
@@ -69,12 +70,13 @@
 	margin-bottom: 24px;
 }
 
-.month div:hover {
+.month .mix-in-sidepanel:hover {
 	background: #f1f1f1;
-	padding: 0;
+	// padding: 0;
 }
 
-.month div span {
+.month div span,
+#search-results div span {
 	text-decoration: none;
 	cursor: default;
 	display: table;
@@ -82,11 +84,13 @@
 }
 
 .play-button {
-	width: 64px;
-	height: 64px;
-	background: #fafafa;
+	width: 50px;
+	height: 50px;
 	display: table-cell;
-	vertical-align: middle
+	vertical-align: middle;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .info-button {
@@ -99,7 +103,6 @@
 
 .month .play-button:hover {
 	cursor: pointer;
-	background: #fafafa;
 }
 
 .mix-in-sidepanel {
@@ -109,8 +112,27 @@
 	height: 64px;
 }
 
+.mix-in-sidepanel img {
+	float: left;
+}
+
+.mix-in-sidepanel>div {
+	position: relative;
+	float: left;
+}
+
+.mix-in-sidepanel svg {
+	color: #fff;
+	fill: currentcolor;
+}
+
+.play-button:hover svg {
+	color: #7d7d7d;
+	fill: currentcolor;
+}
+
 span:hover .mix-in-sidepanel {
-	padding-left: 16px;
+	// padding-left: 16px;
 }
 
 .tabs {

@@ -4,7 +4,8 @@ var Mix = DS.Model.extend({
   name: DS.attr(),
   part: DS.attr(),
   soundcloudId: DS.attr(),
-  image: DS.attr(),
+  background_image: DS.attr(),
+  mix_image: DS.attr(),
   broadcast: DS.belongsTo('broadcast', { async: true}),
   tracks: DS.hasMany('track', { async: true}),
   isCurrent: false

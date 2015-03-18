@@ -10,8 +10,6 @@
 	display: table;
 	width: 100%;
 	table-layout: fixed;
-	background: url(/assets/images/ss-logo.jpg) 24px 0 / contain no-repeat;
-	padding-left: 144px;
 }
 
 .player {
@@ -37,6 +35,11 @@
 
 .player p:nth-child(n+3) {
 	padding-left: 8px;
+}
+
+#players>img {
+	margin-left: 24px;
+	width: 120px;
 }
 
 @media (max-width: 600px) {

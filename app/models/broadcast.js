@@ -6,6 +6,7 @@ var Broadcast = DS.Model.extend({
   altnotes: DS.attr('string'),
   createdAt: DS.attr('date'),
   updatedAt: DS.attr('date'),
+  image: DS.attr(),
   mixes: DS.hasMany('mix', { async: true})
 });
 

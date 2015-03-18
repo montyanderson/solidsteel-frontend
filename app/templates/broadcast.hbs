@@ -5,8 +5,10 @@
 
 <div id="container" {{bind-attr class="showingTracks"}}>
 	<div id="inner-container">
-		<div id="players">
+
+		<img {{ bind-attr src="mixStyle" }} />
 		
+		<div id="players">
 		{{#each mix in model.mixes}}
 			{{ render 'mix' mix }}
 		{{/each}}

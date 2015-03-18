@@ -1,15 +1,10 @@
 <div id="container" {{bind-attr class="showingResults"}}>
   <div id="inner-container">
   	
-  	<div id="search-form" {{bind-attr class="searching:enabled:disabled"}}>
+  	<div id="search-form" {{bind-attr class="searching"}}>
 	  {{input type="text" placeholder="Search by artist, track, date" value=search action="query"}}
 	  <span></span>
     </div>
-
-    <div {{bind-attr class="searching:disabled:enabled"}}>
-	  graphic display of results will go here: {{ foo }}.
-    </div>
-
 
   </div>
 </div>

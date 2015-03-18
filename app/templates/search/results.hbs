@@ -2,11 +2,6 @@
 	<h2>Search results for “{{keyword}}”</h2>
 	
 	{{#each result in model}}
-	  <div>
-	  	{{#link-to 'broadcast' result.id}}
-	  	<p>{{ formatted-date result.broadcast_date 'DD-MM-YY'}}</p>
-	  	<p>{{result.session_name}}</p>
-	  	{{/link-to}}
-	  </div>
+	  {{render "sidepanel-mix" result}}
 	{{/each}}
 </div>

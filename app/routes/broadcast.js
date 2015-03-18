@@ -14,13 +14,19 @@ export default Ember.Route.extend({
   },
 
   setupController: function(controller, model){
-    // model.reload().then(function(){
-    //   controller.set('model', model);
-    //   controller.setCurrentMix();
-    // });
+
+    if(!model.get('mixes').get('length')) {
+      console.log('gonna load mix models...');
+      model.reload().then(function(){
+        controller.set('model', model);
+        controller.setCurrentMix();
+      });
+    }
     
-    controller.set('model', model);
-    controller.setCurrentMix();
+    else {
+      controller.set('model', model);
+      controller.setCurrentMix();
+    }
   }
   
 });

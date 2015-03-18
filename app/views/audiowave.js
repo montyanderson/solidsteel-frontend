@@ -21,7 +21,6 @@ export default Ember.View.extend({
   didInsertElement: function(){
 	var ctx = this.get('element').getContext('2d');
   	ctx.fillStyle = 'rgb(255, 255, 255)';
- 	ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
  	ctx.lineWidth = 2;
  	this.get('controller').set('myCtx', ctx);
 
@@ -53,6 +52,7 @@ export default Ember.View.extend({
 
 		// draw progress line
 		ctx.beginPath();
+		ctx.strokeStyle = 'rgb(255, 255, 255)';
 	  	ctx.moveTo(0, ctx.canvas.height-radius);
 	  	ctx.lineTo(units, ctx.canvas.height-radius);
 	  	ctx.stroke();
@@ -115,6 +115,7 @@ export default Ember.View.extend({
 
   		ctx.moveTo(i, (ctx.canvas.height*0.35) - barHeightAdjuster);
 		ctx.lineTo(i, ctx.canvas.height-radius);
+		ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
 		ctx.stroke();
 	}
  

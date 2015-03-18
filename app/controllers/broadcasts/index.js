@@ -21,6 +21,10 @@ export default Ember.ArrayController.extend(Groupable, {
 
   showingResults: function(){
     return (this.year !== null);
-  }.property('year')
+  }.property('year'),
+
+  rootpath: function(){
+    return "woop";
+  }.property('rootpath')
 
 });
