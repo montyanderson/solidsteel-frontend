@@ -15,15 +15,23 @@ export default Ember.Controller.extend({
 
   mixImgPath: null,
 
-  setCurrentMix: function(mixNumber){
-    // make all mixes not current
+  stopCurrentMix: function(){
+    this.currentlyPlaying.stop();
+    this.currentlyPlaying.destruct();
+    this.currentlyPlaying = false;
     this.get('model.mixes').forEach(function(mix){
       mix.set('isCurrent', false);
       mix.set('progress', 0);
     });
+  },
+
+  setCurrentMix: function(mixNumber){
+
+    this.currentPart = null;
 
     // increment current mix, or play the first one if none specified
     if (mixNumber !== undefined) {
+      this.stopCurrentMix();
       this.currentPart = mixNumber.get('part')-1;
     } else {
       if (this.currentPart == undefined) {

@@ -6,11 +6,23 @@ export default Ember.View.extend({
 
   classNames: ['player'],
 
-  attributeBindings: ['width', 'height'],
-
-  width: "310px",
+  attributeBindings: ['height'],
 
   height: "36px",
+
+  iter: 0,
+
+  handleResize: function() {
+    clearTimeout(window['resizedFinished'+this.iter]);
+    window['resizedFinished'+this.ter] = setTimeout(this.didInsertElement.bind(this), 1000);
+    this.iter++;
+  },
+
+  
+  bindResizeEvent: function() {
+    jQuery(window).on('resize', Ember.run.bind(this, this.handleResize));
+  }.on('init'),
+
 
   click: function(e) {
   	// skip to place in track
@@ -19,7 +31,10 @@ export default Ember.View.extend({
   },
 
   didInsertElement: function(){
-	var ctx = this.get('element').getContext('2d');
+  	var ele = this.get('element');
+  	ele.width = $(ele).parent().width();
+  	
+	var ctx = ele.getContext('2d');
   	ctx.fillStyle = 'rgb(255, 255, 255)';
  	ctx.lineWidth = 2;
  	this.get('controller').set('myCtx', ctx);
@@ -46,6 +61,7 @@ export default Ember.View.extend({
 
 	if(units !== 0) {
 		// draw progress circle
+		ctx.fillStyle = 'rgb(255, 255, 255)';
 		ctx.beginPath();
 		ctx.arc(units, ctx.canvas.height-radius, radius, 0, Math.PI*2, true);
 		ctx.fill();

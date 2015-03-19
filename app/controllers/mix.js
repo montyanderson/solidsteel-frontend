@@ -3,40 +3,27 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   needs: ['application', 'broadcast'],
 
-  init: function(){
-    
-  },
-
   play: function(){
     
-    console.log('aply now!');
-
-    
-    if(window.sound) {
-      window.sound.stop();
-    }
+    var self = this;
 
     // play this mix's soundcloud audio
     if(this.get('model.isCurrent')) {
 
-      self = this;
-
       //SC.whenStreamingReady(function() {
         SC.stream("/tracks/"+self.get('model.soundcloudId'), function(sound){
           
-          window.sound = sound;
-
           // store ref to soundcloud on model
-          self.set('model.sound', sound);
-
+          self.get('controllers.broadcast').set('currentlyPlaying', sound);
+          //window.sound = sound;
           //sound.setVolume(0)
 
           self.set('model.progress', 0 );
 
-          sound.play({
+          self.get('controllers.broadcast').get('currentlyPlaying').play({
             whileplaying: function() {
               // update playhead position
-              self.set('model.progress', this.position );
+              self.set('model.progress', sound.position );
             },
 
             whileloading: function() {
@@ -58,21 +45,21 @@ export default Ember.Controller.extend({
         this.get('controllers.broadcast').set('mixImgPath', this.get('model.mix_image'));
       }
 
-    }
+    } 
     
   }.observes("model.isCurrent").on('init'),
 
   actions: {
 
     makeCurrent: function(mix){
-      this.parentController.setCurrentMix(mix);
+      this.get('controllers.broadcast').setCurrentMix(mix);
     },
 
     skip: function(model, position){
-      if(model.id != self.get('model.id')) {
+      if(!this.get('model.isCurrent')) {
         this.send('makeCurrent', model);
       }
-      self.get('model.sound').setPosition( self.get('model.duration')*position);
+      this.get('controllers.broadcast').get('currentlyPlaying').setPosition( this.get('model.duration')*position);
     }
 
   }
