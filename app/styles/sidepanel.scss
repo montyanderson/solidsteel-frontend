@@ -25,6 +25,14 @@
     transform:rotate(180deg);
 }
 
+@media (max-width: 600px) {
+	#btn-tracklisting {
+		font-size: 12px;
+		right: 24px;
+		top: 58%;
+	}
+}
+
 .sidepanel {
 	width: 50%;
 	right: 0;

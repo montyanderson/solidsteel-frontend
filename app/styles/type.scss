@@ -7,6 +7,10 @@ font-family: 'Decima Mono X Light';
 font-family: 'Decima Mono X';
 
 */
+#mfPreviewBar,
+#mfPreviewBar.adContent {
+	display: none !important;
+}
 
 body, div, p, span {
 	font-family: 'Decima Pro';

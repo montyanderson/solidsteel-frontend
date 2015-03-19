@@ -11,28 +11,28 @@ export default Ember.Controller.extend({
     if(this.get('model.isCurrent')) {
 
       //SC.whenStreamingReady(function() {
-        SC.stream("/tracks/"+self.get('model.soundcloudId'), function(sound){
+        // SC.stream("/tracks/"+self.get('model.soundcloudId'), function(sound){
           
-          // store ref to soundcloud on model
-          self.get('controllers.broadcast').set('currentlyPlaying', sound);
-          //window.sound = sound;
-          //sound.setVolume(0)
+        //   // store ref to soundcloud on model
+        //   self.get('controllers.broadcast').set('currentlyPlaying', sound);
+        //   //window.sound = sound;
+        //   sound.setVolume(0)
 
-          self.set('model.progress', 0 );
+        //   self.set('model.progress', 0 );
 
-          self.get('controllers.broadcast').get('currentlyPlaying').play({
-            whileplaying: function() {
-              // update playhead position
-              self.set('model.progress', sound.position );
-            },
+        //   self.get('controllers.broadcast').get('currentlyPlaying').play({
+        //     whileplaying: function() {
+        //       // update playhead position
+        //       self.set('model.progress', sound.position );
+        //     },
 
-            whileloading: function() {
-              // update duration display
-              self.set('model.duration', sound.durationEstimate);
-            }
+        //     whileloading: function() {
+        //       // update duration display
+        //       self.set('model.duration', sound.durationEstimate);
+        //     }
 
-          });
-        });
+        //   });
+        // });
       //});
 
       // set background image for this mix, if there one...
