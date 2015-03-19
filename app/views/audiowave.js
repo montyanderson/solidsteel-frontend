@@ -2,27 +2,24 @@ import Ember from 'ember';
 
 export default Ember.View.extend({
 
-  tagName: 'canvas',
+  init: function() {
+    this._super();
+    var view = this;
 
-  classNames: ['player'],
+    var resizeHandler = function() {
+        view.didInsertElement();
+    };
+
+    this.set('resizeHandler', resizeHandler);
+    
+    $(window).bind('resize', this.get('resizeHandler'));
+  },
+
+  tagName: 'canvas',
 
   attributeBindings: ['height'],
 
   height: "36px",
-
-  iter: 0,
-
-  handleResize: function() {
-    clearTimeout(window['resizedFinished'+this.iter]);
-    window['resizedFinished'+this.ter] = setTimeout(this.didInsertElement.bind(this), 1000);
-    this.iter++;
-  },
-
-  
-  bindResizeEvent: function() {
-    jQuery(window).on('resize', Ember.run.bind(this, this.handleResize));
-  }.on('init'),
-
 
   click: function(e) {
   	// skip to place in track
