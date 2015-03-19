@@ -73,63 +73,73 @@ export default Ember.View.extend({
 
   	var barHeightAdjuster = 0;
 
-  	// draw progress bars
-  	for(var i = 1; i <= ctx.canvas.width; i += 6) {
-  		ctx.beginPath();
+  	// IF SCREEN IS LARGER THAN 600PX, DRAW FULL PLAYER
+  	if(window.matchMedia("screen and (min-width: 600px)").matches) {
+	  	// draw progress bars
+	  	ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
+	  	for(var i = 1; i <= ctx.canvas.width; i += 6) {
+	  		ctx.beginPath();
 
-  		if(units !== 0) {
-	  		var ui = units - i;
-	  		barHeightAdjuster = 0;
-	  		
-	  		if(ui > 0) {
-		  		// if line is 18px behind playhead, add 2px
-		  		if(ui < 3) {
-		  			barHeightAdjuster = ctx.canvas.height*0.35;
-		  		}
+	  		if(units !== 0) {
+		  		var ui = units - i;
+		  		barHeightAdjuster = 0;
+		  		
+		  		if(ui > 0) {
+			  		// if line is 18px behind playhead, add 2px
+			  		if(ui < 3) {
+			  			barHeightAdjuster = ctx.canvas.height*0.35;
+			  		}
 
-		  		else if(ui < 9) {
-		  			barHeightAdjuster = ctx.canvas.height*0.20;
-		  		}
+			  		else if(ui < 9) {
+			  			barHeightAdjuster = ctx.canvas.height*0.20;
+			  		}
 
-		  		// if line is 18px behind playhead, add 2px
-		  		else if(ui < 15) {
-		  			barHeightAdjuster = ctx.canvas.height*0.10;
-		  		}
+			  		// if line is 18px behind playhead, add 2px
+			  		else if(ui < 15) {
+			  			barHeightAdjuster = ctx.canvas.height*0.10;
+			  		}
 
-		  		// if line is 18px behind playhead, add 2px
-		  		else if(ui <= 21) {
-		  			barHeightAdjuster = ctx.canvas.height*0.05;
-		  		}
-		  	}
+			  		// if line is 18px behind playhead, add 2px
+			  		else if(ui <= 21) {
+			  			barHeightAdjuster = ctx.canvas.height*0.05;
+			  		}
+			  	}
 
-		  	else {
-		  		// if line is 18px behind playhead, add 2px
-		  		if(ui > -3) {
-		  			barHeightAdjuster = ctx.canvas.height*0.35;
-		  		}
+			  	else {
+			  		// if line is 18px behind playhead, add 2px
+			  		if(ui > -3) {
+			  			barHeightAdjuster = ctx.canvas.height*0.35;
+			  		}
 
-		  		// if line is 18px behind playhead, add 2px
-		  		else if(ui > -9) {
-		  			barHeightAdjuster = ctx.canvas.height*0.20;
-		  		}
+			  		// if line is 18px behind playhead, add 2px
+			  		else if(ui > -9) {
+			  			barHeightAdjuster = ctx.canvas.height*0.20;
+			  		}
 
-		  		// if line is 18px behind playhead, add 2px
-		  		else if(ui > -15) {
-		  			barHeightAdjuster = ctx.canvas.height*0.10;
-		  		}
+			  		// if line is 18px behind playhead, add 2px
+			  		else if(ui > -15) {
+			  			barHeightAdjuster = ctx.canvas.height*0.10;
+			  		}
 
-		  		// if line is 18px behind playhead, add 2px
-		  		else if(ui > -21) {
-		  			barHeightAdjuster = ctx.canvas.height*0.05;
-		  		}
+			  		// if line is 18px behind playhead, add 2px
+			  		else if(ui > -21) {
+			  			barHeightAdjuster = ctx.canvas.height*0.05;
+			  		}
 
-		  	}
+			  	}
+			}
+
+	  		ctx.moveTo(i, (ctx.canvas.height*0.35) - barHeightAdjuster);
+			ctx.lineTo(i, ctx.canvas.height-radius);
+			ctx.stroke();
 		}
-
-  		ctx.moveTo(i, (ctx.canvas.height*0.35) - barHeightAdjuster);
-		ctx.lineTo(i, ctx.canvas.height-radius);
-		ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
-		ctx.stroke();
+	} else {
+		// draw thin line
+		ctx.beginPath();
+		ctx.strokeStyle = 'rgb(255, 255, 255)';
+	  	ctx.moveTo(0, ctx.canvas.height-radius);
+	  	ctx.lineTo(ctx.canvas.width, ctx.canvas.height-radius);
+	  	ctx.stroke();
 	}
  
   }.observes('controller.model.progress'),

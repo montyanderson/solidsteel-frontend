@@ -46,14 +46,40 @@
 	padding: 88px 0 0 0;
 }
 
+@media (max-width: 600px) {
+	.sidepanel {
+		width: 67%;
+		top: 4px;
+		bottom: 4px;
+	}
+}
+
 #tracks-in-mix p,
 #tracks-in-mix h2 {
 	border-bottom: 3px solid #ddd;
 	padding: 8px 0 12px 0;
 }
 
+@media (max-width: 600px) {
+	#tracks-in-mix p,
+	#tracks-in-mix h2 {
+		border-bottom: 1px solid #ddd;
+		padding: 8px 0;
+		text-indent: -23px;
+		margin-left: 23px;
+	}
+}
+
 #tracks-in-mix .tabs p {
 	padding: 16px 0 16px 32px;
+}
+
+@media (max-width: 600px) {
+	#tracks-in-mix .tabs p {
+		padding: 16px 0 16px 16px;
+		text-indent: 0px;
+		margin-left: 0px;
+	}
 }
 
 #tracks-in-mix h2 {
@@ -166,6 +192,12 @@ span:hover .mix-in-sidepanel {
 
 #tracks-in-mix>div:nth-child(n+2){
 	margin: 0 32px;
+}
+
+@media (max-width: 600px) {
+	#tracks-in-mix>div:nth-child(n+2){
+		margin: 0 16px;
+	}	
 }
 
 #tracks-in-mix .tabs p {

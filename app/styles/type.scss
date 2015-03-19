@@ -50,6 +50,14 @@ b {
 
 #tracks-in-mix p {
 	font-family: "Decima Pro";
+	font-size: 12px;
+}
+
+@media (max-width: 600px) {
+	#tracks-in-mix p,
+	#tracks-in-mix div {
+		font-size: 12px;
+	}
 }
 
 #tracks-in-mix h2 {
@@ -59,6 +67,12 @@ b {
 	text-decoration: none;
 	margin-bottom: 0;
 
+}
+
+@media (max-width: 600px) {
+	#tracks-in-mix h2 {
+		font-size: 12px;
+	}
 }
 
 #timeline,

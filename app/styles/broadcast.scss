@@ -9,9 +9,10 @@
 		right: 12px;
 		width: 64px;
 		height: 64px;
+		-webkit-clip-path: circle(29px);
 	}
 
-	.player p:nth-of-type(n+2) {
+	.player p {
 		display: none;
 	}
 }
