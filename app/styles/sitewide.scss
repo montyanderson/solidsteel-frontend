@@ -22,6 +22,10 @@ body {
 	position: relative;
 }
 
+[data-ember-action] {
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
 
 	html,

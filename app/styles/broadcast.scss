@@ -2,7 +2,16 @@
 	width: 50%;
 }
 
+#mixImage {
+	-webkit-clip-path: circle(60px);
+}
+
 @media (max-width: 600px) {
+
+	#container.showing-tracks {
+		width: 33%;
+	}
+
 	#mixImage {
 		position: absolute;
 		top: 12px;
