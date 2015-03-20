@@ -29,3 +29,30 @@
 	height: auto;
 	padding-bottom: 200%;
 }
+
+@media (max-width: 600px) {
+	#year-selector {
+		height: auto;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		overflow-y: scroll;
+		width: 22%;
+		border-right: 1px solid #fff;
+	}
+
+	#year-selector p {
+		font-size: 16px;
+		position: relative;
+	}
+
+	#year-selector p:after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        top: 0;
+        right: 0;
+        border-top: 1px solid #ddd;
+    }
+}

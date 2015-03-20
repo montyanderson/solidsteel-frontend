@@ -1,22 +1,17 @@
 #timeline {
-	-webkit-transform: scaleY(1);
-	-o-transform: scaleY(1);
-	-ms-transform: scaleY(1);
-	transform: scaleY(1);
-
-	/* for info bar slide */
-	-webkit-transition: width 300ms ease, -webkit-transform 0.26s ease-out;
-	-o-transition: width 300ms ease, -o-transform 0.26s ease;
-	-ms-transition: width 300ms ease, -ms-transform 0.26s ease;
-	transition: width 300ms ease, transform 0.26s ease;
-}
-
-
-#timeline {
 	float: left;
 	width: 100%;
 	padding: 0 128px;
 	position: relative;
+}
+
+@media (max-width: 600px) {
+	#timeline {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		overflow-y: scroll;
+	}
 }
 
 .decade {
@@ -75,16 +70,14 @@
 @media (max-width: 600px) {
 	#timeline:not(.alt-timeline),
 	#search-timeline:not(.alt-timeline) {
-		width: 15% !important;
+		width: 22% !important;
 		padding: 0;
-		margin-top: 96px;
+		margin-top: 64px;
 		border-right: 1px solid #fff;
 		
 	}
 
 	.decade {
-		position: relative;
-		left: 5px;
 	}
 
 	#timeline:not(.alt-timeline) .decade,
@@ -94,7 +87,7 @@
 	}
 
 	#timeline:not(.alt-timeline) .year {
-		margin-bottom: 20px;
+		margin-bottom: 24px;
 		padding-left: 2px;
 		border-bottom: 0;
 		text-align: right !important;
@@ -102,8 +95,21 @@
 		background-repeat: no-repeat;
 		background-position: 100% 50%;
 		background-size: 10px 10px;
-		padding-right: 20px;
+		padding-right: 12px;
+		position: relative;
+		font-family: 'Decima Mono X';
+		line-height: 18px;
 	}
+
+	.year:after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        top: 0;
+        right: 0;
+        border-top: 1px solid #ddd;
+    }
+
 
 	#timeline:not(.alt-timeline) .decade {
 		margin: 0;

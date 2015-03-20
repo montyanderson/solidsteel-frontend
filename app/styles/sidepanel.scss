@@ -52,6 +52,7 @@
 		width: 67%;
 		top: 4px;
 		bottom: 4px;
+		padding: 6px 0 0 0;
 	}
 }
 
@@ -99,6 +100,13 @@
 .month>div,
 #broadcasts-by-month h2 {
 	padding: 0 $bigBorderWidth 0;
+}
+
+@media (max-width: 600px) {
+	.month>div,
+	#broadcasts-by-month h2 {
+		padding: 0 $bigBorderWidth/2 0;
+	}
 }
 
 .month>div:last-of-type {
@@ -149,6 +157,12 @@
 
 .mix-in-sidepanel img {
 	float: left;
+}
+
+@media (max-width: 600px) {
+	.mix-in-sidepanel img {
+		display: none;
+	}
 }
 
 .mix-in-sidepanel>div {
@@ -211,6 +225,22 @@ span:hover .mix-in-sidepanel {
 
 .month p {
 	margin: 0;
+}
+
+@media (max-width: 600px) {
+	.month p {
+		line-height: 16px;
+	}
+
+	.month > div {
+		height: auto;
+	}
+
+	.mix-in-sidepanel {
+		display: block;
+		height: auto;
+		margin: 12px 0;
+	}
 }
 
 .month p:nth-of-type(2) {
