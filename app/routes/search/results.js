@@ -10,7 +10,7 @@ export default Ember.Route.extend({
 
   model: function(params) {
   	this.set('keyword', params.keyword);
-    return this.store.find('search', {contains: params.keyword});
+    return this.store.find('broadcast', {contains: params.keyword});
   },
 
   setupController: function(controller, model) {
