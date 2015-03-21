@@ -44,7 +44,13 @@
 	overflow: scroll;
 	box-sizing: border-box;
 	position: fixed;
-	padding: 88px 0 0 0;
+	padding: 0;
+}
+
+.sidepanel a {
+	display: block;
+	width: 80px;
+	height: 80px;
 }
 
 @media (max-width: 600px) {
@@ -73,7 +79,7 @@
 
 #tracks-in-mix p,
 #tracks-in-mix h2 {
-	border-bottom: 3px solid #ddd;
+	border-bottom: 1px solid #ddd;
 	padding: 8px 0 12px 0;
 }
 
@@ -105,22 +111,49 @@
 
 #search-results.sidepanel>div {
 	margin-bottom: 24px;
-	height: 64px;
+	height: 94px;
+	width: auto;
+	padding: 0 32px;
 }
 
 .month>div {
-	height: 64px;
+	height: 94px;
 }
 
 .month>div,
-#broadcasts-by-month h2 {
-	padding: 0 $bigBorderWidth 0;
+#broadcasts-by-month h2,
+#search-results h2 {
+	padding: 0 24px 0;
+}
+
+@media (min-width: 601px) {
+	#broadcasts-by-month {
+		padding-top: 88px;
+	}
 }
 
 @media (max-width: 600px) {
+
+	#search-results.sidepanel>div {
+		padding: 0 16px;
+	}
+
 	.month>div,
-	#broadcasts-by-month h2 {
+	#broadcasts-by-month h2,
+	#search-results h2 {
 		padding: 0 $bigBorderWidth/2 0;
+	}
+
+	#search-results.sidepanel p {
+		line-height: 16px;
+	}
+
+	#search-results.sidepanel p:nth-of-type(2) {
+		font-family: 'Decima Pro';
+	}
+
+	#search-results.sidepanel>div {
+		height: auto;
 	}
 }
 
@@ -128,9 +161,14 @@
 	margin-bottom: 24px;
 }
 
-.month .mix-in-sidepanel:hover {
+.month>div:hover,
+#search-results>div:hover {
 	background: #f1f1f1;
 	// padding: 0;
+}
+
+#search-results .mix-in-sidepanel div:nth-of-type(2) {
+	width: 60%;
 }
 
 .month div span,
@@ -142,21 +180,13 @@
 }
 
 .play-button {
-	width: 50px;
-	height: 50px;
-	display: table-cell;
+	width: 80px;
+	height: 80px;
 	vertical-align: middle;
 	position: absolute;
 	top: 0;
 	left: 0;
-}
-
-.info-button {
-	display: table-cell;
-	vertical-align: middle;
-	width: 64px;
-	height: 64px;
-	cursor: pointer;
+	z-index: 10;
 }
 
 .month .play-button:hover {
@@ -164,14 +194,17 @@
 }
 
 .mix-in-sidepanel {
-	display: table-cell;
 	vertical-align: middle;
 	padding-left: 0px;
-	height: 64px;
+	height: 94px;
+	width: 100%;
+	padding-top: 7px;
+	clear: left;
 }
 
 .mix-in-sidepanel img {
 	float: left;
+	-webkit-clip-path: circle(40px);
 }
 
 @media (max-width: 600px) {
@@ -185,6 +218,23 @@
 	float: left;
 }
 
+.mix-in-sidepanel div:nth-of-type(2) {
+	margin-left: 24px;
+	margin-top: 16px;
+}
+
+.mix-in-sidepanel .info-button,
+.mix-in-sidepanel .info-button a {
+	width: 34px;
+	height: 34px;
+	cursor: pointer;
+	float: right;
+}
+
+.mix-in-sidepanel .info-button {
+	margin-top: 23px;
+}
+
 .mix-in-sidepanel svg {
 	color: #fff;
 	fill: currentcolor;
@@ -193,10 +243,6 @@
 .play-button:hover svg {
 	color: #7d7d7d;
 	fill: currentcolor;
-}
-
-span:hover .mix-in-sidepanel {
-	// padding-left: 16px;
 }
 
 .tabs {
@@ -220,14 +266,24 @@ span:hover .mix-in-sidepanel {
 	padding-right: 0;
 }
 
-#tracks-in-mix>div:nth-child(n+4){
+#tracks-in-mix>div:nth-child(3){
+	padding-top: 12px;
+}
+
+#tracks-in-mix>div:nth-child(n+3){
 	margin: 0 32px;
+	clear: left;
 }
 
 @media (max-width: 600px) {
-	#tracks-in-mix>div:nth-child(n+4){
+	#tracks-in-mix>div:nth-child(n+3){
 		margin: 0 16px;
 	}	
+
+	.mix-in-sidepanel div:nth-of-type(2) {
+		margin-left: 0;
+		margin-top: 16px;
+	}
 }
 
 #tracks-in-mix .tabs p {
@@ -243,6 +299,19 @@ span:hover .mix-in-sidepanel {
 }
 
 @media (max-width: 600px) {
+	.month {
+		clear: left;
+	}
+
+	.month div{
+		clear: left;
+		float: left;
+	}
+
+	.month:nth-of-type(n+1) {
+		margin-top: 12px;
+	}
+
 	.month p {
 		line-height: 16px;
 	}
@@ -254,7 +323,7 @@ span:hover .mix-in-sidepanel {
 	.mix-in-sidepanel {
 		display: block;
 		height: auto;
-		margin: 12px 0;
+		margin: 0;
 	}
 }
 

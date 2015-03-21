@@ -14,7 +14,7 @@ input {
 }
 
 input[type="text"] {
-  background-image: asset_url("icons/chevron-thin-right.svg");
+  background-image: url("/assets/images/chevron-thin-right.svg");
   background-repeat: no-repeat;
   background-size: 32px 32px;
   background-position: 100% 0;
@@ -112,6 +112,11 @@ input[type="text"]:hover {
 }
 
 @media (max-width: 600px) {
+
+  #search-form {
+    margin: 0 12px;
+  }
+
   input[type="text"] {
     font-size: 16px;
     background-size: 16px 16px;

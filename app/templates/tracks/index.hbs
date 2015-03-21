@@ -1,5 +1,7 @@
 <div id="tracks-in-mix" {{bind-attr class=":sidepanel showingTracklisting:panel-open:panel-closed"}}>
-
+	{{#if playing}}
+	{{else}}
+	{{/if}}
 	<div>
 		<p>{{formatted-date model.broadcast_date 'DD-MM-YY'}}</p>
 		<p>{{model.session_name}}</p>	
