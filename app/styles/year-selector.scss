@@ -16,18 +16,20 @@
 	font-size: 36px;
 }
 
-#year-selector:hover p a {
-	color: $mainGreyText;
-}
+@media (min-width: 601px) {
+	#year-selector:hover p a {
+		color: $mainGreyText;
+	}
 
-#year-selector:hover {
-	background: rgba(255 ,255, 255, 0.7);
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	overflow-y: scroll;
-	height: auto;
-	padding-bottom: 200%;
+	#year-selector:hover {
+		background: rgba(255 ,255, 255, 0.7);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		overflow-y: scroll;
+		height: auto;
+		padding-bottom: 200%;
+	}
 }
 
 @media (max-width: 600px) {

@@ -16,8 +16,9 @@ export default Ember.Route.extend(ResetScroll, {
     }
   },
 
-  afterModel: function(){
-    this.activate(this.year);
+  afterModel: function(controller){
+    controller.set('year', this.year);
+    this.resetscroll(this.year);
   }
 
 });
