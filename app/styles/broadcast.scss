@@ -3,7 +3,13 @@
 }
 
 #mixImage {
-	-webkit-clip-path: circle(60px);
+	-webkit-clip-path: circle(59px);
+}
+
+#mixImageCell {
+	display: table-cell;
+	width: 168px;
+	text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -23,5 +29,9 @@
 
 	.player p {
 		display: none;
+	}
+
+	#mixImageCell {
+		width: 0;
 	}
 }

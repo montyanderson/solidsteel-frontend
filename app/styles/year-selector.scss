@@ -36,15 +36,23 @@
 		position: fixed;
 		top: 0;
 		bottom: 0;
-		left: 0;
+		left: auto;
+		right: auto;
 		overflow-y: scroll;
 		width: 22%;
 		border-right: 1px solid #fff;
+		margin-top: 64px;
+		line-height: 18px;
 	}
 
 	#year-selector p {
 		font-size: 16px;
 		position: relative;
+		margin-bottom: 24px;
+		width: 100%;
+		padding-left: 2px;
+  		padding-right: 12px;
+  		text-align: right;
 	}
 
 	#year-selector p:after {
