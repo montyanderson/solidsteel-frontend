@@ -14,9 +14,12 @@ export default Ember.Route.extend({
   },
 
   setupController: function(controller, model){
-    if(controller.get('currentlyPlaying')){
-      controller.stopCurrentMix();
-    } 
+
+    if(controller.get('currentlyPlaying')) {  
+      if(controller.get('currentlyPlaying') && controller.get('model') != model) {
+        controller.stopCurrentMix();
+      }
+    }
 
     if(!model.get('mixes').get('length')) {
       model.reload().then(function(){

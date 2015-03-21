@@ -4,6 +4,8 @@ export default Ember.View.extend({
   
   templateName: 'mix-in-sidepanel',
 
+  classNameBindings: ['hover'],
+
   tagName: 'div',
 
   hover: false,

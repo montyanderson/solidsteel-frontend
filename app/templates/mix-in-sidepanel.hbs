@@ -13,8 +13,10 @@
 			<img src="{{unbound controller.rootpath}}{{unbound model.image}}" width="80" height="80"/>
 		</div>
 		<div>
+			{{#link-to 'broadcast' model }}
 			<p>{{ formatted-date model.broadcast_date 'DD-MM-YY' }}</p>
 			<p>{{model.session_name}}</p>
+			{{/link-to}}
 		</div>
 
 		{{#if view.hover}}

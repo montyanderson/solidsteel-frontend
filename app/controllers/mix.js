@@ -10,33 +10,43 @@ export default Ember.Controller.extend({
     // play this mix's soundcloud audio
     if(this.get('model.isCurrent')) {
 
-      //SC.whenStreamingReady(function() {
-        SC.stream("/tracks/"+self.get('model.soundcloudId'), {
-          useHTML5Audio: true,
-          preferFlash: false
-        }, function(sound){
-          
-          // store ref to soundcloud on model
-          self.get('controllers.broadcast').set('currentlyPlaying', sound);
-          
-          //sound.setVolume(0)
+      // check we're not already playing this model...
+      // only stream a track if we're not already playing it
+      if(!
+        (
+           this.get('controllers.broadcast.currentlyPlaying') && 
+           this.get('controllers.broadcast.model.id') == this.get('model.broadcast.id')
+        )
+        ){
+          //SC.whenStreamingReady(function() {
+            SC.stream("/tracks/"+self.get('model.soundcloudId'), {
+              useHTML5Audio: true,
+              preferFlash: false
+            }, function(sound){
+              
+              // store ref to soundcloud on model
+              self.get('controllers.broadcast').set('currentlyPlaying', sound);
+              
+              //sound.setVolume(0)
 
-          self.set('model.progress', 0 );
+              self.set('model.progress', 0 );
 
-          self.get('controllers.broadcast').get('currentlyPlaying').play({
-            whileplaying: function() {
-              // update playhead position
-              self.set('model.progress', sound.position );
-            },
+              self.get('controllers.broadcast').get('currentlyPlaying').play({
+                whileplaying: function() {
+                  // update playhead position
+                  console.log('here!');
+                  self.set('model.progress', sound.position );
+                },
 
-            whileloading: function() {
-              // update duration display
-              self.set('model.duration', sound.durationEstimate);
-            }
+                whileloading: function() {
+                  // update duration display
+                  self.set('model.duration', sound.durationEstimate);
+                }
 
-          });
-        });
-      //});
+              });
+            });
+          //});
+        }
 
       // set background image for this mix, if there one...
       if(this.get('model.background_image')) {
