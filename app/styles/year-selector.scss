@@ -30,20 +30,24 @@
 		height: auto;
 		padding-bottom: 200%;
 	}
+
+	#year-selector p span {
+		display: inline;
+		font-family: 'Decima Mono X';
+	}
 }
 
 @media (max-width: 600px) {
 	#year-selector {
 		height: auto;
 		position: fixed;
-		top: 0;
+		top: 64px;
 		bottom: 0;
 		left: auto;
 		right: auto;
 		overflow-y: scroll;
 		width: 22%;
 		border-right: 1px solid #fff;
-		margin-top: 64px;
 		line-height: 18px;
 	}
 
@@ -65,4 +69,8 @@
         right: 0;
         border-top: 1px solid #ddd;
     }
+
+    #year-selector p span {
+		display: none;
+	}
 }

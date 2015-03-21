@@ -1,4 +1,10 @@
 <div id="tracks-in-mix" {{bind-attr class=":sidepanel showingTracklisting:panel-open:panel-closed"}}>
+
+	<div>
+		<p>{{formatted-date model.broadcast_date 'DD-MM-YY'}}</p>
+		<p>{{model.session_name}}</p>	
+	</div>
+
 	<div class="tabs">
 		<p {{bind-attr class="showingTracks:current"}}{{ action 'toggleTracksSynopsis'}}><b>Tracklist</b></p>
 		<p {{bind-attr class="showingTracks::current"}}{{ action 'toggleTracksSynopsis'}}><b>Synopsis</b></p>

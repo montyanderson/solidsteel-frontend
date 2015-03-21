@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
   	return "z-index: -1; position: fixed; top:4px; left: 4px; right: 4px; bottom: 4px; background: linear-gradient( rgba(0, 0, 0, 0.45),  rgba(0, 0, 0, 0.45)), url('" + ENV.APP.API_HOST + this.get('bgImgPath') + "') 50% / cover no-repeat;";
   }.property("bgImgPath"),
 
-  bgImgPath: ENV.APP.DEFAULT_IMAGE,
+  bgImgPath: null,
 
   muted: false,
 

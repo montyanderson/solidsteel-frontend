@@ -35,9 +35,11 @@ module.exports = function(environment) {
       'font-src': "'self' http://easy.myfonts.net",
       'connect-src': "'self' *",
       'style-src': "'self' 'unsafe-inline' http://cdn.myfonts.net",
+      'img-src': "'self' 'unsafe-inline' http://*:3001",
+      'default-src': "'self' 'unsafe-inline' http://*"
     };
 
-    ENV.APP.DEFAULT_IMAGE = '/assets/images/default-bg.gif';
+    //ENV.APP.DEFAULT_IMAGE = '/assets/images/ss_bg.png';
 
   }
 
@@ -55,7 +57,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.API_HOST = 'http://178.62.62.19';
-    ENV.APP.DEFAULT_IMAGE = '/system/mixes/background_images/default_bg.gif';
+    //ENV.APP.DEFAULT_IMAGE = '/system/mixes/background_images/default_bg.gif';
   }
 
   return ENV;
