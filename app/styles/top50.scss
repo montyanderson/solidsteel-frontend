@@ -1,0 +1,80 @@
+#top50 {
+	width: 100%;
+	height: 100%;
+	background-color: #101010;
+	background-image: url("/assets/images/top50-bg.gif");
+   	background-repeat: repeat;
+   	padding-top: 80px;
+   	padding-left: 168px;
+}
+
+.top50-mix {
+	float: left;
+	width: 326px;
+	margin-right: 24px;
+	margin-bottom: 54px;
+}
+
+.top50-mix>div {
+	margin-bottom: 8px;
+	background-color: #333;
+	position: relative;
+
+}
+
+.top50-mix img {
+	width: 326px;
+	height: 202px;
+	vertical-align: bottom;
+}
+
+.top50-mix p {
+	font-size: 24px;
+}
+
+.play-mix {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+}
+
+.play-mix svg {
+	margin: 14px 0 0 14px;
+	color: #7f7f7f;
+	fill: currentColor;
+}
+
+.play-mix svg:hover {
+	color: #333;
+	fill: currentColor;
+	cursor: pointer;
+}
+
+p.meta {
+	color: #a1a1a1;
+	font-size: 16px;
+}
+
+@media (max-width: 600px) {
+
+	#top50 {
+		width: 100%;
+		height: auto;
+	   	padding-left: 0;
+	}
+
+	.top50-mix {
+		float: none;
+		width: 100%;
+		margin: 0 0 54px 0;
+	}
+
+	.top50-mix p {
+		font-size: 18px;
+		margin: 0 12px;
+	}
+
+}
