@@ -61,7 +61,6 @@
 }
 
 #tracks-in-mix div:nth-of-type(1) {
-
 	padding: 16px;
 	background: #f1f1f1;
 
@@ -73,6 +72,10 @@
 		margin: 0;
 		padding: 0;
 	}	
+}
+
+#tracks-in-mix div:nth-of-type(3) {
+	padding-top: 8px;
 }
 
 #tracks-in-mix p,
@@ -99,7 +102,7 @@
 	#tracks-in-mix .tabs p {
 		padding: 16px 0 16px 16px;
 		text-indent: 0px;
-		margin-left: 0px;
+		margin: 0px;
 	}
 }
 
@@ -144,6 +147,7 @@
 
 	#search-results.sidepanel p {
 		line-height: 16px;
+		margin: 0;
 	}
 
 	#search-results.sidepanel p:nth-of-type(2) {
@@ -275,7 +279,8 @@
 @media (max-width: 600px) {
 	#tracks-in-mix>div:nth-of-type(n+3){
 		margin: 0;
-		padding: 0 16px;
+		padding-left: 16px;
+		padding-right: 16px;
 	}	
 
 	.mix-in-sidepanel div:nth-of-type(2) {

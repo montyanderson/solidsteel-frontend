@@ -1,6 +1,7 @@
 html, body {
 	height: 100%;
 	overflow: hidden;
+	-webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -20,6 +21,10 @@ body {
 	display: table-cell;
 	vertical-align: middle;
 	position: relative;
+}
+
+p {
+	margin: 0;
 }
 
 a,

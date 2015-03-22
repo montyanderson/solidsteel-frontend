@@ -1,5 +1,11 @@
 <div id="container" {{bind-attr class="showingResults"}}>
   <div id="inner-container">
+
+  <div id="players">
+    <div id="timelineMixImageCell">
+        <img src="/assets/images/ss_120_x_120.gif" width="120" height="120" style="-webkit-clip-path: circle(59px);"/>
+    </div>
+
     <div id="timeline" {{bind-attr class="showingResults:disabled:enabled"}}>
       <!-- 2010s -->
       <div class="decade current-decade">
@@ -45,7 +51,9 @@
         <div class="year">{{#link-to "broadcasts" (query-params year="1988") }}88{{/link-to}}</div>
       </div>
     </div>
+  </div>
 
+  
     {{#if showingResults}}
     {{ view 'year-select'  }}
     {{/if}}

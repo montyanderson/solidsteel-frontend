@@ -6,10 +6,12 @@
 	-webkit-clip-path: circle(59px);
 }
 
-#mixImageCell {
+#mixImageCell,
+#timelineMixImageCell {
 	display: table-cell;
 	width: 168px;
 	text-align: center;
+	vertical-align: middle;
 }
 
 @media (max-width: 600px) {

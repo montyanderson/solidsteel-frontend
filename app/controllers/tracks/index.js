@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 Ember.Handlebars.registerBoundHelper('twofigurecounter', function(integer) {
     integer++;
-    if(integer < 9) {
+    if(integer <= 9) {
       return '0' + integer;
     } else {
       return integer;
