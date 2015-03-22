@@ -1,6 +1,8 @@
+import Ember from 'ember';
+
 export default Ember.Mixin.create({
-  resetscroll: function(year) {
+  resetscroll: function() {
     this._super();
-    $(".sidepanel").animate({scrollTop: 0}, 0);
+    Ember.$(".sidepanel").animate({scrollTop: 0}, 0);
   }
 });

@@ -12,8 +12,9 @@
 			<div id="mixImageCell">
 				<img id="mixImage" {{ bind-attr src="mixStyle" }} />
 			</div>
-			{{ render 'mix' model.mixes.firstObject }}
-			{{ render 'mix' model.mixes.lastObject }}
+			{{#each mix in model.mixes}}
+			{{ render 'mix' mix }}
+			{{/each}}
 		
 		</div>
 

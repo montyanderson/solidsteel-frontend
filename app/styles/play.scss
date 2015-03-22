@@ -13,13 +13,12 @@
 }
 
 .player {
-	display: table-cell;
-	vertical-align: middle;
+	float: left;
+	width: 25%;
 }
 
 .player canvas {
 	height: 36px;
-	width: inherit;
 	display: block;
 }
 

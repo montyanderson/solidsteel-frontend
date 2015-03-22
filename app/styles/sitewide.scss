@@ -22,8 +22,10 @@ body {
 	position: relative;
 }
 
+a,
 [data-ember-action] {
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 @media (max-width: 600px) {
@@ -70,9 +72,10 @@ a {
 	color: #fff;
 }
 
-a:hover {
-	text-decoration: underline;
-	color: inherit;
+@media (min-width: 601px) {
+	a:hover {
+		text-decoration: underline;
+	}
 }
 
 .disabled {

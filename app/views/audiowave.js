@@ -5,14 +5,17 @@ export default Ember.View.extend({
   init: function() {
     this._super();
     var view = this;
-
     var resizeHandler = function() {
         view.didInsertElement();
     };
 
     this.set('resizeHandler', resizeHandler);
     
-    $(window).bind('resize', this.get('resizeHandler'));
+    Ember.$(window).bind('resize', this.get('resizeHandler'));
+  },
+
+  willDestroy: function() {
+    Ember.$(window).unbind('resize', this.get('resizeHandler'));
   },
 
   tagName: 'canvas',
@@ -28,32 +31,32 @@ export default Ember.View.extend({
   },
 
   didInsertElement: function(){
+  	this._super();
   	var ele = this.get('element');
-  	ele.width = $(ele).parent().width();
+  	ele.width = Ember.$(ele).parent().width();
   	
 	var ctx = ele.getContext('2d');
   	ctx.fillStyle = 'rgb(255, 255, 255)';
  	ctx.lineWidth = 2;
  	this.get('controller').set('myCtx', ctx);
-
  	this.draw();
-    this._super();
   },
 
   draw: function() {
   	// wipe canvas ready for next frame
     this._empty();
+    
+    var ctx;
 
  	if(!this.get('controller.myCtx')) {
- 		return
+ 		return;
  	} else {
- 		var ctx = this.get('controller.myCtx');
+ 		ctx = this.get('controller.myCtx');
  	}
 
  	// caluclate track play-progress to draw line
  	var unit = ctx.canvas.width / this.get('controller.model.duration');
  	var units = this.get('controller.model.progress') * unit;
-	var centerY = ctx.canvas.height / 2;
 	var radius = 4;
 
 	if(units !== 0) {
@@ -146,7 +149,7 @@ export default Ember.View.extend({
 
   _empty: function(){
   	if(!this.get('controller.myCtx')) {
- 		return
+ 		return;
  	}
     this.get('controller.myCtx').clearRect(0, 0, this.get('controller.myCtx').canvas.width, this.get('controller.myCtx').canvas.height);
   }

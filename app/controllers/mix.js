@@ -1,3 +1,4 @@
+/* global SC:true */
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
@@ -15,7 +16,7 @@ export default Ember.Controller.extend({
       if(!
         (
            this.get('controllers.broadcast.currentlyPlaying') && 
-           this.get('controllers.broadcast.model.id') == this.get('model.broadcast.id')
+           this.get('controllers.broadcast.model.id') === this.get('model.broadcast.id')
         )
         ){
           //SC.whenStreamingReady(function() {
@@ -34,7 +35,6 @@ export default Ember.Controller.extend({
               self.get('controllers.broadcast').get('currentlyPlaying').play({
                 whileplaying: function() {
                   // update playhead position
-                  console.log('here!');
                   self.set('model.progress', sound.position );
                 },
 

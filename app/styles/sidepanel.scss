@@ -263,18 +263,19 @@
 	padding-right: 0;
 }
 
-#tracks-in-mix>div:nth-child(3){
+#tracks-in-mix>div:nth-of-type(3){
 	padding-top: 12px;
 }
 
-#tracks-in-mix>div:nth-child(n+3){
+#tracks-in-mix>div:nth-of-type(n+3){
 	margin: 0 32px;
 	clear: left;
 }
 
 @media (max-width: 600px) {
-	#tracks-in-mix>div:nth-child(n+3){
-		margin: 0 16px;
+	#tracks-in-mix>div:nth-of-type(n+3){
+		margin: 0;
+		padding: 0 16px;
 	}	
 
 	.mix-in-sidepanel div:nth-of-type(2) {

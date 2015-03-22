@@ -17,19 +17,15 @@ export default Ember.Controller.extend({
 
   actions : {
   	
-    toggleTracksSynopsis : function(){
+    toggleTracks : function(){
+      if (!this.showingTracks) {
+        this.set('showingTracks', true);
+      }
+    },
+
+    toggleSynopsis : function(){
   		if (this.showingTracks) {
   			this.set('showingTracks', false);
-  		} else {
-  			this.set('showingTracks', true);
-  		}
-  	},
-
-    togglePanel : function(){
-      if (this.showingTracklisting) {
-        this.set('showingTracklisting', false);
-      } else {
-        this.set('showingTracklisting', true);
       }
     }
   }

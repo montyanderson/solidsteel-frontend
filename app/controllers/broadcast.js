@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
   currentPart: null,
 
   mixStyle: function(){
-    return ENV.APP.API_HOST + this.get('mixImgPath')
+    return ENV.APP.API_HOST + this.get('mixImgPath');
   }.property("mixImgPath"),
 
   mixImgPath: null,
@@ -34,7 +34,7 @@ export default Ember.Controller.extend({
       this.stopCurrentMix();
       this.currentPart = mixNumber.get('part')-1;
     } else {
-      if (this.currentPart == undefined) {
+      if (this.currentPart === undefined) {
         this.currentPart = 0;
       } else {
         this.currentPart++;
