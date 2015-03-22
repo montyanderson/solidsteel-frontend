@@ -10,7 +10,7 @@ Ember.Handlebars.registerBoundHelper('twofigurecounter', function(integer) {
 });
 
 export default Ember.Controller.extend({
-  
+
   showingTracklisting: true,
 
   showingTracks: true,
@@ -20,6 +20,7 @@ export default Ember.Controller.extend({
     toggleTracks : function(){
       if (!this.showingTracks) {
         this.set('showingTracks', true);
+        this.get
       }
     },
 

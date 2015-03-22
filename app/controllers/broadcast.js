@@ -3,6 +3,8 @@ import ENV from '../config/environment';
 
 export default Ember.Controller.extend({
 
+  needs: ['application'],
+
   showingTracks: false,
 
   plusMinus: "+",
@@ -57,10 +59,12 @@ export default Ember.Controller.extend({
   		if (!this.showingTracks) {
   			this.transitionTo('tracks');
   			this.set('showingTracks', true);
+        this.get('controllers.application').set('showingTracks', true);
   			this.set('plusMinus', '–');
   		} else {
   			this.transitionTo('broadcast');
   			this.set('showingTracks', false);
+        this.get('controllers.application').set('showingTracks', false);
   			this.set('plusMinus', '+');
   		}
   	}

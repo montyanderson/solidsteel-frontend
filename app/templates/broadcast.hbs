@@ -1,4 +1,4 @@
-<div id="playDetails">
+<div id="playDetails" {{ bind-attr class="showingTracks:disabled::enabled"}}>
 	<p><b>NOW PLAYING</b></p>
 	<p>{{formatted-date model.broadcast_date 'DD-MM-YY'}} {{model.session_name}}</p>	
 </div>

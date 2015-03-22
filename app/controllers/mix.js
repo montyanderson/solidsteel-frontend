@@ -20,31 +20,31 @@ export default Ember.Controller.extend({
         )
         ){
           //SC.whenStreamingReady(function() {
-            // SC.stream("/tracks/"+self.get('model.soundcloudId'), {
-            //   useHTML5Audio: true,
-            //   preferFlash: false
-            // }, function(sound){
+            SC.stream("/tracks/"+self.get('model.soundcloudId'), {
+              useHTML5Audio: true,
+              preferFlash: false
+            }, function(sound){
               
-            //   // store ref to soundcloud on model
-            //   self.get('controllers.broadcast').set('currentlyPlaying', sound);
+              // store ref to soundcloud on model
+              self.get('controllers.broadcast').set('currentlyPlaying', sound);
               
-            //   //sound.setVolume(0)
+              //sound.setVolume(0)
 
-            //   self.set('model.progress', 0 );
+              self.set('model.progress', 0 );
 
-            //   self.get('controllers.broadcast').get('currentlyPlaying').play({
-            //     whileplaying: function() {
-            //       // update playhead position
-            //       self.set('model.progress', sound.position );
-            //     },
+              self.get('controllers.broadcast').get('currentlyPlaying').play({
+                whileplaying: function() {
+                  // update playhead position
+                  self.set('model.progress', sound.position );
+                },
 
-            //     whileloading: function() {
-            //       // update duration display
-            //       self.set('model.duration', sound.durationEstimate);
-            //     }
+                whileloading: function() {
+                  // update duration display
+                  self.set('model.duration', sound.durationEstimate);
+                }
 
-            //   });
-            // });
+              });
+            });
           //});
         }
 
