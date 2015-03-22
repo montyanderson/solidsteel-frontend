@@ -1,4 +1,4 @@
-<nav class="wide">
+<nav {{ bind-attr class=":wide showingTracks:mobNarrow" }}>
 	{{#link-to "broadcasts"}}
 		<img src="/assets/images/circle1.svg">
 	{{/link-to}}
@@ -16,7 +16,7 @@
 
 {{outlet}}
 
-<nav id="extra">
+<nav id="extra" {{ bind-attr class="showingTracks:mobLeft" }}>
 	{{#link-to "about"}}
 		<img src="/assets/images/circle1.svg">
 	{{/link-to}}

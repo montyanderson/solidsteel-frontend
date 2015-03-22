@@ -35,6 +35,10 @@ a,
 
 @media (max-width: 600px) {
 
+	.mobdisabled {
+		display: none;
+	}
+
 	html,
 	body,
 	#container {

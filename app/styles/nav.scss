@@ -49,4 +49,18 @@ nav img:hover {
 		font-size: 16px;
 		line-height: 18px;
 	}
+
+	.mobNarrow {
+		width: 32px;
+	}
+
+	.mobNarrow a {
+		margin-left: 0;
+		margin-bottom: 16px;
+	}
+
+	#extra.mobLeft {
+		left: 12px;
+		right: auto;
+	}
 }

@@ -1,21 +1,17 @@
-<div id="playDetails" {{ bind-attr class="showingTracks:disabled::enabled"}}>
+<div id="playDetails" {{ bind-attr class="showingTracks:disabled:enabled"}}>
 	<p><b>NOW PLAYING</b></p>
 	<p>{{formatted-date model.broadcast_date 'DD-MM-YY'}} {{model.session_name}}</p>	
 </div>
 
 <div id="container" {{bind-attr class="showingTracks"}}>
 	<div id="inner-container">
-
-		
-		
 		<div id="players">
 			<div id="mixImageCell">
-				<img id="mixImage" {{ bind-attr src="mixStyle" }} />
+				<img id="mixImage" {{ bind-attr src="mixStyle" class="showingTracks:mobdisabled:mobenabled" }}/>
 			</div>
 			{{#each mix in model.mixes}}
 			{{ render 'mix' mix }}
 			{{/each}}
-		
 		</div>
 
 		<p {{action 'toggleTrax'}} id="btn-tracklisting"><span>{{plusMinus}}TRACKLIST</span></p>
