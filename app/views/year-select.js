@@ -7,12 +7,12 @@ export default Ember.View.extend({
   tagName: 'div',
 
   mouseLeave: function(){
-  	var yy = ( 54 * (2015 - this.get('controller.year') ) );
+  	var yy = ( 44 * (2015 - this.get('controller.year') ) );
     Ember.$("#year-selector").animate({scrollTop : yy}, 0);
   },
 
   didInsertElement: function(){
-  	var yy = ( 54 * (2015 - this.get('controller.year')) );
+  	var yy = ( 44 * (2015 - this.get('controller.year')) );
     Ember.$("#year-selector").animate({scrollTop : yy}, 0);
   }
 

@@ -122,9 +122,13 @@
 }
 
 .month>div,
-#broadcasts-by-month h2,
 #search-results h2 {
 	padding: 0 24px 0;
+}
+
+#broadcasts-by-month h2 {
+	margin: 0 0 0 24px;
+	display: inline;
 }
 
 @media (min-width: 601px) {
@@ -135,12 +139,15 @@
 
 @media (max-width: 600px) {
 
+	#broadcasts-by-month h2 {
+		margin: 0 0 0 16px;
+	}
+
 	#search-results.sidepanel>div {
 		padding: 0 16px;
 	}
 
 	.month>div,
-	#broadcasts-by-month h2,
 	#search-results h2 {
 		padding: 0 $bigBorderWidth/2 0;
 	}
