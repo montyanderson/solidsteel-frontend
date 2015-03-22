@@ -1,31 +1,28 @@
 <nav class="wide">
 	{{#link-to "broadcasts"}}
-		<p id="home"><img src="/assets/images/list.svg"></p>
+		<img src="/assets/images/circle1.svg">
 	{{/link-to}}
 		
 	{{#link-to "search"}}
-		<p id="search"><img src="/assets/images/magnifying-glass.svg"></p>
+		<img src="/assets/images/circle1.svg">
 	{{/link-to}}
 
 	{{#link-to "index"}}
-	<p id="playing">
-		<img id="playButton" src="/assets/images/bar-graph.svg">
-	</p>
+		<img id="playButton" src="/assets/images/circle1.svg">
 	{{/link-to}}
-	<p {{action 'mute'}} {{ bind-attr class="muted"}}>mute</p>
+	
+	<!-- <p {{action 'mute'}} {{ bind-attr class="muted"}}>mute</p> -->
 </nav>
 
 {{outlet}}
 
 <nav id="extra">
 	{{#link-to "about"}}
-		<p id="search"><img src="/assets/images/list.svg"></p>
+		<img src="/assets/images/circle1.svg">
 	{{/link-to}}
 
-	<br />
-
 	{{#link-to "a-z"}}
-		<p id="search"><img id="playButton" src="/assets/images/bar-graph.svg"></p>
+		<img id="playButton" src="/assets/images/circle1.svg">
 	{{/link-to}}
 </nav>
 

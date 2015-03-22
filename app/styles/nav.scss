@@ -5,13 +5,24 @@ nav {
 	z-index: 10;
 }
 
+
+nav>a {
+	display: inline;
+	width: auto;
+	height: auto;
+	float: left;
+}
+
 nav.wide p {
 	display: inline;
 	float: left;
+}
+
+nav a {
 	margin-left: 16px;
 }
 
-nav p:first-of-type {
+nav a:first-of-type {
 	margin-left: 0px;
 }
 
