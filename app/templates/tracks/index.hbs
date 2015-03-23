@@ -11,7 +11,26 @@
 		<p {{bind-attr class="showingTracks:current"}}{{ action 'toggleTracks'}}><b>Tracklist</b></p>
 		<p {{bind-attr class="showingTracks::current"}}{{ action 'toggleSynopsis'}}><b>Synopsis</b></p>
 	</div>
-	<div {{bind-attr class="showingTracks:disabled:enabled"}}>{{model.altnotes}}</div>
+	<div {{bind-attr class="showingTracks:disabled:enabled"}}>
+		{{model.altnotes}}
+		<p>You can also listen to this mix on</p>
+		<p>
+		{{#if model.mixes.firstObject.soundcloudId}}
+		<a target="_blank" href="http://soundcloud.com/{{unbound model.mixes.firstObject.soundcloudId}}">SOUNDCLOUD (HOUR 1)</a>
+		{{/if}}
+		{{#if model.mixes.lastObject.soundcloudId}}
+		<a target="_blank" href="http://soundcloud.com/{{unbound model.mixes.lastObject.soundcloudId}}">SOUNDCLOUD (HOUR 2)</a>
+		{{/if}}
+		</p>
+		<p>
+		{{#if model.mixes.firstObject.mixcloudId}}
+		<a target="_blank" href="http://mixcloud.com/{{unbound model.mixes.firstObject.mixcloudId}}">MIXCLOUD (HOUR 1)</a>
+		{{/if}}
+		{{#if model.mixes.lastObject.mixcloudId}}
+		<a target="_blank" href="http://mixcloud.com/{{unbound model.mixes.lastObject.mixcloudId}}">MIXCLOUD (HOUR 2)</a>
+		{{/if}}
+		</p>
+	</div>
 
 	<div {{bind-attr class="showingTracks:enabled:disabled"}}>
 		{{#each mix in model.mixes}}
