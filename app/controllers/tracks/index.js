@@ -20,7 +20,6 @@ export default Ember.Controller.extend({
     toggleTracks : function(){
       if (!this.showingTracks) {
         this.set('showingTracks', true);
-        this.get
       }
     },
 

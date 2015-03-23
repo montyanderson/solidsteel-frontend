@@ -7,7 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   
-  this.route('top50');
+  this.route('top50', {path: 'featured'});
   this.route('about');
   this.resource('a-z', function(){
     this.route('letter', {path: ':letter'});

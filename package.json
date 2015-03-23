@@ -36,7 +36,8 @@
     "ember-export-application-global": "^1.0.2",
     "ember-normalize": "0.0.2",
     "express": "^4.8.5",
-    "glob": "^4.0.5"
+    "glob": "^4.0.5",
+    "liquid-fire": "git://github.com/ef4/liquid-fire"
   },
   "dependencies": {}
 }

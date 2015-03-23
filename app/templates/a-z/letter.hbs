@@ -1,5 +1,7 @@
 <div>
-	{{#each ent in entries}}
-		<p>{{#link-to 'search.results' ent }}{{ent}}{{/link-to}}</p>
-	{{/each}}
+	{{#liquid-with model as model use="toLeft"}}
+  		{{#each ent in model}}
+			<p>{{#link-to 'search.results' ent }}{{ent}}{{/link-to}}</p>
+		{{/each}}
+	{{/liquid-with}}
 </div>

@@ -57,12 +57,12 @@ export default Ember.Controller.extend({
 
   	toggleTrax: function(){
   		if (!this.showingTracks) {
-  			this.transitionTo('tracks');
+  			this.transitionToRoute('tracks');
   			this.set('showingTracks', true);
         this.get('controllers.application').set('showingTracks', true);
   			this.set('plusMinus', '–');
   		} else {
-  			this.transitionTo('broadcast');
+  			this.transitionToRoute('broadcast');
   			this.set('showingTracks', false);
         this.get('controllers.application').set('showingTracks', false);
   			this.set('plusMinus', '+');
