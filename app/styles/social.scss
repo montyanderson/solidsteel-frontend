@@ -2,7 +2,7 @@
 	display: inline;
 	position: absolute;
 	top: auto;
-	bottom: 16px;
+	bottom: 32px;
 	left: auto;
 	right: 32px;
 	text-transform: uppercase;
@@ -13,6 +13,10 @@
 #social a {
 	color: #aaa;
 	font-family: 'Decima Mono X';
+}
+
+#social svg {
+	vertical-align: bottom;
 }
 
 @media (max-width: 600px) {
