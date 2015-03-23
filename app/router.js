@@ -9,7 +9,9 @@ Router.map(function() {
   
   this.route('top50');
   this.route('about');
-  this.route('a-z');
+  this.resource('a-z', function(){
+    this.route('letter', {path: ':letter'});
+  });
   this.resource('search', function(){
     this.route('results', {path: ':keyword'});
   });
