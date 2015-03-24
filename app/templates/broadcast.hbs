@@ -3,7 +3,7 @@
 	<p>{{formatted-date model.broadcast_date 'DD-MM-YY'}} {{model.session_name}}</p>	
 </div>
 
-<div id="container" {{bind-attr class="showingTracks"}}>
+<div id="container">
 	<div id="inner-container">
 		<div id="players">
 			<div id="mixImageCell">
@@ -14,7 +14,7 @@
 			{{/each}}
 		</div>
 
-		<p {{action 'toggleTrax'}} id="btn-tracklisting"><span>{{plusMinus}}TRACKLIST</span></p>
+		<p {{action 'toggleTrax'}} {{bind-attr class="showingTracks"}} id="btn-tracklisting"><span>{{plusMinus}}TRACKLIST</span></p>
 	</div>
 </div>
 

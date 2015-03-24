@@ -27,6 +27,10 @@
     transform:rotate(180deg);
 }
 
+#btn-tracklisting.showing-tracks {
+	right: 52%;	
+}
+
 @media (max-width: 600px) {
 	#btn-tracklisting {
 		font-size: 12px;
@@ -341,4 +345,26 @@
 
 .month p:nth-of-type(2) {
 	font-family: 'Decima Pro', Helvetica, sans-serif;
+}
+
+.panel-open {
+	-webkit-animation-name: example;
+    -webkit-animation-duration: 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035); 
+}
+
+.panel-closed {
+	-webkit-animation-name: example;
+    -webkit-animation-duration: 0.3s;
+    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035); 
+}
+
+@-webkit-keyframes example {
+    from {width:0;}
+    to {width:50%;}
+}
+
+@-webkit-keyframes example2 {
+    from {width:50%;}
+    to {width:0%;}
 }
