@@ -1,7 +1,8 @@
 <div>
-	{{#liquid-with model as model use="toLeft"}}
-  		{{#each ent in model}}
-			<p>{{#link-to 'search.results' ent }}{{ent}}{{/link-to}}</p>
-		{{/each}}
-	{{/liquid-with}}
+	{{#each dj in model}}
+		<p>{{#link-to 'search.results' dj.name }}{{dj.name}}({{dj.count}}){{/link-to}}</p>
+		{{#eq model.length 20 }}
+	     <p> display this content, if it passes</p>
+    	{{/eq}}
+	{{/each}}
 </div>
