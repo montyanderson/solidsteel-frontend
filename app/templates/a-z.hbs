@@ -1,8 +1,15 @@
-<div id="az" style="position: relative; background: rgba(255, 255, 255, 0.9); color: #333; position: fixed; top: 0; left: 0; right: 0; bottom: 0; padding: 128px; -webkit-column-width:15em;">
-
-	<div style="position: absolute; top: 32px; right: 32px;">{{#link-to "index"}}X close{{/link-to}}</div>
-
-	<div id="alpha-key" style="position: absolute; top: 32px; left: 176px;">
+<div id="az">
+	<div class="close">
+	{{#link-to "index"}}
+		<svg version="1.1" id="Circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+<path d="M10,0.4c-5.302,0-9.6,4.298-9.6,9.6s4.298,9.6,9.6,9.6c5.301,0,9.6-4.298,9.6-9.601
+	C19.6,4.698,15.301,0.4,10,0.4z M10,17.599c-4.197,0-7.6-3.402-7.6-7.6S5.802,2.4,10,2.4c4.197,0,7.601,3.402,7.601,7.6
+	S14.197,17.599,10,17.599z"/>
+</svg>
+	{{/link-to}}
+	</div>
+	<div id="alpha-key">
 		{{#link-to 'a-z.letter' 'A'}}A{{/link-to}}
 		{{#link-to 'a-z.letter' 'B'}}B{{/link-to}}
 		{{#link-to 'a-z.letter' 'C'}}C{{/link-to}}
@@ -30,8 +37,5 @@
 		{{#link-to 'a-z.letter' 'Y'}}Y{{/link-to}}
 		{{#link-to 'a-z.letter' 'Z'}}Z{{/link-to}}
 	</div>
-
-	<div class="alpha-index">
-		{{outlet}}
-	</div>
+	{{outlet}}
 </div>

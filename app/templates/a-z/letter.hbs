@@ -1,8 +1,8 @@
-<div>
+<div class="alpha-index">
+	<h1>{{letter}}</h1>
 	{{#each dj in model}}
-		<p>{{#link-to 'search.results' dj.name }}{{dj.name}}({{dj.count}}){{/link-to}}</p>
-		{{#eq model.length 20 }}
-	     <p> display this content, if it passes</p>
-    	{{/eq}}
+		<p>{{#link-to 'search.results' dj.name }}{{dj.name}}{{/link-to}}</p>	
 	{{/each}}
 </div>
+<p class="backscroller" {{ action 'backswipe'}}></p>
+<p class="scroller" {{ action 'swipe'}}></p>
