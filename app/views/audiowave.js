@@ -13,7 +13,7 @@ export default Ember.View.extend({
     
     Ember.$(window).bind('resize', this.get('resizeHandler'));
   },
-
+  
   willDestroy: function() {
     Ember.$(window).unbind('resize', this.get('resizeHandler'));
   },
@@ -26,7 +26,7 @@ export default Ember.View.extend({
 
   click: function(e) {
   	// skip to place in track
-  	var skipTo = Math.floor(e.offsetX / (this.get('controller.myCtx').canvas.width / 100));
+  	var skipTo = Math.floor(e.offsetX / (this.get('myCtx').canvas.width / 100));
     this.get('controller').send('skip', this.get('controller.model'), skipTo/100); 
   },
 
@@ -34,25 +34,24 @@ export default Ember.View.extend({
   	this._super();
   	var ele = this.get('element');
   	ele.width = Ember.$(ele).parent().width();
-  	
+  	ele.height = 36;
 	var ctx = ele.getContext('2d');
   	ctx.fillStyle = 'rgb(255, 255, 255)';
  	ctx.lineWidth = 2;
- 	this.get('controller').set('myCtx', ctx);
+ 	this.set('myCtx', ctx);
  	this.draw();
   },
 
   draw: function() {
   	// wipe canvas ready for next frame
     this._empty();
-    
-    var ctx;
 
- 	if(!this.get('controller.myCtx')) {
- 		return;
- 	} else {
- 		ctx = this.get('controller.myCtx');
- 	}
+
+ 	if(!this.get('myCtx')) {
+ 	  return;
+ 	} 
+ 	
+    var ctx = this.get('myCtx');
 
  	// caluclate track play-progress to draw line
  	var unit = ctx.canvas.width / this.get('controller.model.duration');
@@ -76,7 +75,7 @@ export default Ember.View.extend({
 
   	var barHeightAdjuster = 0;
 
-  	// IF SCREEN IS LARGER THAN 600PX, DRAW FULL PLAYER
+  	//IF SCREEN IS LARGER THAN 600PX, DRAW FULL PLAYER
   	if(window.matchMedia("screen and (min-width: 600px)").matches) {
 	  	// draw progress bars
 	  	ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
@@ -148,10 +147,10 @@ export default Ember.View.extend({
   }.observes('controller.model.progress'),
 
   _empty: function(){
-  	if(!this.get('controller.myCtx')) {
+  	if(!this.get('myCtx')) {
  		return;
  	}
-    this.get('controller.myCtx').clearRect(0, 0, this.get('controller.myCtx').canvas.width, this.get('controller.myCtx').canvas.height);
+    this.get('myCtx').clearRect(0, 0, this.get('myCtx').canvas.width, this.get('myCtx').canvas.height);
   }
 
 });

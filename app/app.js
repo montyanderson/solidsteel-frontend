@@ -23,4 +23,6 @@ inflector.uncountable('search'); //only makes call to /advice
 
 loadInitializers(App, config.modulePrefix);
 
+window.MyNewapp = {};
+
 export default App;

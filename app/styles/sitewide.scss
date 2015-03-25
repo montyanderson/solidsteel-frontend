@@ -23,6 +23,19 @@ body {
 	position: relative;
 }
 
+nav svg {
+	color: #fff;	
+	fill: currentColor;
+}
+
+.subscribe nav svg {
+	color: #333;
+}
+
+.subscribe #social {
+	display: none;
+}
+
 p {
 	margin: 0;
 }

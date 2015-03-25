@@ -11,6 +11,8 @@ export default Ember.Controller.extend({
 
   currentPart: null,
 
+  isPlaying: true,
+  
   mixStyle: function(){
     return ENV.APP.API_HOST + this.get('mixImgPath');
   }.property("mixImgPath"),

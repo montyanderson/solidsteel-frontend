@@ -5,24 +5,31 @@ nav {
 	z-index: 10;
 }
 
+nav svg {
+	width: 32px;
+	height: 32px;
+}
 
-nav>a {
+nav>a,
+nav>span {
 	display: inline;
 	width: auto;
 	height: auto;
 	float: left;
+	position: relative;
 }
+
 
 nav.wide p {
 	display: inline;
 	float: left;
 }
 
-nav a {
+nav.wide span {
 	margin-left: 16px;
 }
 
-nav a:first-of-type {
+nav span:first-of-type {
 	margin-left: 0px;
 }
 

@@ -27,6 +27,7 @@ export default Ember.Controller.extend({
               
               // store ref to soundcloud on model
               self.get('controllers.broadcast').set('currentlyPlaying', sound);
+              window.MyNewApp.isPlaying = true;
               
               //sound.setVolume(0)
 

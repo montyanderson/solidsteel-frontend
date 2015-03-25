@@ -48,9 +48,15 @@
 
 .close {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 32px;
+    right: 32px;
 }
+
+.close svg {
+  width: 32px;
+  height: 32px;
+}
+
 
 .close svg,
 .scroller svg {
@@ -113,4 +119,34 @@
     .alpha-index h1 {
         margin-bottom: 8px;
     }
+}
+
+.subscribe {
+  width: 480px;
+  line-height: 24px;
+}
+
+.subscribe input[type="text"] {
+  border-bottom: 2px solid #333;
+  font-size: 16px;
+  margin-top: 64px;
+  color: #333;
+  fill: currentColor;
+  background: none;
+}
+
+::-webkit-input-placeholder {
+   color: #333;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #333;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #333;
+}
+
+:-ms-input-placeholder {  
+  color: #333;
 }
