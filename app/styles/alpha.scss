@@ -10,12 +10,21 @@
   padding: 128px 176px;
 }
 
+.about p {
+  margin-bottom: 32px;
+}
+
 @media (min-width: 601px) {
     .alpha-index {
         -webkit-column-width: 215px;
         -webkit-column-gap: 4px;
         height: 100%;
         position: relative;
+    }
+
+    .about {
+        -webkit-column-width: 245px;
+        -webkit-column-gap: 45px;
     }
 
     .scroller,

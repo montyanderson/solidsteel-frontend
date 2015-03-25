@@ -13,12 +13,12 @@ export default Ember.Controller.extend({
     swipe: function(){
 
         if(this.dist == undefined) {
-            this.dist = Ember.$('.alpha-index').width();
+            this.dist = Ember.$('.about').width();
         }
 
-        var currentOffset = parseInt(Ember.$('.alpha-index').css('left'));
+        var currentOffset = parseInt(Ember.$('.about').css('left'));
 
-        Ember.$('.alpha-index').animate({
+        Ember.$('.about').animate({
             'left': (currentOffset + -this.dist)
         }, 1000);
 
@@ -28,12 +28,12 @@ export default Ember.Controller.extend({
 
     backswipe: function(){
         if(this.dist == undefined) {
-            this.dist = Ember.$('.alpha-index').width();
+            this.dist = Ember.$('.about').width();
         }
 
-        var currentOffset = parseInt(Ember.$('.alpha-index').css('left'));
+        var currentOffset = parseInt(Ember.$('.about').css('left'));
 
-        Ember.$('.alpha-index').animate({
+        Ember.$('.about').animate({
             'left': (currentOffset + this.dist)
         }, 1000);
 
@@ -42,7 +42,7 @@ export default Ember.Controller.extend({
 
     resetswipe: function(){
         if (this.get('wasSwiped')) {
-            Ember.$('.alpha-index').offset({
+            Ember.$('.about').offset({
                 'left': '176'
             });
         }
