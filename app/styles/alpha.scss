@@ -1,0 +1,107 @@
+#az {
+  position: relative;
+  background: #fff;
+  color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 128px 176px;
+}
+
+@media (min-width: 601px) {
+    .alpha-index {
+        -webkit-column-width: 215px;
+        -webkit-column-gap: 4px;
+        height: 100%;
+        position: relative;
+    }
+
+    .scroller,
+    .backscroller {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: -webkit-linear-gradient(left, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 51%,rgba(255,255,255,1) 93%,rgba(255,255,255,1) 100%);
+        width: 176px;
+        cursor: e-resize;
+    }
+
+    .backscroller {
+        left: 0;
+        right: auto;
+        cursor: w-resize;
+        background: -webkit-linear-gradient(right, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 51%,rgba(255,255,255,1) 93%,rgba(255,255,255,1) 100%);
+    }
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.close svg,
+.scroller svg {
+    color: #555;
+    fill: currentColor;
+    width: 32px;
+    height: 32px;
+}
+
+#alpha-key {
+  position: absolute;
+  letter-spacing: 4px;
+  left: 176px;
+  top: 32px;
+}
+
+#alpha-key a {
+  color: #acacac;
+}
+
+#alpha-key a.active {
+  color: #000;
+}
+
+.alpha-index {
+  line-height: 24px;
+  left: 0;
+}
+
+.alpha-index h1 {
+  font-size: 80px;
+  line-height: 80px;
+}
+
+@media (max-width: 600px) {
+    #az {
+      padding: 88px 36px 0 12px;
+      overflow-y: scroll;
+    }
+
+    .alpha-index h1 {
+      font-size: 36px;
+      line-height: 36px;
+    }
+
+    #alpha-key {
+        letter-spacing: auto;
+        text-align: right;
+        left: auto;
+        right: 12px;
+        width: 24px;
+        top: 88px;
+    }
+
+    .alpha-index {
+        line-height: 32px;
+        width: 100%;
+    }
+
+    .alpha-index h1 {
+        margin-bottom: 8px;
+    }
+}
