@@ -30,7 +30,7 @@
     .scroller,
     .backscroller {
         position: absolute;
-        top: 0;
+        top: 88px;
         right: 0;
         bottom: 0;
         background: -webkit-linear-gradient(left, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.7) 51%,rgba(255,255,255,1) 93%,rgba(255,255,255,1) 100%);
@@ -119,6 +119,11 @@
     .alpha-index h1 {
         margin-bottom: 8px;
     }
+
+    .close {
+      top: 12px;
+      right: 12px;
+    }
 }
 
 .subscribe {
@@ -130,23 +135,25 @@
   border-bottom: 2px solid #333;
   font-size: 16px;
   margin-top: 64px;
-  color: #333;
+  color: #333 !important;
   fill: currentColor;
   background: none;
 }
 
-::-webkit-input-placeholder {
-   color: #333;
-}
+.subscribe {
+  ::-webkit-input-placeholder {
+     color: #333;
+  }
 
-:-moz-placeholder { /* Firefox 18- */
-  color: #333;
-}
+  :-moz-placeholder { /* Firefox 18- */
+    color: #333;
+  }
 
-::-moz-placeholder {  /* Firefox 19+ */
-  color: #333;
-}
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: #333;
+  }
 
-:-ms-input-placeholder {  
-  color: #333;
+  :-ms-input-placeholder {  
+    color: #333;
+  }
 }

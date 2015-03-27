@@ -31,14 +31,13 @@ export default Ember.Controller.extend({
 
   setCurrentMix: function(mixNumber){
 
-    this.currentPart = null;
-
     // increment current mix, or play the first one if none specified
     if (mixNumber !== undefined) {
       this.stopCurrentMix();
       this.currentPart = mixNumber.get('part')-1;
     } else {
-      if (this.currentPart === undefined) {
+      if (this.currentPart === null) {
+        console.log(this);
         this.currentPart = 0;
       } else {
         this.currentPart++;

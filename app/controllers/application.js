@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
   }.property('muted'),
 
   updateCurrentPath: function() {
-    window.MyNewapp.currentPath = this.get('currentPath');
+    window.MyNewApp.currentPath = this.get('currentPath');
   }.observes('currentPath'),
 
   actions: {

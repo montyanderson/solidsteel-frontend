@@ -28,8 +28,16 @@ nav svg {
 	fill: currentColor;
 }
 
-.subscribe nav svg {
+.about nav svg,
+.subscribe nav svg,
+.about #featured a,
+.subscribe #featured a {
 	color: #333;
+}
+
+.about #featured p,
+.subscribe #featured p {
+	border-color: rgba(48, 48, 48, 0.7);
 }
 
 .subscribe #social {
@@ -47,6 +55,10 @@ a,
 }
 
 @media (max-width: 600px) {
+
+	.broadcasts #featured {
+		display: none;
+	}
 
 	.mobdisabled {
 		display: none;

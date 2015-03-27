@@ -129,7 +129,9 @@
 
 .month>div,
 #search-results h2 {
-	padding: 0 24px 0;
+	padding: 0;
+	margin-left: 24px;
+	margin-right: 24px;
 }
 
 #broadcasts-by-month h2 {
@@ -155,12 +157,18 @@
 
 	.month>div,
 	#search-results h2 {
-		padding: 0 $bigBorderWidth/2 0;
+		padding: 0;
 	}
 
 	#search-results.sidepanel p {
 		line-height: 16px;
 		margin: 0;
+	}
+
+	.month>div,
+	#search-results h2 {
+		margin-left: 12px;
+		margin-right: 12px;
 	}
 
 	#search-results.sidepanel p:nth-of-type(2) {
