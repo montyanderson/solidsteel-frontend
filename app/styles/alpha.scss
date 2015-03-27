@@ -91,6 +91,11 @@
   line-height: 80px;
 }
 
+.subscribe {
+  width: 480px;
+  line-height: 24px;
+}
+
 @media (max-width: 600px) {
     #az {
       padding: 88px 36px 0 12px;
@@ -124,11 +129,15 @@
       top: 12px;
       right: 12px;
     }
-}
 
-.subscribe {
-  width: 480px;
-  line-height: 24px;
+    .subscribe {
+      width: auto;
+    }
+
+    .subscribe #social,
+    .subscribe #extra {
+      display: none;
+    }
 }
 
 .subscribe input[type="text"] {

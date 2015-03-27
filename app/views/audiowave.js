@@ -18,6 +18,15 @@ export default Ember.View.extend({
     Ember.$(window).unbind('resize', this.get('resizeHandler'));
   },
 
+  mouseMove: function(e) {
+    var skipTo = Math.floor(e.offsetX / (this.get('myCtx').canvas.width / 100));
+    this.get('controller').send('waveHover', skipTo/100);
+  },
+
+  mouseLeave: function(){
+    this.get('controller').send('stopWaveHover');
+  },
+
   tagName: 'canvas',
 
   attributeBindings: ['height'],

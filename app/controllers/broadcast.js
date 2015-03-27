@@ -29,15 +29,19 @@ export default Ember.Controller.extend({
     });
   },
 
+  nextMix: function(){
+    this.currentPart++;
+    this.setCurrentMix(this.currentPart);
+  },
+
   setCurrentMix: function(mixNumber){
 
     // increment current mix, or play the first one if none specified
     if (mixNumber !== undefined) {
       this.stopCurrentMix();
-      this.currentPart = mixNumber.get('part')-1;
+      this.currentPart = mixNumber;
     } else {
       if (this.currentPart === null) {
-        console.log(this);
         this.currentPart = 0;
       } else {
         this.currentPart++;
@@ -46,7 +50,7 @@ export default Ember.Controller.extend({
 
     // don't try to play a mix that doesn't exist
     if(this.currentPart >= this.get('model.mixes').get('length')){
-      this.currentPart = 0;
+      this.transitionToRoute('broadcasts');
     }
 
     // set current mix by setting an attribute on one of the Mix models - this

@@ -57,6 +57,14 @@ nav img:hover {
 		line-height: 18px;
 	}
 
+	.broadcasts .wide span:nth-of-type(2){
+		display: none;
+	}
+
+	.broadcast .wide span:nth-of-type(2){
+		display: block;
+	}
+
 	.mobNarrow {
 		width: 32px;
 	}

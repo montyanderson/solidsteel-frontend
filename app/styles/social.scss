@@ -17,12 +17,13 @@
 
 #social svg {
 	vertical-align: bottom;
-	height: 16px;
+	height: 11px;
 	width: auto;
 }
 
 @media (max-width: 600px) {
 	#social {
-		display: none;
+		bottom: 12px;
+		right: 12px;
 	}
 }

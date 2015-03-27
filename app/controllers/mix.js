@@ -42,6 +42,10 @@ export default Ember.Controller.extend({
                 whileloading: function() {
                   // update duration display
                   self.set('model.duration', sound.durationEstimate);
+                },
+
+                onfinish: function(){
+                  self.get('controllers.broadcast').nextMix();
                 }
 
               });
@@ -64,9 +68,18 @@ export default Ember.Controller.extend({
   }.observes("model.isCurrent").on('init'),
 
   actions: {
+    
+    waveHover: function(hoverTime){
+        this.set('model.searching', true);
+        this.set('model.searchTime', this.get('model.duration')*hoverTime);
+    },
+
+    stopWaveHover: function(hoverTime){
+        this.set('model.searching', false);
+    },
 
     makeCurrent: function(mix){
-      this.get('controllers.broadcast').setCurrentMix(mix);
+      this.get('controllers.broadcast').setCurrentMix(mix.get('part')-1);
     },
 
     skip: function(model, position){

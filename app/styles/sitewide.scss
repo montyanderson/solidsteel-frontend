@@ -28,20 +28,19 @@ nav svg {
 	fill: currentColor;
 }
 
+.a-z nav svg,
 .about nav svg,
 .subscribe nav svg,
+.a-z #featured a,
 .about #featured a,
 .subscribe #featured a {
 	color: #333;
 }
 
+.a-z #featured p,
 .about #featured p,
 .subscribe #featured p {
 	border-color: rgba(48, 48, 48, 0.7);
-}
-
-.subscribe #social {
-	display: none;
 }
 
 p {
@@ -56,8 +55,22 @@ a,
 
 @media (max-width: 600px) {
 
-	.broadcasts #featured {
+	.a-z #extra,
+	.a-z #featured,
+	.a-z #social,
+	.about #extra,
+	.about #featured,
+	.about #social,
+	.broadcasts #featured,
+	.broadcasts #extra,
+	.top50 #extra,
+	.top50 #social {
 		display: none;
+	}
+
+	.broadcast #featured,
+	.broadcast #extra {
+		display: block;
 	}
 
 	.mobdisabled {

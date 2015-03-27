@@ -11,7 +11,8 @@
 	height: 32px;
 }
 
-#featured {
+#featured,
+#linksout {
 	display: inline;
 	position: absolute;
 	top: auto;
@@ -45,7 +46,11 @@
 }
 
 #featured a:nth-child(2) {
-	margin-left: 16px;
+	margin-left: 20px;
+}
+
+.subscribe #extra {
+	line-height: normal;
 }
 
 @media (max-width: 600px) {
@@ -56,16 +61,34 @@
 		background: none;
 		padding: 0;
 		line-height: 12px;
+		letter-spacing: 2px;
 	}
 	
 	#extra {
-		bottom: 12px;
-		right: 12px;
-		left: auto;
+		bottom: 40px;
+		right: auto;
+		left: 12px;
 	}
 
-	#featured {
+	#featured,
+	#linksout {
 		bottom: 12px;
 		left: 12px;
 	}
+
+	.subscribe #featured {
+		display: none;
+	}
+
+	#linksout p {
+		font-size: 12px;
+		letter-spacing: 2px;
+	}
+
+	#linksout p a {
+		border-bottom: 1px solid #333;
+	}
 }
+
+
+
