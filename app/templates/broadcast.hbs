@@ -7,7 +7,7 @@
 	<div id="inner-container">
 		<div id="players">
 			<div id="mixImageCell">
-				<img id="mixImage" {{ bind-attr src="mixStyle" class="showingTracks:mobdisabled:mobenabled" }}/>
+				{{partial 'icons/logo'}}
 			</div>
 			{{#each mix in model.mixes}}
 			{{ render 'mix' mix }}

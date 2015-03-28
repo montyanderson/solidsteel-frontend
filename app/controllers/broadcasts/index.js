@@ -7,13 +7,18 @@ export default Ember.ArrayController.extend(Groupable, {
   
   ungroupedContentBinding: 'content', //tell Groupable where your default content is
 
-  group: function(activity) {
+  getHighlights: "",
+
+  group: function(broadcast) {
     var x = Ember.Object.create({
-      key: moment.utc(activity.get('broadcast_date')).format('MMM'), // using momentjs to pluck the day from the date
-      description: 'some string describing this group (if you want)'
-     });
+      key: moment.utc(broadcast.get('broadcast_date')).format('MMM'), // using momentjs
+    });
     return x;
   },
+
+  hasHighlights: function() {
+    return this.filterBy('highlight', true).get('length');
+  }.property('@each.highlight'),
 
   queryParams: ['year'],
 
@@ -25,6 +30,16 @@ export default Ember.ArrayController.extend(Groupable, {
 
   rootpath: function(){
     return "woop";
-  }.property('rootpath')
+  }.property('rootpath'),
+
+  actions: {
+    viewFeatured: function() {
+      if(this.get('getHighlights')) {
+        this.set('getHighlights', false);
+      } else {
+        this.set('getHighlights', true);
+      }
+    }
+  }
 
 });

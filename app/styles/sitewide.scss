@@ -64,8 +64,14 @@ a,
 	.broadcasts #featured,
 	.broadcasts #extra,
 	.top50 #extra,
-	.top50 #social {
+	.top50 #social,
+	.search-results #featured,
+	.search-results span:nth-of-type(3) {
 		display: none;
+	}
+
+	.search-results #extra {
+		bottom: 12px;
 	}
 
 	.broadcast #featured,

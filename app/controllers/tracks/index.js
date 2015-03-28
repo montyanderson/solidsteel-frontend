@@ -1,15 +1,11 @@
 import Ember from 'ember';
-
-Ember.Handlebars.registerBoundHelper('twofigurecounter', function(integer) {
-    integer++;
-    if(integer <= 9) {
-      return '0' + integer;
-    } else {
-      return integer;
-    }
-});
+import ENV from '../../config/environment';
 
 export default Ember.Controller.extend({
+
+  rootpath: function(){
+    return ENV.APP.API_HOST;
+  }.property('rootpath'),
 
   showingTracklisting: true,
 

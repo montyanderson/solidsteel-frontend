@@ -22,6 +22,10 @@ export default Ember.Controller.extend({
     window.MyNewApp.currentPath = this.get('currentPath');
   }.observes('currentPath'),
 
+  noPlayLink: function() {
+    return (this.get('currentPath') == 'broadcasts.broadcast.index');
+  }.property('currentPath'),
+
   actions: {
   	mute: function(){
       
@@ -34,7 +38,32 @@ export default Ember.Controller.extend({
   				this.set('muted', true);
   			}
   		}
-  	}
+    },
+
+    linkage: function(){
+        if(!this.get('noPlayLink')) {
+            this.transitionToRoute('index');
+        }
+    },
+
+    pause: function(){
+      this.get('controllers.broadcast').pauseCurrentMix();
+    },
+
+    play: function(){
+      this.get('controllers.broadcast').playCurrentMix();
+    },
+
+    doLink : function(){
+        var currentMix = this.get('controllers.broadcast').get('model')
+        if(currentMix != null){
+          // transition to currently playing mix
+          this.transitionToRoute('broadcast', this.get('controllers.broadcast').get('model'));
+        } else {
+          // get latest
+          this.transitionToRoute('');
+        }
+    },
   }
 
 });

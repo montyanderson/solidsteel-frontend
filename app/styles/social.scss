@@ -17,7 +17,7 @@
 
 #social svg {
 	vertical-align: bottom;
-	height: 11px;
+	height: 16px;
 	width: auto;
 }
 
@@ -25,5 +25,9 @@
 	#social {
 		bottom: 12px;
 		right: 12px;
+	}
+
+	#social svg {
+		height: 11px;
 	}
 }

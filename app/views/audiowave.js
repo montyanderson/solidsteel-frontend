@@ -23,10 +23,6 @@ export default Ember.View.extend({
     this.get('controller').send('waveHover', skipTo/100);
   },
 
-  mouseLeave: function(){
-    this.get('controller').send('stopWaveHover');
-  },
-
   tagName: 'canvas',
 
   attributeBindings: ['height'],
@@ -46,9 +42,23 @@ export default Ember.View.extend({
   	ele.height = 36;
 	var ctx = ele.getContext('2d');
   	ctx.fillStyle = 'rgb(255, 255, 255)';
+    ctx.strokeStyle = 'rgb(255, 255, 255)';
  	ctx.lineWidth = 2;
  	this.set('myCtx', ctx);
  	this.draw();
+  },
+
+  mouseEnter: function() {
+    var ctx = this.get('myCtx');
+    ctx.strokeStyle = 'rgb(100, 100, 100)';
+    ctx.fillStyle = 'rgb(100, 100, 100)';
+  },
+
+  mouseLeave: function() {
+    var ctx = this.get('myCtx');
+    this.get('controller').send('stopWaveHover');
+    ctx.fillStyle = 'rgb(255, 255, 255)';
+    ctx.strokeStyle = 'rgb(255, 255, 255)';
   },
 
   draw: function() {
@@ -69,14 +79,12 @@ export default Ember.View.extend({
 
 	if(units !== 0) {
 		// draw progress circle
-		ctx.fillStyle = 'rgb(255, 255, 255)';
 		ctx.beginPath();
 		ctx.arc(units, ctx.canvas.height-radius, radius, 0, Math.PI*2, true);
 		ctx.fill();
 
 		// draw progress line
 		ctx.beginPath();
-		ctx.strokeStyle = 'rgb(255, 255, 255)';
 	  	ctx.moveTo(0, ctx.canvas.height-radius);
 	  	ctx.lineTo(units, ctx.canvas.height-radius);
 	  	ctx.stroke();
@@ -87,7 +95,6 @@ export default Ember.View.extend({
   	//IF SCREEN IS LARGER THAN 600PX, DRAW FULL PLAYER
   	if(window.matchMedia("screen and (min-width: 600px)").matches) {
 	  	// draw progress bars
-	  	ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
 	  	for(var i = 1; i <= ctx.canvas.width; i += 6) {
 	  		ctx.beginPath();
 
@@ -147,7 +154,6 @@ export default Ember.View.extend({
 	} else {
 		// draw thin line
 		ctx.beginPath();
-		ctx.strokeStyle = 'rgb(255, 255, 255)';
 	  	ctx.moveTo(0, ctx.canvas.height-radius);
 	  	ctx.lineTo(ctx.canvas.width, ctx.canvas.height-radius);
 	  	ctx.stroke();

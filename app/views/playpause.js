@@ -8,13 +8,21 @@ export default Ember.View.extend({
 
   hover: false,
 
+  isPlaying: true,
+
   mouseEnter: function() { this.set('hover', true); },
   mouseLeave: function() { this.set('hover', false); },
 
-  click: function(){
-    // if track is playing, pause it
-
-    // if track it not playing, play it
+  actions : {
+    doToggle: function(){
+        if(window.MyNewApp.isPlaying) {
+            this.set('isPlaying', false);
+            this.get('controller').send('pause');
+        } else {
+            this.set('isPlaying', true);
+            this.get('controller').send('play');
+        }
+    }
   }
 
 });

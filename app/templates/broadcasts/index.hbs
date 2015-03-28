@@ -3,7 +3,7 @@
 
   <div id="players">
     <div id="timelineMixImageCell">
-        <img src="/assets/images/ss_120_x_120.gif" width="120" height="120" style="-webkit-clip-path: circle(59px);"/>
+        {{partial 'icons/logo'}}
     </div>
 
     <div id="timeline" {{bind-attr class="showingResults:disabled:enabled"}}>
@@ -62,6 +62,14 @@
 </div>
 
 <div id="broadcasts-by-month" {{bind-attr class=":sidepanel showingResults:enabled:disabled"}}>
+
+  {{#if hasHighlights}}
+    <p {{action 'viewFeatured'}}>
+      View {{#if getHighlights }}all{{else}}highlights{{/if}}
+    </p>
+  {{/if}}
+
+
   {{#each group in groupedContent}}
     <div class="month">
     <h2>{{group.group.key}}</h2>
@@ -70,4 +78,6 @@
     {{/each}}
     </div>
   {{/each}}
+
+ 
 </div>

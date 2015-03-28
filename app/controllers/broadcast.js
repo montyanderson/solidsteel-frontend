@@ -19,9 +19,20 @@ export default Ember.Controller.extend({
 
   mixImgPath: null,
 
+  playCurrentMix: function(){
+    window.MyNewApp.isPlaying = true;
+    window.MyNewApp.currentlyPlaying.play();
+  },
+
+  pauseCurrentMix: function(){
+    window.MyNewApp.isPlaying = false;
+    window.MyNewApp.currentlyPlaying.pause();
+  },
+
   stopCurrentMix: function(){
-    this.currentlyPlaying.stop();
-    this.currentlyPlaying.destruct();
+    window.MyNewApp.isPlaying = false;
+    window.MyNewApp.currentlyPlaying.stop();
+    window.MyNewApp.currentlyPlaying.destruct();
     this.currentlyPlaying = false;
     this.get('model.mixes').forEach(function(mix){
       mix.set('isCurrent', false);

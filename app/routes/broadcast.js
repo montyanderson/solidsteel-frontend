@@ -6,31 +6,30 @@ export default Ember.Route.extend({
     return this.store.find('broadcast', params.broadcast_id);
   },
 
-  actions: {
-    error: function (error) {
-      Ember.Logger.error(error);
-      this.transitionTo('/not-found');
-    }
-  },
+  // actions: {
+  //   error: function (error) {
+  //     Ember.Logger.error(error);
+  //     this.transitionTo('/not-found');
+  //   }
+  // },
 
   setupController: function(controller, model){
-
-    if(controller.get('currentlyPlaying')) {  
-      if(controller.get('currentlyPlaying') && controller.get('model') !== model) {
+    if(window.MyNewApp.currentlyPlaying) {
+      if(controller.get('model') !== model) {
         controller.stopCurrentMix();
       }
     }
 
-    if(!model.get('mixes').get('length')) {
-      model.reload().then(function(){
+    else {
+      if(!model.get('mixes').get('length')) {
+        model.reload().then(function(){
+          controller.set('model', model);
+          controller.setCurrentMix();
+        });
+      } else {
         controller.set('model', model);
         controller.setCurrentMix();
-      });
-    }
-    
-    else {
-      controller.set('model', model);
-      controller.setCurrentMix();
+      }
     }
   }
   

@@ -35,7 +35,7 @@ module.exports = function(environment) {
       'font-src': "'self' http://easy.myfonts.net",
       'connect-src': "'self' *",
       'style-src': "'self' 'unsafe-inline' http://cdn.myfonts.net",
-      'img-src': "'self' 'unsafe-inline' http://*:3001",
+      'img-src': "'self' 'unsafe-inline' *",
       'default-src': "'self' 'unsafe-inline' http://*"
     };
 
