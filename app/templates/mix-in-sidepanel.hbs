@@ -14,7 +14,22 @@
 			<p>{{ formatted-date model.broadcast_date 'DD-MM-YY' }}</p>
 			<p>{{model.session_name}}</p>
 		</div>
-		{{partial 'icons/add'}}
+		{{#if view.hasTracks}}
+			{{partial 'icons/minus'}}
+		{{else}}
+			{{partial 'icons/add'}}
+		{{/if}}
 	</div>
 
-	{{outlet}}
+	{{#if view.hasTracks}}
+		<div id="tracks-in-mix">
+		{{#each mix in model.mixes}}
+			<h2><b>Part {{mix.part}}</b> {{mix.name}}</h2>
+			{{#each track in mix.tracks}}
+		    	<p>{{two-figure-counter _view.contentIndex}} &nbsp;&nbsp; <b>{{ track.title }}</b> / {{ track.artist }} / {{ track.recordLabel }}</p>
+		  	{{else}}
+		    	<p>No tracklist available...</p>
+		  	{{/each}}
+		{{/each}}
+		</div>
+	{{/if}}

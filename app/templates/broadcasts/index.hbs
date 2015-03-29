@@ -52,23 +52,19 @@
       </div>
     </div>
   </div>
-
-  
-    {{#if showingResults}}
-    {{ view 'year-select'  }}
-    {{/if}}
-
+  {{#if showingResults}}
+  {{ view 'year-select'  }}
+  {{/if}}
   </div>
 </div>
 
 <div id="broadcasts-by-month" {{bind-attr class=":sidepanel showingResults:enabled:disabled"}}>
 
   {{#if hasHighlights}}
-    <p {{action 'viewFeatured'}}>
-      View {{#if getHighlights }}all{{else}}highlights{{/if}}
+    <p id="highlights" {{action 'viewFeatured'}}>
+      View {{#if getHighlights }}all{{else}}{{controller.year}} highlights{{/if}}
     </p>
   {{/if}}
-
 
   {{#each group in groupedContent}}
     <div class="month">
@@ -78,6 +74,12 @@
     {{/each}}
     </div>
   {{/each}}
-
- 
 </div>
+
+
+
+
+
+
+
+
