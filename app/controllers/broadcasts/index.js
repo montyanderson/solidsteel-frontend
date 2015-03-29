@@ -32,6 +32,17 @@ export default Ember.ArrayController.extend(Groupable, {
     return "woop";
   }.property('rootpath'),
 
+  highlights: null,
+
+  findImageForYear: function(){
+    console.log(this.filterBy('highlight', true)[0]);
+    return this.filterBy('highlight', true)[0];
+    // return this.find(function(item, index, enumerable){
+    //   console.log(item.get('highlight') && moment.utc(item.get('broadcast_date')).year() == '2015');
+    //   return  item.get('highlight') && moment.utc(item.get('broadcast_date')).year() == '2015';
+    // })
+  }.property('content.@each'),
+
   actions: {
     viewFeatured: function() {
       if(this.get('getHighlights')) {

@@ -27,7 +27,7 @@ export default Ember.View.extend({
 
   attributeBindings: ['height'],
 
-  height: "36px",
+  height: "72px",
 
   click: function(e) {
   	// skip to place in track
@@ -39,14 +39,15 @@ export default Ember.View.extend({
   	this._super();
   	var ele = this.get('element');
   	ele.width = Ember.$(ele).parent().width();
-  	ele.height = 36;
-	var ctx = ele.getContext('2d');
+  	ele.height = 72;
+	  var ctx = ele.getContext('2d');
   	ctx.fillStyle = 'rgb(255, 255, 255)';
     ctx.strokeStyle = 'rgb(255, 255, 255)';
- 	ctx.lineWidth = 2;
- 	this.set('myCtx', ctx);
- 	this.draw();
-  },
+   	ctx.lineWidth = 2;
+   	this.set('myCtx', ctx);
+    this.set('isOverSixHundred', window.matchMedia("screen and (min-width: 600px)").matches);
+   	this.draw();
+    },
 
   mouseEnter: function() {
     var ctx = this.get('myCtx');
@@ -62,124 +63,87 @@ export default Ember.View.extend({
   },
 
   draw: function() {
+
+    if(!this.get('myCtx')) {
+      return;
+    } 
+
+    var ctx = this.get('myCtx');
+    var w = ctx.canvas.width;
+    var h = ctx.canvas.height;
+    // caluclate track play-progress to draw line
+    var unit = w / this.get('controller.model.duration');
+    var units = this.get('controller.model.progress') * unit;
+    var radius = 4;
+    var bottomOfEqualizer = h*0.9;
+    var maxBarHeight = bottomOfEqualizer-h*0.3;
+    var variant;
+    var barPoint;
+    var counter = 0;
+    var spacer = 5; // how many pixels between audio lines
+    var wave = w*0.1; // distance around playhead to show audio wave bopping 0.1 = a tenth of the canvas width
+    var increase = (Math.PI / ((wave*2)/spacer)); // if you change this you also need to change ui <= 30 && ui >= -30 and for(var i = 1; i <= w; i += 3) {
+    var barHeightAdjuster = 0;
+
+    if(!this.get('isOverSixHundred')) {
+      // draw thin line
+      ctx.beginPath();
+      ctx.moveTo(0, h-radius);
+      ctx.lineTo(w, h-radius);
+      ctx.stroke();
+      return false;
+    }
+
   	// wipe canvas ready for next frame
     this._empty();
-
-
- 	if(!this.get('myCtx')) {
- 	  return;
- 	} 
- 	
-    var ctx = this.get('myCtx');
-
- 	// caluclate track play-progress to draw line
- 	var unit = ctx.canvas.width / this.get('controller.model.duration');
- 	var units = this.get('controller.model.progress') * unit;
-	var radius = 4;
-
-	if(units !== 0) {
-		// draw progress circle
-		ctx.beginPath();
-		ctx.arc(units, ctx.canvas.height-radius, radius, 0, Math.PI*2, true);
-		ctx.fill();
-
-		// draw progress line
-		ctx.beginPath();
-	  	ctx.moveTo(0, ctx.canvas.height-radius);
-	  	ctx.lineTo(units, ctx.canvas.height-radius);
-	  	ctx.stroke();
-	}
-
-  	var barHeightAdjuster = 0;
-
-  	//IF SCREEN IS LARGER THAN 600PX, DRAW FULL PLAYER
-  	if(window.matchMedia("screen and (min-width: 600px)").matches) {
-	  	// draw progress bars
-
-        var counter = 0;
-        var increase = (Math.PI / (ctx.canvas.width/6)*8);
-        //var canvashalf = (ctx.canvas.height/2);
-        var barHeightAdjuster = 0;
-
-        // for each bopping line (6 px apart)
-	  	for(var i = 1; i <= ctx.canvas.width; i += 6) {
-	  		ctx.beginPath();
-
-            // the nearer we get to the playhead,
-            // the taller the line is and
-            // the more the line bops
-	  		if(units !== 0) {
-		  		var ui = units - i;
-		  				 
-                // only bop around the playhead
-                if (ui <= 30 && ui > -30) {
-                    barHeightAdjuster = Math.sin(counter);
-                    counter += increase;
-                } else {
-                    barHeightAdjuster = 0.3;
-                }
-                
-
-                
-		  		// if(ui > 0) {
-			  	// 	// if line is 18px behind playhead, add 2px
-			  	// 	if(ui < 3) {
-			  	// 		barHeightAdjuster = ctx.canvas.height*0.35;
-			  	// 	}
-
-			  	// 	else if(ui < 9) {
-			  	// 		barHeightAdjuster = ctx.canvas.height*0.20;
-			  	// 	}
-
-			  	// 	// if line is 18px behind playhead, add 2px
-			  	// 	else if(ui < 15) {
-			  	// 		barHeightAdjuster = ctx.canvas.height*0.10;
-			  	// 	}
-
-			  	// 	// if line is 18px behind playhead, add 2px
-			  	// 	else if(ui <= 21) {
-			  	// 		barHeightAdjuster = ctx.canvas.height*0.05;
-			  	// 	}
-			  	// }
-
-			  	// else {
-			  	// 	// if line is 18px behind playhead, add 2px
-			  	// 	if(ui > -3) {
-			  	// 		barHeightAdjuster = ctx.canvas.height*0.35;
-			  	// 	}
-
-			  	// 	// if line is 18px behind playhead, add 2px
-			  	// 	else if(ui > -9) {
-			  	// 		barHeightAdjuster = ctx.canvas.height*0.20;
-			  	// 	}
-
-			  	// 	// if line is 18px behind playhead, add 2px
-			  	// 	else if(ui > -15) {
-			  	// 		barHeightAdjuster = ctx.canvas.height*0.10;
-			  	// 	}
-
-			  	// 	// if line is 18px behind playhead, add 2px
-			  	// 	else if(ui > -21) {
-			  	// 		barHeightAdjuster = ctx.canvas.height*0.05;
-			  	// 	}
-
-			  	// }
-			}
-
-            // y runs from top to bottom, so 0 is at the top, canvas.height is at the bottom
-	  		ctx.moveTo(i, ctx.canvas.height-radius);
-			ctx.lineTo(i, (ctx.canvas.height-radius)-(barHeightAdjuster*(ctx.canvas.height-(radius*2)) - (barHeightAdjuster*(Math.random()*radius) )));
-			ctx.stroke();
-		}
-	} else {
-		// draw thin line
-		ctx.beginPath();
-	  	ctx.moveTo(0, ctx.canvas.height-radius);
-	  	ctx.lineTo(ctx.canvas.width, ctx.canvas.height-radius);
-	  	ctx.stroke();
-	}
  
-  }.observes('controller.model.progress'),
+  	if(units !== 0) {
+  		// draw progress circle
+  		ctx.beginPath();
+  		ctx.arc(units, bottomOfEqualizer, radius, 0, Math.PI*2, true);
+  		ctx.fill();
+
+  		// draw progress line
+  		ctx.beginPath();
+  	  ctx.moveTo(0, bottomOfEqualizer);
+  	  ctx.lineTo(units, bottomOfEqualizer);
+  	  ctx.stroke();
+  	}
+
+    // for each bopping line (6 px apart)
+	  for(var i = 1; i <= w; i += spacer) {
+  		ctx.beginPath();
+
+      // the nearer we get to the playhead, the taller the line is and the more the line bops
+  		if(units !== 0) {
+        // ui     = distance from playhead
+        // i      = current bar we're drawing
+        // units  = playhead
+    		var ui = units - i;
+
+        // only bop around the playhead i.e. if we're drawing a bar within 30px of the current track progress, bop around
+        if (ui <= wave && ui >= -wave) {
+              barHeightAdjuster = Math.sin(counter);
+              counter += increase;
+        } else {
+            barHeightAdjuster = 0.3;
+        }
+      }
+
+      variant = barHeightAdjuster*(Math.random()*radius);
+      barPoint = bottomOfEqualizer-(barHeightAdjuster*maxBarHeight);
+
+      if(barHeightAdjuster <= 0.3) {
+        barHeightAdjuster = 0.3;
+        barPoint = bottomOfEqualizer-(barHeightAdjuster*maxBarHeight);
+      } else {
+        barPoint = bottomOfEqualizer-(barHeightAdjuster*maxBarHeight) - variant;
+      }
+  	  ctx.moveTo(i, bottomOfEqualizer);
+  		ctx.lineTo(i, barPoint);
+  		ctx.stroke();
+	  }
+	}.observes('controller.model.progress'),
 
   _empty: function(){
   	if(!this.get('myCtx')) {

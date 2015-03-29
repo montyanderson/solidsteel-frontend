@@ -1,7 +1,5 @@
-<div {{action 'gotoyear' view.year target=view}}>
-    {{#if view.prelink}}
-    <span class="hideWhenSmall">{{view.prelink}}</span>
-    {{/if}}
-    {{view.link}}
-<div class="yearImage"></div>
+<div {{action 'gotoyear' view.year target=view}}>{{#if view.prelink}}<span class="hideWhenSmall">{{view.prelink}}</span>{{/if}}{{view.link}}
+{{#if view.yearHasHighlight}}
+    <div class="yearImage"></div>
+{{/if}}
 </div>

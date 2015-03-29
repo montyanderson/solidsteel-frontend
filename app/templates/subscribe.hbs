@@ -5,8 +5,21 @@
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat.
 
+        {{#if subscribeFailed}}
+        <div class="alert">problem subscribing...</div>
+        {{/if}}
+
+        {{#if isProcessing}}
+        <div class="alert">provoessing...........</div>
+        {{/if}}
+
+        {{#if isSuccess}}
+        <div class="alert">YESSS SUCCESS</div>
+        {{/if}}
+
         <div {{bind-attr class="submitting"}}>
-            {{input type="text" placeholder="Email address" value=search action="subscribe"}}
+            {{input type="text" placeholder="Email address" value=email action="subscribe" bindAttr="disabled:isProcessing" focus-in="focus"}}
+            <span></span>
         </div>
     </div>
     <div id="linksout">

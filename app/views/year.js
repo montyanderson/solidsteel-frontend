@@ -8,6 +8,10 @@ export default Ember.View.extend({
 
   tagName: 'div',
 
+  yearHasHighlight: function(){
+    return this.get('controller').findImageForYear;
+  }.property('yearHasHighlight'),
+
   actions: {
 
     gotoyear: function(y){

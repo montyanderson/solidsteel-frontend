@@ -15,7 +15,7 @@ export default Ember.Route.extend(ResetScroll, {
       return this.store.find('broadcast', {year: params.year || "null"});
     } else {
       // return years and year pics?
-      
+      return this.store.find('broadcast', {highlights: 'true'});
     }
   },
 

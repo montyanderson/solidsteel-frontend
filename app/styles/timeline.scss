@@ -28,8 +28,12 @@
 
 }
 
+.year span {
+	font-family: 'Decima Mono X';
+}
+
 .year:hover .yearImage {
-	-webkit-clip-path: circle(40px);
+	-webkit-clip-path: circle(39px);
 	-webkit-transition: -webkit-clip-path 0.26s ease-out;
 }
 
