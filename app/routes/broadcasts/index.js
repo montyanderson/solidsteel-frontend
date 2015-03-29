@@ -13,6 +13,9 @@ export default Ember.Route.extend(ResetScroll, {
     if(params.year && params.year !== undefined) {
       this.year = params.year;
       return this.store.find('broadcast', {year: params.year || "null"});
+    } else {
+      // return years and year pics?
+      
     }
   },
 

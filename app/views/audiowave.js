@@ -95,60 +95,80 @@ export default Ember.View.extend({
   	//IF SCREEN IS LARGER THAN 600PX, DRAW FULL PLAYER
   	if(window.matchMedia("screen and (min-width: 600px)").matches) {
 	  	// draw progress bars
+
+        var counter = 0;
+        var increase = (Math.PI / (ctx.canvas.width/6)*8);
+        //var canvashalf = (ctx.canvas.height/2);
+        var barHeightAdjuster = 0;
+
+        // for each bopping line (6 px apart)
 	  	for(var i = 1; i <= ctx.canvas.width; i += 6) {
 	  		ctx.beginPath();
 
+            // the nearer we get to the playhead,
+            // the taller the line is and
+            // the more the line bops
 	  		if(units !== 0) {
 		  		var ui = units - i;
-		  		barHeightAdjuster = 0;
-		  		
-		  		if(ui > 0) {
-			  		// if line is 18px behind playhead, add 2px
-			  		if(ui < 3) {
-			  			barHeightAdjuster = ctx.canvas.height*0.35;
-			  		}
+		  				 
+                // only bop around the playhead
+                if (ui <= 30 && ui > -30) {
+                    barHeightAdjuster = Math.sin(counter);
+                    counter += increase;
+                } else {
+                    barHeightAdjuster = 0.3;
+                }
+                
 
-			  		else if(ui < 9) {
-			  			barHeightAdjuster = ctx.canvas.height*0.20;
-			  		}
+                
+		  		// if(ui > 0) {
+			  	// 	// if line is 18px behind playhead, add 2px
+			  	// 	if(ui < 3) {
+			  	// 		barHeightAdjuster = ctx.canvas.height*0.35;
+			  	// 	}
 
-			  		// if line is 18px behind playhead, add 2px
-			  		else if(ui < 15) {
-			  			barHeightAdjuster = ctx.canvas.height*0.10;
-			  		}
+			  	// 	else if(ui < 9) {
+			  	// 		barHeightAdjuster = ctx.canvas.height*0.20;
+			  	// 	}
 
-			  		// if line is 18px behind playhead, add 2px
-			  		else if(ui <= 21) {
-			  			barHeightAdjuster = ctx.canvas.height*0.05;
-			  		}
-			  	}
+			  	// 	// if line is 18px behind playhead, add 2px
+			  	// 	else if(ui < 15) {
+			  	// 		barHeightAdjuster = ctx.canvas.height*0.10;
+			  	// 	}
 
-			  	else {
-			  		// if line is 18px behind playhead, add 2px
-			  		if(ui > -3) {
-			  			barHeightAdjuster = ctx.canvas.height*0.35;
-			  		}
+			  	// 	// if line is 18px behind playhead, add 2px
+			  	// 	else if(ui <= 21) {
+			  	// 		barHeightAdjuster = ctx.canvas.height*0.05;
+			  	// 	}
+			  	// }
 
-			  		// if line is 18px behind playhead, add 2px
-			  		else if(ui > -9) {
-			  			barHeightAdjuster = ctx.canvas.height*0.20;
-			  		}
+			  	// else {
+			  	// 	// if line is 18px behind playhead, add 2px
+			  	// 	if(ui > -3) {
+			  	// 		barHeightAdjuster = ctx.canvas.height*0.35;
+			  	// 	}
 
-			  		// if line is 18px behind playhead, add 2px
-			  		else if(ui > -15) {
-			  			barHeightAdjuster = ctx.canvas.height*0.10;
-			  		}
+			  	// 	// if line is 18px behind playhead, add 2px
+			  	// 	else if(ui > -9) {
+			  	// 		barHeightAdjuster = ctx.canvas.height*0.20;
+			  	// 	}
 
-			  		// if line is 18px behind playhead, add 2px
-			  		else if(ui > -21) {
-			  			barHeightAdjuster = ctx.canvas.height*0.05;
-			  		}
+			  	// 	// if line is 18px behind playhead, add 2px
+			  	// 	else if(ui > -15) {
+			  	// 		barHeightAdjuster = ctx.canvas.height*0.10;
+			  	// 	}
 
-			  	}
+			  	// 	// if line is 18px behind playhead, add 2px
+			  	// 	else if(ui > -21) {
+			  	// 		barHeightAdjuster = ctx.canvas.height*0.05;
+			  	// 	}
+
+			  	// }
 			}
 
-	  		ctx.moveTo(i, (ctx.canvas.height*0.35) - barHeightAdjuster);
-			ctx.lineTo(i, ctx.canvas.height-radius);
+            // y runs from top to bottom, so 0 is at the top, canvas.height is at the bottom
+	  		ctx.moveTo(i, ctx.canvas.height-radius);
+			ctx.lineTo(i, (ctx.canvas.height-radius)-(barHeightAdjuster*(ctx.canvas.height-(radius*2)) - (barHeightAdjuster*(Math.random()*radius) )));
 			ctx.stroke();
 		}
 	} else {
