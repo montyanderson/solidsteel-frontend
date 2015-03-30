@@ -10,8 +10,6 @@ export default Ember.Controller.extend({
   plusMinus: "+",
 
   currentPart: null,
-
-  isPlaying: true,
   
   mixStyle: function(){
     return ENV.APP.API_HOST + this.get('mixImgPath');
@@ -30,10 +28,10 @@ export default Ember.Controller.extend({
   },
 
   stopCurrentMix: function(){
+    window.MyNewApp.mixPlaying = false;
     window.MyNewApp.isPlaying = false;
     window.MyNewApp.currentlyPlaying.stop();
     window.MyNewApp.currentlyPlaying.destruct();
-    this.currentlyPlaying = false;
     this.get('model.mixes').forEach(function(mix){
       mix.set('isCurrent', false);
       mix.set('progress', 0);
@@ -41,12 +39,13 @@ export default Ember.Controller.extend({
   },
 
   nextMix: function(){
+    // cancel everything playing now, so a new stream can start
+    this.stopCurrentMix();
     this.currentPart++;
     this.setCurrentMix(this.currentPart);
   },
 
   setCurrentMix: function(mixNumber){
-
     // increment current mix, or play the first one if none specified
     if (mixNumber !== undefined) {
       this.stopCurrentMix();

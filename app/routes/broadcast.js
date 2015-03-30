@@ -14,22 +14,19 @@ export default Ember.Route.extend({
   // },
 
   setupController: function(controller, model){
-    if(window.MyNewApp.currentlyPlaying) {
-      if(controller.get('model') !== model) {
-        controller.stopCurrentMix();
-      }
+
+    if(window.MyNewApp.mixPlaying) {
+      return false;
     }
 
-    else {
-      if(!model.get('mixes').get('length')) {
-        model.reload().then(function(){
-          controller.set('model', model);
-          controller.setCurrentMix();
-        });
-      } else {
+    if(!model.get('mixes').get('length')) {
+      model.reload().then(function(){
         controller.set('model', model);
         controller.setCurrentMix();
-      }
+      });
+    } else {
+      controller.set('model', model);
+      controller.setCurrentMix();
     }
   }
   

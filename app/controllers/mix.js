@@ -8,50 +8,46 @@ export default Ember.Controller.extend({
 
   play: function(){
     
-    var self = this;
+    if(window.MyNewApp.mixPlaying){
+      return false;
+    }
 
-    // play this mix's soundcloud audio
+    var self = this;
+    var selfmodel = this.get('model');
+    
     if(this.get('model.isCurrent')) {
 
-      // check we're not already playing this model...
-      // only stream a track if we're not already playing it
-      if(!
-        (
-           window.MyNewApp.currentlyPlaying && 
-           this.get('controllers.broadcast.model.id') === this.get('model.broadcast.id')
-        )
-        ){
-          SC.whenStreamingReady(function() {
-            SC.stream("/tracks/"+self.get('model.soundcloudId'), {
-              useHTML5Audio: true,
-              preferFlash: false
-            }, function(sound){
-              
-              // store ref to soundcloud on model
-              window.MyNewApp.currentlyPlaying = sound;
-              window.MyNewApp.isPlaying = true;
-              
-              sound.setVolume(0)
+      SC.whenStreamingReady(function() {
+        SC.stream("/tracks/"+self.get('model.soundcloudId'), {
+          useHTML5Audio: true,
+          preferFlash: false
+        }, function(sound){
+          
+          // store ref to soundcloud on model
+          window.MyNewApp.currentlyPlaying = sound;
+          window.MyNewApp.isPlaying = true;
+          window.MyNewApp.mixPlaying = true;
 
-              window.MyNewApp.currentlyPlaying.play({
-                whileplaying: function() {
-                  // update playhead position
-                  self.set('model.progress', sound.position);
-                },
+          window.MyNewApp.currentlyPlaying.play({
+            whileplaying: function() {
+              // using self.set('model.progress') worked initially
+              // but after transitioning to another rout the reference
+              // to the model seemed to get lost. so i'm explicitly
+              // referencing the model in the callback here
+              selfmodel.set('progress', sound.position);
+            },
 
-                whileloading: function() {
-                  // update duration display
-                  self.set('model.duration', sound.durationEstimate);
-                },
+            whileloading: function() {
+              self.set('model.duration', sound.durationEstimate);
+            },
 
-                onfinish: function(){
-                  self.get('controllers.broadcast').nextMix();
-                }
+            onfinish: function(){
+              self.get('controllers.broadcast').nextMix();
+            }
 
-              });
-            });
           });
-        }
+        });
+      });
 
       // set background image for this mix, if there one...
       if(this.get('model.background_image')) {

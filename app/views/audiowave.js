@@ -75,8 +75,8 @@ export default Ember.View.extend({
     var unit = w / this.get('controller.model.duration');
     var units = this.get('controller.model.progress') * unit;
     var radius = 4;
-    var bottomOfEqualizer = h*0.9;
-    var maxBarHeight = bottomOfEqualizer-h*0.3;
+    var bottomOfEqualizer = h-radius;
+    var maxBarHeight = bottomOfEqualizer-h*0.4;
     var variant;
     var barPoint;
     var counter = 0;
@@ -126,15 +126,15 @@ export default Ember.View.extend({
               barHeightAdjuster = Math.sin(counter);
               counter += increase;
         } else {
-            barHeightAdjuster = 0.3;
+            barHeightAdjuster = 0.5;
         }
       }
 
-      variant = barHeightAdjuster*(Math.random()*radius);
+      variant = barHeightAdjuster*(Math.random()*(radius*2));
       barPoint = bottomOfEqualizer-(barHeightAdjuster*maxBarHeight);
 
-      if(barHeightAdjuster <= 0.3) {
-        barHeightAdjuster = 0.3;
+      if(barHeightAdjuster <= 0.5) {
+        barHeightAdjuster = 0.5;
         barPoint = bottomOfEqualizer-(barHeightAdjuster*maxBarHeight);
       } else {
         barPoint = bottomOfEqualizer-(barHeightAdjuster*maxBarHeight) - variant;

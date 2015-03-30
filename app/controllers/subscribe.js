@@ -32,10 +32,8 @@ export default Ember.Controller.extend({
 
   success: function(resp) {
     if(resp.result == "error") {
-        console.log('problems');
         this.failure();
     } else {
-        console.log('success');
         this.set('isSuccess', true);
     }
     this.set('isProcessing', false);

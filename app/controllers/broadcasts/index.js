@@ -35,7 +35,6 @@ export default Ember.ArrayController.extend(Groupable, {
   highlights: null,
 
   findImageForYear: function(){
-    console.log(this.filterBy('highlight', true)[0]);
     return this.filterBy('highlight', true)[0];
     // return this.find(function(item, index, enumerable){
     //   console.log(item.get('highlight') && moment.utc(item.get('broadcast_date')).year() == '2015');
