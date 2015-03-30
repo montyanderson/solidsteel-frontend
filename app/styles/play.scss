@@ -4,6 +4,16 @@
 	top: 32px;
 	font-size: 14px;
 	line-height: 16px;
+	font-size: $generalScreenText
+}
+
+#playDetails p:nth-child(2){
+	font-family: $mono;
+	line-height: 20px;
+}
+
+#playDetails p:nth-child(3){
+	font-family: $reg;
 }
 
 #players {
@@ -24,6 +34,10 @@
 
 .player p {
 	margin: 0;
+}
+
+.player p:first-child {
+	font-family: $mono;
 }
 
 .player p:nth-child(3) {

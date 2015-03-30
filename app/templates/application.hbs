@@ -8,7 +8,7 @@
 	</span>
 
 	<span>
-	{{#link-to "broadcasts"}}
+	{{#link-to "broadcasts" (query-params year="null")}}
 		{{partial 'icons/timeline'}}
 	{{/link-to}}
 	</span>
@@ -27,10 +27,10 @@
 
 <nav id="featured">
 {{#link-to "top50"}}
-	<p id="feat-link">Featured mixes</p>
+	<p id="feat-link">FEATURED MIXES</p>
 {{/link-to}}
 {{#link-to "subscribe"}}
-	<p id="sub-link">Subscribe</p>
+	<p id="sub-link">SUBSCRIBE</p>
 {{/link-to}}
 </nav>
 

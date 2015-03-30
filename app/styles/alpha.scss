@@ -1,13 +1,14 @@
 #az {
   position: relative;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   color: #333;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
   padding: 128px 176px;
+  overflow: hidden;
 }
 
 .about p {
@@ -33,16 +34,14 @@
         top: 88px;
         right: 0;
         bottom: 0;
-        background: -webkit-linear-gradient(left, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.7) 51%,rgba(255,255,255,1) 93%,rgba(255,255,255,1) 100%);
         width: 176px;
-        cursor: e-resize;
+        cursor: pointer;
     }
 
     .backscroller {
         left: 0;
         right: auto;
-        cursor: w-resize;
-        background: -webkit-linear-gradient(right, rgba(255,255,255,0.1) 0%,rgba(255,255,255,0.7) 51%,rgba(255,255,255,1) 93%,rgba(255,255,255,1) 100%);
+        cursor: pointer;
     }
 }
 
@@ -91,7 +90,7 @@
   line-height: 80px;
 }
 
-.subscribe {
+.subscribeBlock {
   width: 480px;
   line-height: 24px;
 }
@@ -143,7 +142,8 @@
 .subscribe input[type="text"] {
   border-bottom: 2px solid #333;
   font-size: 16px;
-  margin-top: 64px;
+  margin-top: 36px;
+  margin-bottom: 36px;
   color: #333 !important;
   fill: currentColor;
   background: none;

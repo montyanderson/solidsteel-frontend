@@ -41,8 +41,8 @@ export default Ember.View.extend({
   	ele.width = Ember.$(ele).parent().width();
   	ele.height = 72;
 	  var ctx = ele.getContext('2d');
-  	ctx.fillStyle = 'rgb(255, 255, 255)';
-    ctx.strokeStyle = 'rgb(255, 255, 255)';
+  	ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
    	ctx.lineWidth = 2;
    	this.set('myCtx', ctx);
     this.set('isOverSixHundred', window.matchMedia("screen and (min-width: 600px)").matches);
@@ -50,17 +50,27 @@ export default Ember.View.extend({
     },
 
   mouseEnter: function() {
-    var ctx = this.get('myCtx');
-    ctx.strokeStyle = 'rgb(100, 100, 100)';
-    ctx.fillStyle = 'rgb(100, 100, 100)';
+    // var ctx = this.get('myCtx');
+    // ctx.strokeStyle = 'rgb(100, 100, 100, 0.5)';
+    // ctx.fillStyle = 'rgb(100, 100, 100, 0.5';
   },
 
   mouseLeave: function() {
-    var ctx = this.get('myCtx');
-    this.get('controller').send('stopWaveHover');
-    ctx.fillStyle = 'rgb(255, 255, 255)';
-    ctx.strokeStyle = 'rgb(255, 255, 255)';
+    // var ctx = this.get('myCtx');
+    // this.get('controller').send('stopWaveHover');
+    // ctx.fillStyle = 'rgb(255, 255, 255, 0.7)';
+    // ctx.strokeStyle = 'rgb(255, 255, 255, 0.7)';
   },
+
+  complete: function(){
+    if(!this.get('myCtx')) {
+      return;
+    }
+    this.get('myCtx').beginPath();
+    this.get('myCtx').moveTo(0, this.get('myCtx').canvas.height-4);
+    this.get('myCtx').lineTo(this.get('myCtx').canvas.width, this.get('myCtx').canvas.height-4);
+    this.get('myCtx').stroke();
+  }.observes('controller.model.complete'),
 
   draw: function() {
 

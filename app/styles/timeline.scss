@@ -25,11 +25,11 @@
 .yearImage {
 	-webkit-clip-path: circle(0);
 	-webkit-transition: -webkit-clip-path 0.5s ease-out;
-
 }
 
+.year div,
 .year span {
-	font-family: 'Decima Mono X';
+	font-family: 'DecimaMonoX';
 }
 
 .year:hover .yearImage {
@@ -42,7 +42,7 @@
 	top:24px;
 	right:32px;
 	text-decoration: underline;
-	font-family: 'Decima Pro';
+	font-family: 'DecimaPro';
 }
 
 @media (min-width: 601px) {
@@ -88,6 +88,29 @@
 	    background-size: cover;
 	    z-index: 10;
 	}
+
+	.decade:nth-of-type(n+2) .yearImage {
+		left: 25%;
+	}
+
+	.year:last-child .yearImage {
+	    left: -40px;
+	}
+
+	.year:first-child .yearImage {
+	    right: -40px;
+	    left: auto;
+	}
+
+	.decade:nth-of-type(4) .year:last-child .yearImage  {
+		left: -40px;
+	}
+
+	.decade:nth-of-type(4) .year:first-child .yearImage  {
+		right: -40px;
+		left: auto;
+	}
+
 }
 
 .current-decade {
@@ -107,7 +130,7 @@
 	text-align: center;
 	border-bottom: 2px solid #fff;
 	font-size: 16px;
-	font-family: 'Decima Mono X';
+	font-family: 'DecimaMonoX';
 	position: relative;
 	line-height: 36px;
 }
@@ -166,7 +189,7 @@
 		text-align: right !important;
 		padding-right: 12px;
 		position: relative;
-		font-family: 'Decima Mono X';
+		font-family: 'DecimaMonoX';
 		line-height: 18px;
 	}
 

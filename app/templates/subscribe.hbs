@@ -1,28 +1,29 @@
 <div id="az">
-    <div class="subscribe">
+    <div class="subscribeBlock">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat.
 
-        {{#if subscribeFailed}}
-        <div class="alert">problem subscribing...</div>
-        {{/if}}
-
-        {{#if isProcessing}}
-        <div class="alert">provoessing...........</div>
-        {{/if}}
-
-        {{#if isSuccess}}
-        <div class="alert">YESSS SUCCESS</div>
-        {{/if}}
-
         <div {{bind-attr class="submitting"}}>
             {{input type="text" placeholder="Email address" value=email action="subscribe" bindAttr="disabled:isProcessing" focus-in="focus"}}
             <span></span>
         </div>
+
+        {{#if subscribeFailed}}
+        <div class="alert">Oops! There was a problem subscribing. Please try again.</div>
+        {{/if}}
+
+        {{#if isProcessing}}
+        <div class="alert">Processing.....</div>
+        {{/if}}
+
+        {{#if isSuccess}}
+        <div class="alert">Subscribed! Please check your email.</div>
+        {{/if}}
+
     </div>
     <div id="linksout">
-        <p><a href="#">FACEBOOK</a> - <a href="#">TWITTER</a> - <a href="#">VIMEO</a> - <a href="#">ITUNES</a></p>
+        <p><a target="_blank" href="https://www.facebook.com/pages/Solid-Steel/175027509192663">FACEBOOK</a> - <a  target="_blank" href="https://twitter.com/SolidSteelRadio">TWITTER</a> - <a  target="_blank" href="http://vimeo.com/solidsteel">VIMEO</a> - <a  target="_blank" href="https://itunes.apple.com/podcast/solid-steel/id88395834">ITUNES</a></p>
     </div>
 </div>

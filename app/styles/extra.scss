@@ -9,6 +9,7 @@
 #extra svg {
 	width: 32px;
 	height: 32px;
+	vertical-align: bottom;
 }
 
 #featured,
@@ -34,12 +35,11 @@
 }
 
 #featured p {
-	font-size: 18px;
+	font-size: $generalScreenText;
 	letter-spacing: 1px;
 	border-bottom: 2px solid rgba(255, 255, 255, 0.7);
 	margin: 0;
-	line-height: 32px;
-	text-transform: uppercase;
+	line-height: $generalScreenText;
 }
 
 #featured a:hover {

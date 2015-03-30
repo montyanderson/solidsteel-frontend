@@ -33,12 +33,16 @@ export default Ember.Controller.extend({
     }
     window.MyNewApp.mixPlaying = false;
     window.MyNewApp.isPlaying = false;
-    window.MyNewApp.currentlyPlaying.stop();
-    window.MyNewApp.currentlyPlaying.destruct();
-    this.get('model.mixes').forEach(function(mix){
-      mix.set('isCurrent', false);
-      mix.set('progress', 0);
-    });
+    if(window.MyNewApp.currentlyPlaying) {
+      window.MyNewApp.currentlyPlaying.stop();
+      window.MyNewApp.currentlyPlaying.destruct();
+    }
+    if(this.get('model.mixes')) {
+      this.get('model.mixes').forEach(function(mix){
+        mix.set('isCurrent', false);
+        mix.set('progress', 0);
+      });   
+    }
   },
 
   nextMix: function(){
@@ -52,6 +56,11 @@ export default Ember.Controller.extend({
     // increment current mix, or play the first one if none specified
     if (mixNumber !== undefined) {
       this.stopCurrentMix();
+
+      if(this.currentPart < this.get('model.mixes').get('length')-1) {
+        this.get('model.mixes').objectAt(this.currentPart).set('complete', true);
+      }   
+
       this.currentPart = mixNumber;
     } else {
       if (this.currentPart === null) {

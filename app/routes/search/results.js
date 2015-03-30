@@ -16,6 +16,12 @@ export default Ember.Route.extend({
   setupController: function(controller, model) {
   		controller.set('model', model);
       controller.set('keyword', this.keyword);
+  },
+
+  actions: {
+    willTransition: function(){
+      this.controllerFor('search').set('showingResults', false);
     }
+  }
 
 });
