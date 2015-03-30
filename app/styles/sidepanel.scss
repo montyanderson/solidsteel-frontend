@@ -64,37 +64,7 @@
 		bottom: 4px;
 		padding: 4px 0 0 0;
 	}
-}
 
-#tracks-in-mix div:nth-of-type(1) {
-	padding: 0;
-	background: #f1f1f1;
-
-
-	p {
-		border: 0;
-		font-size: 16px;
-		text-indent: 0;
-		margin: 0;
-		padding: 0;
-	}	
-}
-
-.broadcast-image {
-	margin: 7px 0 0 32px;
-}
-
-#tracks-in-mix div:nth-of-type(3) {
-	padding-top: 8px;
-}
-
-#tracks-in-mix p,
-#tracks-in-mix h2 {
-	border-bottom: 1px solid #ddd;
-	padding: 12px 0;
-}
-
-@media (max-width: 600px) {
 	#tracks-in-mix p,
 	#tracks-in-mix h2 {
 		border-bottom: 1px solid #ddd;
@@ -102,10 +72,6 @@
 		text-indent: -23px;
 		padding-left: 23px;
 	}
-}
-
-#tracks-in-mix .tabs p {
-	padding: 16px 0 16px 32px;
 }
 
 @media (max-width: 600px) {
@@ -116,25 +82,34 @@
 	}
 }
 
-#tracks-in-mix h2 {
-	clear: left;
-}
-
 #search-results.sidepanel>div {
-	margin-bottom: 24px;
 	width: auto;
-	padding: 0 32px;
+	padding: 0 $generalScreenSidePadding;
 }
 
 .month>div {
 	cursor: pointer;
 }
 
-.month>div,
-#search-results h2 {
+.month>div {
 	padding: 0;
 	padding-left: 24px;
 	padding-right: 24px;
+}
+
+#search-results h2,
+#search-results h3 {
+	padding: 0;
+	margin-left: $generalScreenSidePadding;
+	margin-right: $generalScreenSidePadding;
+	font-family: 'Decima Pro';
+	font-size: 32px;
+	margin-bottom: 0;
+}
+
+#search-results h3 {
+	font-size: 30px;
+	color: $subHeadGrey;
 }
 
 #broadcasts-by-month h2 {
@@ -250,7 +225,7 @@
 }
 
 .mix-in-sidepanel div:nth-of-type(2) {
-	margin-left: 24px;
+	margin-left: $generalScreenSidePadding;
 	margin-top: 16px;
 }
 
@@ -289,8 +264,47 @@
 	padding-right: 0;
 }
 
+#tracks-in-mix div:nth-of-type(1) {
+	padding: 0;
+	background: #f1f1f1;
+
+
+	p {
+		border: 0;
+		font-size: 16px;
+		text-indent: 0;
+		margin: 0;
+		padding: 0;
+	}	
+}
+
+.broadcast-image {
+	margin: 7px 0 0 32px;
+}
+
+#tracks-in-mix div:nth-of-type(3) {
+	padding-top: 8px;
+}
+
+#tracks-in-mix p,
+#tracks-in-mix h2 {
+	border-bottom: 1px solid #ddd;
+	padding: 12px 0;
+	font-size: $generalScreenText;
+	margin: 0;
+}
+
+#tracks-in-mix .tabs p {
+	padding: 16px 0 16px 32px;
+}
+
+#tracks-in-mix h2 {
+	clear: left;
+}
+
 #tracks-in-mix>div:nth-of-type(3){
 	padding-top: 12px;
+	line-height: 32px;
 }
 
 #tracks-in-mix>div:nth-of-type(n+3){

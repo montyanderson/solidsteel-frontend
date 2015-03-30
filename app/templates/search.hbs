@@ -2,7 +2,7 @@
   <div id="inner-container">
   	
   	<div id="search-form" {{bind-attr class="searching"}}>
-	  {{input type="text" placeholder="Search by artist, track, date" value=search action="query"}}
+	  {{input type="text" placeholder=controller.placeholder value=search action="query"}}
 	  <span></span>
     </div>
 

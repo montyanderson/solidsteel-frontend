@@ -26,7 +26,7 @@
 	{{#if view.hasTracks}}
 		<div id="tracks-in-mix">
 		{{#each mix in model.mixes}}
-			<h2><b>Part {{mix.part}}</b> {{mix.name}}</h2>
+			<h2><b>Hour {{mix.part}}</b> {{mix.name}}</h2>
 			{{#each track in mix.tracks}}
 		    	<p>{{two-figure-counter _view.contentIndex}} &nbsp;&nbsp; <b>{{ track.title }}</b> / {{ track.artist }} / {{ track.recordLabel }}</p>
 		  	{{else}}

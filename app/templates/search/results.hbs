@@ -1,6 +1,6 @@
 <div id="search-results" class="sidepanel">
-	<h2>“{{keyword}}” ({{model.length}} mixes)</h2>
-	
+	<h2>{{keyword}}</h2>
+	<h3>{{model.length}} results</h3>
 	{{#each result in model}}
 	  {{render "sidepanel-mix" result}}
 	{{/each}}

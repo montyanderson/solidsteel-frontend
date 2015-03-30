@@ -1,8 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	// the initial value of the `search` property
-  search: '',
+
+  placeholder: function(){
+    if(this.showingResults){
+        return "Search...";
+    } else {
+        return "Search by artist, track, date...";
+    }
+  }.property('showingResults'),
 
   showingResults: false,
 
