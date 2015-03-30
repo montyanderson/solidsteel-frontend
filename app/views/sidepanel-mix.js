@@ -4,7 +4,7 @@ export default Ember.View.extend({
   
   templateName: 'mix-in-sidepanel',
 
-  classNameBindings: ['hover'],
+  classNameBindings: ['hasTracks'],
 
   tagName: 'div',
 

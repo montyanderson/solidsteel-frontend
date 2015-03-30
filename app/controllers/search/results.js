@@ -2,6 +2,19 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  keyword: ''
+  needs: ['broadcast'],
+
+  keyword: '',
+
+  actions: {
+
+    playBroadcast: function(model){
+        this.get('controllers.broadcast').stopCurrentMix(true);
+        this.transitionToRoute('broadcast', model);
+        // to transition to tracklist do....
+        //this.transitionToRoute('tracks', model);
+    }
+
+  }
 
 });

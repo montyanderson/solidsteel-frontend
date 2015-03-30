@@ -27,7 +27,10 @@ export default Ember.Controller.extend({
     window.MyNewApp.currentlyPlaying.pause();
   },
 
-  stopCurrentMix: function(){
+  stopCurrentMix: function(reset){
+    if (reset) {
+      this.set('currentPart', null);
+    }
     window.MyNewApp.mixPlaying = false;
     window.MyNewApp.isPlaying = false;
     window.MyNewApp.currentlyPlaying.stop();

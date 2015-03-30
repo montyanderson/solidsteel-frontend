@@ -16,7 +16,7 @@ export default Ember.Route.extend({
   setupController: function(controller, model){
 
     if(window.MyNewApp.mixPlaying) {
-      return false;
+      return this;
     }
 
     if(!model.get('mixes').get('length')) {

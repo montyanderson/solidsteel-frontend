@@ -5,6 +5,8 @@ import Groupable from '../../mixins/groupable';
 
 export default Ember.ArrayController.extend(Groupable, {
   
+  needs: ['broadcast'],
+
   ungroupedContentBinding: 'content', //tell Groupable where your default content is
 
   getHighlights: "",
@@ -49,6 +51,13 @@ export default Ember.ArrayController.extend(Groupable, {
       } else {
         this.set('getHighlights', true);
       }
+    },
+    
+    playBroadcast: function(model){
+        this.get('controllers.broadcast').stopCurrentMix(true);
+        this.transitionToRoute('broadcast', model);
+        // to transition to tracklist do....
+        //this.transitionToRoute('tracks', model);
     }
   }
 

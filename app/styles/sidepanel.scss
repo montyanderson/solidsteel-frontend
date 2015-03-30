@@ -187,9 +187,14 @@
 	margin-bottom: 24px;
 }
 
-.month>div.hover,
-#search-results>div.hover {
+.month>div:hover,
+#search-results>div:hover {
 	background: #f1f1f1;
+}
+
+.month>div.has-tracks:hover,
+#search-results>div.has-tracks:hover {
+	background: #fff;
 }
 
 #search-results .mix-in-sidepanel div:nth-of-type(2) {
@@ -225,6 +230,7 @@
 	width: 100%;
 	padding-top: 7px;
 	clear: left;
+	cursor: pointer;
 }
 
 .mix-in-sidepanel img {

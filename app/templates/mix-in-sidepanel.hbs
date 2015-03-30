@@ -17,7 +17,9 @@
 		{{#if view.hasTracks}}
 			{{partial 'icons/minus'}}
 		{{else}}
+			{{#if view.hover}}
 			{{partial 'icons/add'}}
+			{{/if}}
 		{{/if}}
 	</div>
 
