@@ -1,4 +1,4 @@
-<div id="tracks-in-mix" {{bind-attr class=":sidepanel showingTracklisting:panel-open:panel-closed"}}>
+<div id="tracks-in-mix" {{ action 'swipeAway' on="swipeRight"}} {{bind-attr class=":sidepanel showingTracklisting:panel-open:panel-closed"}}>
 	<div class="mix-in-sidepanel">
 		<div>
 			<img src="{{unbound controller.rootpath}}{{unbound model.image}}" width="80" height="80"/>

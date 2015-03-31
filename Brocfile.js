@@ -19,5 +19,6 @@ var app = new EmberApp();
 app.import('bower_components/moment/moment.js');
 app.import('bower_components/normalize.css/normalize.css');
 app.import('bower_components/fastclick/lib/fastclick.js');
+app.import('bower_components/hammerjs/hammer.js');
 
 module.exports = app.toTree();

@@ -17,7 +17,7 @@ export default Ember.View.extend({
   mouseEnter: function() { this.set('hover', true); },
   mouseLeave: function() { this.set('hover', false); },
 
-  click: function(e){
+  tap: function(e){
 
     if(!this.get('top')){
       // scroll element to top of sidepanel

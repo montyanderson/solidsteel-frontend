@@ -16,6 +16,7 @@
     "neat": "~1.7.1",
     "bitters": "~1.0.0",
     "ember-resolver": "~0.1.14",
-    "fastclick": "*"
+    "fastclick": "*",
+    "hammerjs": "~2.0.4"
   }
 }

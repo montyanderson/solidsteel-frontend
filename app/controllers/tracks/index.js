@@ -13,6 +13,10 @@ export default Ember.Controller.extend({
 
   actions : {
   	
+    swipeAway: function() {
+      this.transitionToRoute('broadcast');
+    },
+
     toggleTracks : function(){
       if (!this.showingTracks) {
         this.set('showingTracks', true);

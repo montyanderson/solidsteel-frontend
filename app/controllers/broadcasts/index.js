@@ -46,7 +46,11 @@ export default Ember.ArrayController.extend(Groupable, {
         this.transitionToRoute('broadcast', model);
         // to transition to tracklist do....
         //this.transitionToRoute('tracks', model);
-    }
+    },
+
+    swipeAway: function() {
+      this.transitionToRoute('broadcasts', {queryParams: {year: 'null'}});
+    },
   }
 
 });

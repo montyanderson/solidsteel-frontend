@@ -14,7 +14,7 @@ export default Ember.Route.extend({
 
   actions: {
     
-    willTransition: function(transition) {
+    willTransition: function() {
       this.get('controller').send('resetswipe');
     }
   }

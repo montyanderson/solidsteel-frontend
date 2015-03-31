@@ -55,6 +55,10 @@
 	padding: 0 0 100% 0;
 }
 
+.search-loading .sidepanel {
+	padding: 0;
+}
+
 .sidepanel a {
 	display: block;
 }
@@ -169,7 +173,7 @@
 }
 
 #search-results .mix-in-sidepanel div:nth-of-type(2) {
-	width: 70%;
+	width: 65%;
 }
 
 .month div span,
@@ -457,6 +461,11 @@ p.sc-meta {
 }
 
 @media (max-width: 600px) {
+
+	#search-results .mix-in-sidepanel div:nth-of-type(2) {
+		width: 70%;
+	}
+
 	.month {
 		clear: left;
 	}

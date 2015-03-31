@@ -29,7 +29,7 @@ export default Ember.View.extend({
 
   height: "72px",
 
-  click: function(e) {
+  tap: function(e) {
   	// skip to place in track
   	var skipTo = Math.floor(e.offsetX / (this.get('myCtx').canvas.width / 100));
     this.get('controller').send('skip', this.get('controller.model'), skipTo/100); 

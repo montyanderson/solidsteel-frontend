@@ -58,7 +58,7 @@
   </div>
 </div>
 
-<div id="broadcasts-by-month" {{bind-attr class=":sidepanel showingResults:enabled:disabled"}}>
+<div id="broadcasts-by-month" {{ action 'swipeAway' on="swipeRight"}} {{bind-attr class=":sidepanel showingResults:enabled:disabled"}}>
 
   {{#if hasHighlights}}
     <p id="highlights" {{action 'viewFeatured'}}>
