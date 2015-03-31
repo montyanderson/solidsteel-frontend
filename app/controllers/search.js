@@ -12,6 +12,13 @@ export default Ember.Controller.extend({
 
   showingResults: false,
 
-  searching: true
+  searching: true,
+
+  actions: {
+  	query: function(){
+  		document.activeElement.blur();
+  		this.transitionToRoute('search.results', this.search)
+  	}
+  }
 
 });

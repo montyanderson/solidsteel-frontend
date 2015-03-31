@@ -11,8 +11,8 @@
 	</div>
 
 	<div class="tabs">
-		<p {{bind-attr class="showingTracks:current"}}{{ action 'toggleTracks'}}><b>Tracklist</b></p>
-		<p {{bind-attr class="showingTracks::current"}}{{ action 'toggleSynopsis'}}><b>Synopsis</b></p>
+		<p {{bind-attr class="showingTracks:current"}}{{ action 'toggleTracks'}}>Tracklist</p>
+		<p {{bind-attr class="showingTracks::current"}}{{ action 'toggleSynopsis'}}>Synopsis</p>
 	</div>
 	<div {{bind-attr class="showingTracks:disabled:enabled"}}>
 		{{break-lines model.altnotes}}

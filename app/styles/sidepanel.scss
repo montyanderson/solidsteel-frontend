@@ -52,40 +52,11 @@
 	-webkit-overflow-scrolling: touch;
 	box-sizing: border-box;
 	position: fixed;
-	padding: 0;
+	padding: 0 0 100% 0;
 }
 
 .sidepanel a {
 	display: block;
-}
-
-@media (max-width: 600px) {
-	.sidepanel {
-		width: 67%;
-		top: 0px;
-		bottom: 4px;
-		padding: 4px 0 0 0;
-	}
-
-	#tracks-in-mix p,
-	#tracks-in-mix h2 {
-		border-bottom: 1px solid #ddd;
-		padding: 8px 0;
-		text-indent: -23px;
-		padding-left: 23px;
-	}
-
-	#tracks-in-mix h2 {
-		text-indent: 0;
-	}
-}
-
-@media (max-width: 600px) {
-	#tracks-in-mix .tabs p {
-		padding: 16px 0 16px 16px;
-		text-indent: 0px;
-		margin: 0px;
-	}
 }
 
 #search-results.sidepanel>div {
@@ -151,20 +122,24 @@
 		padding: 0 16px;
 	}
 
-	.month>div,
-	#search-results h2 {
-		padding: 0;
-	}
-
 	#search-results.sidepanel p {
 		line-height: 16px;
 		margin: 0;
 	}
 
-	.month>div,
 	#search-results h2 {
+		padding: 0;
 		margin-left: 12px;
-		margin-right: 12px;
+	}
+
+	.month>div {
+		padding: 0 12px;
+	}
+
+	#broadcasts-by-month .month > div {
+		float: left;
+		clear: left;
+		width: 100%;
 	}
 
 	#search-results.sidepanel p:nth-of-type(2) {
@@ -194,7 +169,7 @@
 }
 
 #search-results .mix-in-sidepanel div:nth-of-type(2) {
-	width: 60%;
+	width: 70%;
 }
 
 .month div span,
@@ -228,13 +203,13 @@
 	height: 94px;
 	width: 100%;
 	padding-top: 7px;
+	padding-bottom: 7px;
 	clear: left;
 	cursor: pointer;
 }
 
 .mix-in-sidepanel img {
 	float: left;
-	-webkit-clip-path: circle(40px);
 }
 
 p.mixTitle {
@@ -249,11 +224,16 @@ p.sc-meta {
 
 @media (max-width: 600px) {
 	.mix-in-sidepanel img {
-		display: none;
+		width: 40px;
+		height: 40px;
 	}
 
 	.play-button {
 		display: none;
+	}
+
+	p.mixTitle {
+		margin: 2px 0;
 	}
 }
 
@@ -373,6 +353,56 @@ p.sc-meta {
 }
 
 @media (max-width: 600px) {
+	
+	.mix-in-sidepanel #add {
+		float: none;
+		margin-top: 0;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	#tracks-in-mix {
+		clear: left;
+	}
+
+	#tracks-in-mix .mix-in-sidepanel {
+		float: left;
+	}
+
+	#tracks-in-mix .mix-in-sidepanel img {
+		margin: 0 0 0 $generalScreenSidePadding/2;
+	}
+	.sidepanel {
+		width: 67%;
+		top: 0px;
+		bottom: 4px;
+		padding: 4px 0 0 0;
+	}
+
+	#tracks-in-mix p,
+	#tracks-in-mix h2 {
+		border-bottom: 1px solid #ddd;
+		padding: 8px 0;
+		text-indent: -16px;
+		padding-left: 16px;
+		font-size: 12px;
+	}
+
+	#broadcasts-by-month #tracks-in-mix h2 {
+		text-indent: 0;
+	}
+
+	#tracks-in-mix .tabs p {
+		padding-left: 16px;
+		text-indent: 0px;
+		margin: 0px;
+		font-size: 12px;
+	}
+
+	#tracks-in-mix .tabs p.current {
+		font-family: $bold;
+	}
 
 	#tracks-in-mix>div:nth-of-type(3){
 		line-height: 20px;
@@ -385,9 +415,10 @@ p.sc-meta {
 	}	
 
 	.mix-in-sidepanel div:nth-of-type(2) {
-		margin-left: 0;
-		margin-top: 16px;
-		width: 80%; /* to allow for minus button room to float right into */
+		margin-left: 8px;
+		margin-top: 0;
+		width: 66%; /* to allow for minus button room to float right into */
+		clear: none;
 	}
 
 	#tracks-in-mix .mix-in-sidepanel div:nth-of-type(2) {
@@ -430,11 +461,6 @@ p.sc-meta {
 		clear: left;
 	}
 
-	.month div{
-		clear: left;
-		float: left;
-	}
-
 	.month:nth-of-type(n+1) {
 		margin-top: 12px;
 	}
@@ -445,12 +471,21 @@ p.sc-meta {
 
 	.month > div {
 		height: auto;
+		clear: left;
+		float: left;
+		margin-bottom: 16px;
+	}
+
+	.month > div:nth-of-type(1) {
+		margin-top: 16px;
 	}
 
 	.mix-in-sidepanel {
 		display: block;
 		height: auto;
 		margin: 0;
+		position: relative;
+		float: left;
 	}
 }
 
@@ -471,11 +506,11 @@ p.sc-meta {
 }
 
 @-webkit-keyframes example {
-    from {width:0;}
-    to {width:50%;}
+    from {right:-100%;}
+    to {right:0;}
 }
 
 @-webkit-keyframes example2 {
-    from {width:50%;}
-    to {width:0%;}
+    from {right:0;}
+    to {right: -100%;}
 }

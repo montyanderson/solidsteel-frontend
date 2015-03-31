@@ -8,7 +8,7 @@ export default Ember.Route.extend({
 	},
 
 	 actions: {
-	 	willTransition: function(transition) {
+	 	willTransition: function() {
 	      this.controllerFor('application').set('showingTracks', 'false');
 	      this.controllerFor('broadcast').set('showingTracks', 'false');
 	      this.controllerFor('broadcast').set('plusMinus', '+');

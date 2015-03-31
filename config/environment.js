@@ -22,7 +22,7 @@ module.exports = function(environment) {
   if (environment === 'development') {
 
     ENV.APP.LOG_TRANSITIONS = true;
-    ENV.APP.API_HOST = 'http://192.168.0.18:3001';
+    ENV.APP.API_HOST = 'http://192.168.1.198:3001';
 
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

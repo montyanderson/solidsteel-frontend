@@ -67,7 +67,8 @@ a,
 	.top50 #social,
 	.search-results #featured,
 	.search-results span:nth-of-type(3),
-	.tracks-index span:nth-of-type(3) {
+	.broadcasts-index #social,
+	.tracks-index #btn-tracklisting {
 		display: none;
 	}
 
