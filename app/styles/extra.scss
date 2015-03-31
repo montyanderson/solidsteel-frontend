@@ -42,8 +42,11 @@
 	line-height: $generalScreenText;
 }
 
-#featured a:hover {
-	text-decoration: none;
+/* hover hack */
+@media (min-width: 601px) {
+	#featured a:hover {
+		text-decoration: none;
+	}
 }
 
 #featured a:nth-child(2) {

@@ -3,10 +3,10 @@
   background: rgba(255, 255, 255, 0.9);
   color: #333;
   position: fixed;
-  top: 8px;
-  left: 8px;
-  right: 8px;
-  bottom: 8px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   padding: 128px 176px;
   overflow: hidden;
 }
@@ -16,6 +16,14 @@
 }
 
 @media (min-width: 601px) {
+
+    #az {
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+    }
+
     .alpha-index {
         -webkit-column-width: 215px;
         -webkit-column-gap: 4px;
@@ -99,6 +107,7 @@
     #az {
       padding: 88px 36px 0 12px;
       overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
     }
 
     .alpha-index h1 {
@@ -129,7 +138,7 @@
       right: 12px;
     }
 
-    .subscribe {
+    .subscribeBlock {
       width: auto;
     }
 
@@ -139,8 +148,13 @@
     }
 }
 
+@media (min-width: 601px) {
+  .subscribe input[type="text"] {
+    border-bottom: 2px solid #333;
+  }  
+}
+
 .subscribe input[type="text"] {
-  border-bottom: 2px solid #333;
   font-size: 16px;
   margin-top: 36px;
   margin-bottom: 36px;

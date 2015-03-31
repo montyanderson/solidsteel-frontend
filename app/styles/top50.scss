@@ -47,10 +47,13 @@
 	fill: currentColor;
 }
 
-.play-mix svg:hover {
-	color: #333;
-	fill: currentColor;
-	cursor: pointer;
+/* hover hack */
+@media (min-width: 601px) {
+	.play-mix svg:hover {
+		color: #333;
+		fill: currentColor;
+		cursor: pointer;
+	}
 }
 
 p.meta {

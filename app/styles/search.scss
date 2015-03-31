@@ -14,21 +14,26 @@ input {
 }
 
 input[type="text"] {
-  background-image: url("/assets/images/chevron-thin-right.svg");
-  background-repeat: no-repeat;
-  background-size: 32px 32px;
-  background-position: 100% 0;
   background-color: transparent;
-  border: none;
-  border-bottom: 2px dotted #fff;
   font-size: 32px;
   outline: 0;
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
-  font-family: 'DecimaPro' !important;
-  padding: 0 0 3px 0;
+  font-family: $reg !important;
   margin: 0;
+}
+
+@media (min-width: 601px) {
+  input[type="text"] {
+    background-image: url("/assets/images/chevron-thin-right.svg");
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    background-position: 100% 0;
+    border: none;
+    border-bottom: 2px dotted #fff;
+    padding: 0 0 3px 0;
+  }
 }
 
 input[type="text"]:focus {
@@ -38,8 +43,11 @@ input[type="text"]:focus {
   box-shadow: none;
 }
 
-input[type="text"]:hover {
-  border-color: #fff;
+/* hover hack */
+@media (min-width: 601px) {
+  input[type="text"]:hover {
+    border-color: #fff;
+  }
 }
 
 #search-form {

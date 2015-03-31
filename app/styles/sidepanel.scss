@@ -47,7 +47,9 @@
 	bottom: 8px;
 	background: #fefeff;
 	color: black;
-	overflow: scroll;
+	overflow: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
 	box-sizing: border-box;
 	position: fixed;
 	padding: 0;
@@ -71,6 +73,10 @@
 		padding: 8px 0;
 		text-indent: -23px;
 		padding-left: 23px;
+	}
+
+	#tracks-in-mix h2 {
+		text-indent: 0;
 	}
 }
 
@@ -98,7 +104,7 @@
 	padding: 0;
 	margin-left: $generalScreenSidePadding;
 	margin-right: $generalScreenSidePadding;
-	font-family: 'DecimaPro';
+	font-family: $reg;
 	font-size: 32px;
 	margin-bottom: 0;
 }
@@ -113,6 +119,20 @@
 	line-height: 42px;
 	display: inline;
 	border-bottom: 2px solid #333;
+}
+
+@media (max-width: 600px) {
+	#search-results h3 {
+		margin-left: $generalScreenSidePadding/2;
+		margin-right: $generalScreenSidePadding/2;
+	}
+	#broadcasts-by-month h2 {
+		float: left;
+	}
+	#broadcasts-by-month #tracks-in-mix h2 {
+		float: none;
+		padding-left: 0;
+	}
 }
 
 @media (min-width: 601px) {
@@ -148,7 +168,7 @@
 	}
 
 	#search-results.sidepanel p:nth-of-type(2) {
-		font-family: 'DecimaPro';
+		font-family: $reg;
 	}
 
 	#search-results.sidepanel>div {
@@ -160,14 +180,17 @@
 	margin-bottom: 24px;
 }
 
-.month>div:hover,
-#search-results>div:hover {
-	background: #f1f1f1;
-}
+/* hover hack */
+@media (min-width: 601px) {
+	.month>div:hover,
+	#search-results>div:hover {
+		background: #f1f1f1;
+	}
 
-.month>div.has-tracks:hover,
-#search-results>div.has-tracks:hover {
-	background: #fff;
+	.month>div.has-tracks:hover,
+	#search-results>div.has-tracks:hover {
+		background: #fff;
+	}
 }
 
 #search-results .mix-in-sidepanel div:nth-of-type(2) {
@@ -192,8 +215,11 @@
 	z-index: 10;
 }
 
-.month .play-button:hover {
-	cursor: pointer;
+/* hover hack */
+@media (min-width: 601px) {
+	.month .play-button:hover {
+		cursor: pointer;
+	}
 }
 
 .mix-in-sidepanel {
@@ -225,6 +251,10 @@ p.sc-meta {
 	.mix-in-sidepanel img {
 		display: none;
 	}
+
+	.play-button {
+		display: none;
+	}
 }
 
 .mix-in-sidepanel>div {
@@ -252,12 +282,15 @@ p.sc-meta {
 	margin: 18px 0 0 21px;
 }
 
-.play-button:hover svg {
-	width: 52px;
-	height: 52px;
-	margin: 14px 0 0 17px;
-	color: #7d7d7d;
-	fill: currentcolor;
+/* hover hack */
+@media (min-width: 601px) {
+	.play-button:hover svg {
+		width: 52px;
+		height: 52px;
+		margin: 14px 0 0 17px;
+		color: #7d7d7d;
+		fill: currentcolor;
+	}
 }
 
 .tabs {
@@ -308,9 +341,15 @@ p.sc-meta {
 #tracks-in-mix p,
 #tracks-in-mix h2 {
 	border-bottom: 1px solid #ddd;
-	padding: 12px 0;
 	font-size: $generalScreenText;
 	margin: 0;
+}
+
+@media (min-width: 601px) {
+	#tracks-in-mix p,
+	#tracks-in-mix h2 {
+		padding: 12px 0;
+	}
 }
 
 #tracks-in-mix .tabs p {
@@ -334,6 +373,11 @@ p.sc-meta {
 }
 
 @media (max-width: 600px) {
+
+	#tracks-in-mix>div:nth-of-type(3){
+		line-height: 20px;
+	}
+
 	#tracks-in-mix>div:nth-of-type(n+3){
 		margin: 0;
 		padding-left: 16px;
@@ -343,6 +387,11 @@ p.sc-meta {
 	.mix-in-sidepanel div:nth-of-type(2) {
 		margin-left: 0;
 		margin-top: 16px;
+		width: 80%; /* to allow for minus button room to float right into */
+	}
+
+	#tracks-in-mix .mix-in-sidepanel div:nth-of-type(2) {
+		margin-left: 12px;
 	}
 }
 
@@ -406,7 +455,7 @@ p.sc-meta {
 }
 
 .month p:nth-of-type(2) {
-	font-family: 'DecimaPro', Helvetica, sans-serif;
+	font-family: $reg, Helvetica, sans-serif;
 }
 
 .panel-open {
