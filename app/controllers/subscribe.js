@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
         var request = Ember.$.ajax({
             url: "http://solidsteel.us1.list-manage1.com/subscribe/post-json?u=6a14ebd3be69ddfacbaee8799&id=d6c8a1965f&MERGE0="+this.get('email')+"&c=?",
             dataType: 'jsonp'
-        })
+        });
         request.then(this.success.bind(this), this.failure.bind(this));
     },
 
@@ -32,7 +32,7 @@ export default Ember.Controller.extend({
   },
 
   success: function(resp) {
-    if(resp.result == "error") {
+    if(resp.result === "error") {
         this.failure();
     } else {
         this.set('isSuccess', true);

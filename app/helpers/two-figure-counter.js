@@ -7,7 +7,7 @@ export function twofigurecounter(integer) {
     } else {
       return integer;
     }
-};
+}
 
 export default Ember.Handlebars.makeBoundHelper(twofigurecounter);
     

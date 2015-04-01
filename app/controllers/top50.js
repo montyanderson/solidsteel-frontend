@@ -7,4 +7,4 @@ export default Ember.Controller.extend({
     return ENV.APP.API_HOST;
   }.property('rootpath')
 
-})
+});

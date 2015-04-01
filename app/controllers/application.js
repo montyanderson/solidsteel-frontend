@@ -31,7 +31,7 @@ export default Ember.Controller.extend({
   }.observes('currentPath'),
 
   noPlayLink: function() {
-    return (this.get('currentPath') == 'broadcasts.broadcast.index');
+    return (this.get('currentPath') === 'broadcasts.broadcast.index');
   }.property('currentPath'),
 
   actions: {
@@ -63,7 +63,7 @@ export default Ember.Controller.extend({
     },
 
     doLink : function(){
-        var currentMix = this.get('controllers.broadcast').get('model')
+        var currentMix = this.get('controllers.broadcast').get('model');
         if(currentMix != null){
           // transition to currently playing mix
           this.transitionToRoute('broadcast', this.get('controllers.broadcast').get('model'));

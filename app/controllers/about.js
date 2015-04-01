@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
 
     swipe: function(){
 
-        if(this.dist == undefined) {
+        if(this.dist === undefined) {
             this.dist = Ember.$('.alpha-index').width();
         }
 
@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
     },
 
     backswipe: function(){
-        if(this.dist == undefined) {
+        if(this.dist === undefined) {
             this.dist = Ember.$('.alpha-index').width();
         }
 

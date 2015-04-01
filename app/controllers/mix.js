@@ -70,7 +70,7 @@ export default Ember.Controller.extend({
         this.set('model.searchTime', this.get('model.duration')*hoverTime);
     },
 
-    stopWaveHover: function(hoverTime){
+    stopWaveHover: function(){
         this.set('model.searching', false);
     },
 

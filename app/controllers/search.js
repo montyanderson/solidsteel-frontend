@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
   actions: {
   	query: function(){
   		document.activeElement.blur();
-  		this.transitionToRoute('search.results', this.search)
+  		this.transitionToRoute('search.results', this.search);
   	}
   }
 
