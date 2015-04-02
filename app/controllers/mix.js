@@ -75,6 +75,7 @@ export default Ember.Controller.extend({
     },
 
     makeCurrent: function(mix){
+      console.log('here');
       this.get('controllers.broadcast').setCurrentMix(mix.get('part')-1);
     },
 

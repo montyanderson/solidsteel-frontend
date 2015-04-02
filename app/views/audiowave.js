@@ -30,8 +30,9 @@ export default Ember.View.extend({
   height: "72px",
 
   tap: function(e) {
+    var canvasX = e.originalEvent.gesture.srcEvent.offsetX;
   	// skip to place in track
-  	var skipTo = Math.floor(e.offsetX / (this.get('myCtx').canvas.width / 100));
+  	var skipTo = Math.floor(canvasX / (this.get('myCtx').canvas.width / 100));
     this.get('controller').send('skip', this.get('controller.model'), skipTo/100); 
   },
 
@@ -121,7 +122,7 @@ export default Ember.View.extend({
   	}
 
     // for each bopping line (6 px apart)
-	  for(var i = 1; i <= w; i += spacer) {
+	  for(var i = -wave; i <= w; i += spacer) {
   		ctx.beginPath();
 
       // the nearer we get to the playhead, the taller the line is and the more the line bops
