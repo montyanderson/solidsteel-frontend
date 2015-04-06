@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ENV from '../config/environment';
 
 export default Ember.View.extend({
   
@@ -6,11 +7,11 @@ export default Ember.View.extend({
 
   classNames: ['year'],
 
-  tagName: 'div',
+  rootpath: function(){
+    return ENV.APP.API_HOST;
+  }.property('rootpath'),
 
-  yearHasHighlight: function(){
-    return this.get('controller').findImageForYear;
-  }.property('yearHasHighlight'),
+  tagName: 'div',
 
   actions: {
 
