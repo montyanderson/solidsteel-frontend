@@ -21,13 +21,11 @@ export default Ember.Route.extend({
     }
 
     if(!model.get('mixes').get('length')) {
-      console.log('h1');
       model.reload().then(function(){
         controller.set('model', model);
         controller.setCurrentMix();
       });
     } else {
-      console.log('h2');
       controller.set('model', model);
       controller.setCurrentMix();
     }

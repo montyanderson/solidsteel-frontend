@@ -18,10 +18,10 @@
 				{{#each featured in featureds}}
 				<div>
 					<div>
-						<img src="{{unbound controller.rootpath}}{{unbound featured.background_image}}" width="100%"/>
+						{{#link-to 'broadcast' featured.id}}<img src="{{unbound controller.rootpath}}{{unbound featured.background_image}}" width="100%"/>{{/link-to}}
 					</div>
 					<div>
-						<p class="mixTitle">Coldcut, Chris Carter from Throbbing Gristle</p>
+						<p class="mixTitle">{{#link-to 'broadcast' featured.id}}{{featured.session_name}}{{/link-to}}</p>
 					</div>
 				</div>
 				{{/each}}

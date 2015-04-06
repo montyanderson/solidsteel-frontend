@@ -75,10 +75,8 @@ export default Ember.Controller.extend({
 
       this.currentPart = mixNumber;
     } else {
-      console.log('here2');
       if (this.currentPart === null) {
         // first mix played
-        console.log('here3');
         this.currentPart = 0;
       } else {
         // this means a mix has been playing at somoe point
