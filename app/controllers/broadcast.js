@@ -7,7 +7,13 @@ export default Ember.Controller.extend({
 
   showingTracks: false,
 
+  showingFeaturedListing: true,
+
+  hasEverClosedFeatured: false,
+
   plusMinus: "+",
+
+  featuredPlusMinus: "-",
 
   currentPart: null,
   
@@ -83,6 +89,7 @@ export default Ember.Controller.extend({
   actions: {
 
   	toggleTrax: function(){
+      this.set('hasBeenOpened', true);
   		if (!this.showingTracks) {
   			this.transitionToRoute('tracks');
   			this.set('showingTracks', true);
@@ -94,7 +101,17 @@ export default Ember.Controller.extend({
         this.get('controllers.application').set('showingTracks', false);
   			this.set('plusMinus', '+');
   		}
-  	}
+  	},
+
+    toggleFeatured: function(){
+      if (!this.showingFeaturedListing) {
+        this.set('showingFeaturedListing', true);
+        this.set('featuredPlusMinus', '–');
+      } else {
+        this.set('showingFeaturedListing', false);
+        this.set('featuredPlusMinus', '+');
+      }
+    }
 
   }
 });

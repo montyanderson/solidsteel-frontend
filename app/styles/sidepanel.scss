@@ -1,58 +1,55 @@
-#btn-tracklisting {
+#buttons {
+	position: absolute;
+	right: 24px;
+	top: 0;
+}
+
+#btn-tracklisting,
+#btn-featured {
 	font-size: 18px;
 	position: absolute;
-	top: 23px;
+	top: 50%;
 	letter-spacing: 1px;
-	right: 40px;
 	display: inline;
 	width: auto;
-	height: 24px;
-	-ms-transform: rotate(-90deg); /* IE 9 */
-    -ms-transform-origin: 100% 0; /* IE 9 */
-    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
-    -webkit-transform-origin: 100% 0; /* Chrome, Safari, Opera */
-    transform: rotate(-90deg);
-    transform-origin: 100% 0;
+    transform-origin: 0 100%;
+    transform: rotate(90deg);
+
+    -ms-transform-origin: 0 100%; /* IE 9 */
+    -ms-transform: rotate(90deg); /* IE 9 */
+    
+    -webkit-transform-origin: 0 100%; /* Chrome, Safari, Opera */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    
     line-height: $generalScreenText;
     text-decoration: underline;
     letter-spacing: 2px;
 }
 
-#btn-tracklisting span {
+#btn-featured {
+	top: 0;
+}
+
+#btn-tracklisting span,
+#btn-featured span {
 	display: block;
-	-webkit-transform:rotate(180deg);
-    -moz-transform:rotate(180deg);
-    -o-transform:rotate(180deg);
-    -ms-transform:rotate(180deg);
-    transform:rotate(180deg);
-}
-
-#btn-tracklisting.showing-tracks {
-	right: 52%;	
-}
-
-@media (max-width: 600px) {
-	#btn-tracklisting {
-		font-size: 12px;
-		right: 24px;
-		top: 58%;
-		z-index: 10;
-	}
 }
 
 .sidepanel {
+	position: fixed;
 	width: 50%;
-	right: 0;
 	top: 8px;
 	bottom: 8px;
+	padding: 0 0 100% 0;
 	background: #fefeff;
 	color: black;
 	overflow: hidden;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
-	box-sizing: border-box;
-	position: fixed;
-	padding: 0 0 100% 0;
+}
+
+.MyApp-container>.sidepanel {
+	right: 0;
 }
 
 .search-loading .sidepanel {
@@ -502,15 +499,137 @@ p.sc-meta {
 	font-family: $reg, Helvetica, sans-serif;
 }
 
+#buttons {
+	height: 100%;
+	width: 24px;
+}
+
+@media (min-width: 600px) {
+
+	#featured-section {
+		padding: 0 0 8px 8px;
+		background: #fff;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: auto;
+		bottom: 0;
+		width: 208px;
+		position: fixed;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+		overflow: hidden;
+	}
+
+	#featured-section>div {
+		margin-bottom: 24px;
+		color: #333;
+	}
+
+	.featured-panel-open {
+		-webkit-animation-name: featured;
+	    -webkit-animation-duration: 0.5s;
+    	-webkit-animation-iteration-count: 1;
+	    right: 0;
+	}
+
+	@-webkit-keyframes featured {
+    	from {right:-208px;}
+    	to {right:0}
+	}
+
+	.featured-panel-closed {
+		-webkit-animation-name: featured2;
+	    -webkit-animation-duration: 0.5s;
+	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
+	}
+
+	@-webkit-keyframes featured2 {
+	    from {right:0;}
+    	to {right: -208px;}
+	}
+
+	/* SIDEPANEL BUTTONS */
+	.btn-featured-panel-open #buttons,
+	.btn-featured-panel-open.btn-panel-closed #buttons {
+		-webkit-animation-name: buttons1;
+	    -webkit-animation-duration: 0.5s;
+	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
+	    right: 208px;
+	}
+
+	.btn-featured-panel-closed #buttons {
+		-webkit-animation-name: buttons2;
+	    -webkit-animation-duration: 0.5s;
+	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
+	    right: 0;
+	}
+
+	.btn-panel-open #buttons {
+		-webkit-animation-name: buttons1;
+	    -webkit-animation-duration: 0.5s;
+	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
+	    right: 50%;
+	}
+
+	.btn-panel-open #btn-featured {
+		display: none;
+	}
+
+	.btn-panel-closed #buttons {
+		-webkit-animation-name: buttons2;
+	    -webkit-animation-duration: 0.5s;
+	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
+	    right: 0;
+	}
+
+	.btn-featured-panel-open.btn-panel-open #buttons {
+		-webkit-animation-name: buttonsboth;
+	    -webkit-animation-duration: 0.5s;
+	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
+	    right: 50%;
+	}
+}
+
+@media (max-width: 600px) {
+	#featured-section {
+		display: none;
+	}
+
+	#buttons {
+		right: 0;
+	}
+
+	#btn-tracklisting {
+		font-size: 12px;
+		top: 55%;
+		z-index: 10;
+	}
+
+	#btn-featured {
+		top: auto;
+		bottom: 80px;
+		font-size: 12px;
+	}
+
+}
+
+/* END SIDEPANEL BUTTONS */
+
 .panel-open {
+	right: 0;
 	-webkit-animation-name: example;
-    -webkit-animation-duration: 0.3s;
+    -webkit-animation-duration: 0.5s;
     -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035); 
 }
 
 .panel-closed {
-	-webkit-animation-name: example;
-    -webkit-animation-duration: 0.3s;
+	right: -100%;
+}
+
+.has-been-opened.panel-closed {
+	-webkit-animation-name: example2;
+    -webkit-animation-duration: 0.5s;
     -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035); 
 }
 
@@ -522,4 +641,19 @@ p.sc-meta {
 @-webkit-keyframes example2 {
     from {right:0;}
     to {right: -100%;}
+}
+
+@-webkit-keyframes buttons1 {
+    from {right:104px;}
+    to {right:208px}
+}
+
+@-webkit-keyframes buttons2 {
+    from {right:208px;}
+    to {right:0px}
+}
+
+@-webkit-keyframes buttonsboth {
+    from {right:104px;}
+    to {right: 50%;}
 }

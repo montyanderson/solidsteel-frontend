@@ -1,12 +1,12 @@
 <div {{bind-attr class=":player model.isCurrent"}}>
-	<p>
+	{{ render 'audiowave' model }}
+	<p {{action 'makeCurrent' model }}><b>HOUR {{model.part}}</b></p>
+    <p>
     {{#if model.searching }}
     {{ formatted-time model.searchTime }}
     {{else}}
     {{ formatted-time model.progress }}
     {{/if}}
     </p>
-	{{ render 'audiowave' model }}
-	<p {{action 'makeCurrent' model }}><b>HOUR {{model.part}}</b></p>
 	<p {{action 'makeCurrent' model }}>{{model.name}}</p>
 </div>

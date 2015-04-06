@@ -27,7 +27,8 @@ export default Ember.Controller.extend({
           window.MyNewApp.currentlyPlaying = sound;
           window.MyNewApp.isPlaying = true;
           window.MyNewApp.mixPlaying = true;
-
+          sound.setVolume(0);
+          
           window.MyNewApp.currentlyPlaying.play({
             whileplaying: function() {
               // using self.set('model.progress') worked initially

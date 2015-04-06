@@ -25,10 +25,6 @@ export default Ember.View.extend({
 
   tagName: 'canvas',
 
-  attributeBindings: ['height'],
-
-  height: "72px",
-
   tap: function(e) {
     var canvasX = e.originalEvent.gesture.srcEvent.offsetX;
   	// skip to place in track
@@ -38,15 +34,22 @@ export default Ember.View.extend({
 
   didInsertElement: function(){
   	this._super();
+    this.set('isOverSixHundred', window.matchMedia("screen and (min-width: 600px)").matches);
+    
   	var ele = this.get('element');
   	ele.width = Ember.$(ele).parent().width();
-  	ele.height = 72;
+  	
+    if(!this.get('isOverSixHundred')) {
+      ele.height = 24;
+    } else {
+      ele.height = 72;
+    }
+
 	  var ctx = ele.getContext('2d');
   	ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
    	ctx.lineWidth = 2;
    	this.set('myCtx', ctx);
-    this.set('isOverSixHundred', window.matchMedia("screen and (min-width: 600px)").matches);
    	this.draw();
     },
 
@@ -96,6 +99,7 @@ export default Ember.View.extend({
     var increase = (Math.PI / ((wave*2)/spacer)); // if you change this you also need to change ui <= 30 && ui >= -30 and for(var i = 1; i <= w; i += 3) {
     var barHeightAdjuster = 0;
 
+    // use media query to draw the full audio wave at larger screen sizes only
     if(!this.get('isOverSixHundred')) {
       // draw thin line
       ctx.beginPath();
@@ -115,6 +119,7 @@ export default Ember.View.extend({
   		ctx.fill();
 
   		// draw progress line
+      ctx.fillStyle = 'rgba(255, 255, 255, 1)';
   		ctx.beginPath();
   	  ctx.moveTo(0, bottomOfEqualizer);
   	  ctx.lineTo(units, bottomOfEqualizer);
