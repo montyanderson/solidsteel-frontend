@@ -27,7 +27,6 @@ export default Ember.Controller.extend({
           window.MyNewApp.currentlyPlaying = sound;
           window.MyNewApp.isPlaying = true;
           window.MyNewApp.mixPlaying = true;
-          sound.setVolume(0);
           
           window.MyNewApp.currentlyPlaying.play({
             whileplaying: function() {
@@ -53,6 +52,8 @@ export default Ember.Controller.extend({
       // set background image for this mix, if there one...
       if(this.get('model.background_image')) {
         this.get('controllers.application').set('bgImgPath', this.get('model.background_image'));
+      } else {
+        this.get('controllers.application').set('bgImgPath', null);
       }
 
       // set mix image for this mix, if there is one...

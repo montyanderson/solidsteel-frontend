@@ -8,6 +8,10 @@ export default Ember.Route.extend({
 
   afterModel: function(model) {
   	this.transitionTo('broadcast', model);
+  },
+
+  setupController: function(controller, model){
+    controller.set('model', model);
   }
 
 });

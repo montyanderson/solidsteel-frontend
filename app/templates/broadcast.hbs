@@ -15,70 +15,17 @@
 			{{ render 'mix' mix }}
 			{{/each}}
 			<div id="featured-section" {{bind-attr class="showingFeaturedListing:featured-panel-open:featured-panel-closed showingTracks:featured-panel-closed"}}>
+				{{#each featured in featureds}}
 				<div>
 					<div>
-						<img src="/assets/images/fff-f90.gif" width="100%" />
+						<img src="{{unbound controller.rootpath}}{{unbound featured.background_image}}" width="100%"/>
 					</div>
 					<div>
 						<p class="mixTitle">Coldcut, Chris Carter from Throbbing Gristle</p>
 					</div>
 				</div>
-				
-				<div>
-					<div>
-						<img src="/assets/images/fff-f90.gif" width="100%" />
-					</div>
-					<div>
-						<p class="mixTitle">Coldcut, Chris Carter from Throbbing Gristle</p>
-					</div>
-				</div>
-				
-				<div>
-					<div>
-						<img src="/assets/images/6d6d6d.gif" width="100%" />
-					</div>
-					<div>
-						<p class="mixTitle">Coldcut, Chris Carter from Throbbing Gristle</p>
-					</div>
-				</div>
-				
-				<div>
-					<div>
-						<img src="/assets/images/1440x900.gif" width="100%" />
-					</div>
-					<div>
-						<p class="mixTitle">Coldcut, Chris Carter from Throbbing Gristle</p>
-					</div>
-				</div>
-				
-				<div>
-					<div>
-						<img src="/assets/images/fff-f90.gif" width="100%" />
-					</div>
-					<div>
-						<p class="mixTitle">Coldcut, Chris Carter from Throbbing Gristle</p>
-					</div>
-				</div>
-				
-				<div>
-					<div>
-						<img src="/assets/images/6d6d6d.gif" width="100%" />
-					</div>
-					<div>
-						<p class="mixTitle">Coldcut, Chris Carter from Throbbing Gristle</p>
-					</div>
-				</div>
-				
-				<div>
-					<div>
-						<img src="/assets/images/1440x900.gif" width="100%" />
-					</div>
-					<div>
-						<p class="mixTitle">Coldcut, Chris Carter from Throbbing Gristle</p>
-					</div>
-				</div>
-
-				<p>{{#link-to 'top50'}}More featured mixes&ellip;{{/link-to}}</p>
+				{{/each}}
+				<p>{{#link-to 'top50'}}More featured mixes…{{/link-to}}</p>
 			</div>
 		</div>
 

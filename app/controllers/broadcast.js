@@ -17,6 +17,10 @@ export default Ember.Controller.extend({
 
   currentPart: null,
   
+  rootpath: function(){
+    return ENV.APP.API_HOST;
+  }.property('rootpath'),
+  
   mixStyle: function(){
     return ENV.APP.API_HOST + this.get('mixImgPath');
   }.property("mixImgPath"),
@@ -59,8 +63,10 @@ export default Ember.Controller.extend({
   },
 
   setCurrentMix: function(mixNumber){
+
     // increment current mix, or play the first one if none specified
     if (mixNumber !== undefined) {
+      console.log('here');
       this.stopCurrentMix();
 
       if(this.currentPart < this.get('model.mixes').get('length')-1) {
@@ -69,9 +75,14 @@ export default Ember.Controller.extend({
 
       this.currentPart = mixNumber;
     } else {
+      console.log('here2');
       if (this.currentPart === null) {
+        // first mix played
+        console.log('here3');
         this.currentPart = 0;
       } else {
+        // this means a mix has been playing at somoe point
+        console.log('here4');
         this.currentPart++;
       }
     }
