@@ -21,6 +21,7 @@ export default Ember.Route.extend({
     }
 
     if(!model.get('mixes').get('length')) {
+      console.log('getting mixes cos there is none');
       model.reload().then(function(){
         controller.set('model', model);
         controller.setCurrentMix();

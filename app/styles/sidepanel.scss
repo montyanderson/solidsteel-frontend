@@ -385,9 +385,9 @@ p.sc-meta {
 	#tracks-in-mix h2 {
 		border-bottom: 1px solid #ddd;
 		padding: 8px 0;
-		text-indent: -16px;
+		text-indent: -20px;
 		padding-left: 16px;
-		font-size: 12px;
+		font-size: $generalScreenText;
 	}
 
 	#broadcasts-by-month #tracks-in-mix h2 {
@@ -398,7 +398,7 @@ p.sc-meta {
 		padding-left: 16px;
 		text-indent: 0px;
 		margin: 0px;
-		font-size: 12px;
+		font-size: $generalScreenText;
 	}
 
 	#tracks-in-mix .tabs p.current {

@@ -5,7 +5,6 @@
 		<div>
 			<p>{{ formatted-date model.broadcast_date 'DD-MM-YY' }}</p>
 			<p class="mixTitle">{{model.session_name}}</p>
-			<p class="sc-meta">? PLAYS</p>
 		</div>
 	</div>
 
@@ -19,18 +18,18 @@
 			<p>You can also listen to this mix on</p>
 			<p>
 			{{#if model.mixes.firstObject.soundcloudId}}
-			<a target="_blank" href="http://soundcloud.com/{{unbound model.mixes.firstObject.soundcloudId}}">SOUNDCLOUD (HOUR 1)</a>
+			<a target="_blank" href="http://soundcloud.com/ninja-tune">SOUNDCLOUD (HOUR 1)</a>
 			{{/if}}
 			{{#if model.mixes.lastObject.soundcloudId}}
-			 &ndash; <a target="_blank" href="http://soundcloud.com/{{unbound model.mixes.lastObject.soundcloudId}}">SOUNDCLOUD (HOUR 2)</a>
+			 &ndash; <a target="_blank" href="http://soundcloud.com/ninja-tune">SOUNDCLOUD (HOUR 2)</a>
 			{{/if}}
 			</p>
 			<p>
 			{{#if model.mixes.firstObject.mixcloudId}}
-			 &ndash; <a target="_blank" href="http://mixcloud.com/{{unbound model.mixes.firstObject.mixcloudId}}">MIXCLOUD (HOUR 1)</a> &ndash;
+			 &ndash; <a target="_blank" href="http://mixcloud.com/">MIXCLOUD (HOUR 1)</a> &ndash;
 			{{/if}}
 			{{#if model.mixes.lastObject.mixcloudId}}
-			 &ndash; <a target="_blank" href="http://mixcloud.com/{{unbound model.mixes.lastObject.mixcloudId}}">MIXCLOUD (HOUR 2)</a>
+			 &ndash; <a target="_blank" href="http://mixcloud.com/">MIXCLOUD (HOUR 2)</a>
 			{{/if}}
 			</p>
 		</div>

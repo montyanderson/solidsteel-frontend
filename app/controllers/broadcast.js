@@ -17,6 +17,10 @@ export default Ember.Controller.extend({
 
   currentPart: null,
   
+  hasBeenOpened: function(){
+    return false;
+  }.property('hasBeenOpened'),
+
   rootpath: function(){
     return ENV.APP.API_HOST;
   }.property('rootpath'),
@@ -65,28 +69,35 @@ export default Ember.Controller.extend({
   setCurrentMix: function(mixNumber){
 
     // increment current mix, or play the first one if none specified
-    if (mixNumber !== undefined) {
-      console.log('here');
+    if (mixNumber) {
+      console.log('111');
+      console.log(mixNumber);
       this.stopCurrentMix();
 
       if(this.currentPart < this.get('model.mixes').get('length')-1) {
+        console.log('222');
         this.get('model.mixes').objectAt(this.currentPart).set('complete', true);
       }   
 
       this.currentPart = mixNumber;
     } else {
+      console.log(mixNumber);
+      console.log('333');
       if (this.currentPart === null) {
+        console.log('444');
         // first mix played
         this.currentPart = 0;
       } else {
+        console.log('555');
         // this means a mix has been playing at somoe point
-        console.log('here4');
+        console.log('666');
         this.currentPart++;
       }
     }
 
     // don't try to play a mix that doesn't exist
     if(this.currentPart >= this.get('model.mixes').get('length')){
+      console.log('777');
       this.transitionToRoute('broadcasts');
     }
 

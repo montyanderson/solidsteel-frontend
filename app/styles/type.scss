@@ -50,7 +50,7 @@ a {
 @media (max-width: 600px) {
 	#tracks-in-mix p,
 	#tracks-in-mix div {
-		font-size: 12px;
+		font-size: $generalScreenText;
 	}
 }
 

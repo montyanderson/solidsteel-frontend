@@ -9,6 +9,8 @@ export default Ember.Route.extend({
 
 	 actions: {
 	 	willTransition: function() {
+	 		console.log(this.controllerFor('broadcast').get('hasBeenOpened'));
+	 		this.controllerFor('broadcast').set('hasBeenOpened', false);
 	      //this.set('controllers.broadcast.plusMinus', '+');
 	    }
 	 }

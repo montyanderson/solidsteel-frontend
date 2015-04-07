@@ -26,10 +26,12 @@
 	display: table-cell;
 	vertical-align: middle;
 	width: 50%;
+	position: relative;
 }
 
 .player canvas {
 	display: block;
+	position: relative;
 }
 
 .player p {

@@ -26,9 +26,19 @@ export default Ember.View.extend({
   tagName: 'canvas',
 
   tap: function(e) {
-    var canvasX = e.originalEvent.gesture.srcEvent.offsetX;
+    var x, y;
+    var canvas = Ember.$(this.get('element'));
+    if (e.originalEvent.gesture.srcEvent.offsetX != undefined && e.originalEvent.gesture.srcEvent.offsetY != undefined) {
+      x = e.originalEvent.gesture.srcEvent.offsetX;
+      x -= canvas[0].offsetLeft;
+    }
+    else { // Firefox method to get the position 
+      x = e.originalEvent.gesture.srcEvent.clientX;
+      x -= (canvas[0].offsetParent.offsetLeft + 8); // adding body 8px border
+    }
+    
   	// skip to place in track
-  	var skipTo = Math.floor(canvasX / (this.get('myCtx').canvas.width / 100));
+  	var skipTo = Math.floor(x / (this.get('myCtx').canvas.width / 100));
     this.get('controller').send('skip', this.get('controller.model'), skipTo/100); 
   },
 
@@ -38,7 +48,7 @@ export default Ember.View.extend({
     
   	var ele = this.get('element');
   	ele.width = Ember.$(ele).parent().width();
-  	
+
     if(!this.get('isOverSixHundred')) {
       ele.height = 24;
     } else {
