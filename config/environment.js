@@ -22,7 +22,7 @@ module.exports = function(environment) {
   if (environment === 'development') {
 
     ENV.APP.LOG_TRANSITIONS = true;
-    ENV.APP.API_HOST = 'http://192.168.1.80:3001';
+    ENV.APP.API_HOST = 'http://46.101.29.151';
 
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -56,8 +56,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.API_HOST = 'http://178.62.62.19';
-    //ENV.APP.DEFAULT_IMAGE = '/system/mixes/background_images/default_bg.gif';
+    ENV.APP.API_HOST = 'http://46.101.29.151';
   }
 
   return ENV;

@@ -16,8 +16,14 @@ export default Ember.Route.extend({
 
   setupController: function(controller, model){
 
+    // may have clicked the nowplaying link to get here while a mix is playing...
+    // so check if current playing model is the same as the one we're navigating to
     if(window.MyNewApp.mixPlaying) {
-      controller.stopCurrentMix(true);
+      if (model == controller.get('model')) {
+        return false;
+      } else {
+        controller.stopCurrentMix(true);
+      }
     }
 
     if(!model.get('mixes').get('length')) {
