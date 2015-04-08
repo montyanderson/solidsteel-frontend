@@ -93,13 +93,7 @@ export default Ember.Controller.extend({
         }
         this.currentPart = mixNumber;
     } else {
-        if (this.currentPart === null) {
-          // first mix played
           this.currentPart = 0;
-        } else {
-          // this means a mix has been playing at somoe point
-          this.currentPart++;
-        }
     }
 
     // don't try to play a mix that doesn't exist
@@ -107,7 +101,6 @@ export default Ember.Controller.extend({
       this.stopCurrentMix();
       this.transitionToRoute('broadcasts');
     }
-
     this.get('model.mixes').objectAt(this.currentPart).set('isCurrentBG', true);
 
     if(this.get('audioOptIn')) {
