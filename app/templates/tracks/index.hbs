@@ -10,10 +10,10 @@
 	</div>
 
 	<div class="tabs">
-		<p {{bind-attr class="showingTracks:current"}}{{ action 'toggleTracks'}}>Tracklist</p>
-		<p {{bind-attr class="showingTracks::current"}}{{ action 'toggleSynopsis'}}>Synopsis</p>
+		<p {{bind-attr class="showingTracksTab:current"}}{{ action 'toggleTracks'}}>Tracklist</p>
+		<p {{bind-attr class="showingTracksTab::current"}}{{ action 'toggleSynopsis'}}>Synopsis</p>
 	</div>
-	<div {{bind-attr class="showingTracks:disabled:enabled"}}>
+	<div {{bind-attr class="showingTracksTab:disabled:enabled"}}>
 		{{#if model.altnotes}}
 		{{break-lines model.altnotes}}
 		{{else}}
@@ -45,7 +45,7 @@
 		</div>
 	</div>
 
-	<div {{bind-attr class="showingTracks:enabled:disabled"}}>
+	<div {{bind-attr class="showingTracksTab:enabled:disabled"}}>
 		{{#each mix in model.mixes}}
 			<h2><b>Part {{mix.part}}</b> {{mix.name}}</h2>
 			{{#each track in mix.tracks}}

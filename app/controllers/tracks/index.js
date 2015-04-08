@@ -11,6 +11,8 @@ export default Ember.Controller.extend({
 
   showingTracks: true,
 
+  showingTracksTab: true,
+
   actions : {
   	
     swipeAway: function() {
@@ -18,14 +20,14 @@ export default Ember.Controller.extend({
     },
 
     toggleTracks : function(){
-      if (!this.showingTracks) {
-        this.set('showingTracks', true);
+      if (!this.showingTracksTab) {
+        this.set('showingTracksTab', true);
       }
     },
 
     toggleSynopsis : function(){
-  		if (this.showingTracks) {
-  			this.set('showingTracks', false);
+  		if (this.showingTracksTab) {
+  			this.set('showingTracksTab', false);
       }
     }
   }
