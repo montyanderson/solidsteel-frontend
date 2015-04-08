@@ -13,9 +13,6 @@ export default Ember.Controller.extend({
     }
 
     if(this.get('model.background_image')) {
-
-      console.log(this.get('model.background_image'));
-
       this.get('controllers.application').set('bgImgPath', this.get('model.background_image'));
     } else {
       this.get('controllers.application').set('bgImgPath', null);

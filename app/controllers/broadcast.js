@@ -108,8 +108,6 @@ export default Ember.Controller.extend({
       this.transitionToRoute('broadcasts');
     }
 
-    console.log(this.currentPart);
-    console.log(this.get('model.mixes').objectAt(this.currentPart).get('background_image'));
     this.get('model.mixes').objectAt(this.currentPart).set('isCurrentBG', true);
 
     if(this.get('audioOptIn')) {
