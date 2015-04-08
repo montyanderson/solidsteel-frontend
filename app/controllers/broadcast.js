@@ -87,7 +87,7 @@ export default Ember.Controller.extend({
         // it looks weird.
         if(this.currentPart < this.get('model.mixes').get('length')-1) {
           this.get('model.mixes').objectAt(this.currentPart).set('complete', true);
-        }   
+        }
         this.currentPart = mixNumber;
     } else {
         if (this.currentPart === null) {

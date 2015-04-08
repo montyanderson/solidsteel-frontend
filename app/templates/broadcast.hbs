@@ -2,6 +2,7 @@
 	<p><b>NOW PLAYING</b></p>
 	<p>{{formatted-date model.broadcast_date 'DD-MM-YY'}}</p>	
 	<p>{{model.session_name}}</p>
+	{{#if model.mixes.firstObject.soundcloudId}}{{else}}<p class="warning">Sorry! There is no audio for this mix yet…</p>{{/if}}
 </div>
 
 <div style="height: 100%" {{bind-attr class="showingFeaturedListing:btn-featured-panel-open:btn-featured-panel-closed showingTracks:btn-panel-open:btn-panel-closed"}}>
