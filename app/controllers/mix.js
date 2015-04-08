@@ -6,6 +6,27 @@ export default Ember.Controller.extend({
 
   progress: 0,
 
+  setCurrentBg: function(){
+    // set background image for this mix, if there one...
+    if(!this.get('model.isCurrentBG')) {
+      return false;
+    }
+
+    if(this.get('model.background_image')) {
+
+      console.log(this.get('model.background_image'));
+
+      this.get('controllers.application').set('bgImgPath', this.get('model.background_image'));
+    } else {
+      this.get('controllers.application').set('bgImgPath', null);
+    }
+
+    // set mix image for this mix, if there is one...
+    if(this.get('model.mix_image')) {
+      this.get('controllers.broadcast').set('mixImgPath', this.get('model.mix_image'));
+    }
+  }.observes("model.isCurrentBG").on('init'),
+
   play: function(){
     
     if(window.MyNewApp.mixPlaying){
@@ -49,19 +70,6 @@ export default Ember.Controller.extend({
           });
         });
       });
-
-      // set background image for this mix, if there one...
-      if(this.get('model.background_image')) {
-        this.get('controllers.application').set('bgImgPath', this.get('model.background_image'));
-      } else {
-        this.get('controllers.application').set('bgImgPath', null);
-      }
-
-      // set mix image for this mix, if there is one...
-      if(this.get('model.mix_image')) {
-        this.get('controllers.broadcast').set('mixImgPath', this.get('model.mix_image'));
-      }
-
     } 
     
   }.observes("model.isCurrent").on('init'),

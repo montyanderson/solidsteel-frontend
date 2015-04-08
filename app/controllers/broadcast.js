@@ -56,6 +56,7 @@ export default Ember.Controller.extend({
     if(this.get('model.mixes')) {
       this.get('model.mixes').forEach(function(mix){
         mix.set('isCurrent', false);
+        mix.set('isCurrentBG', false);
         mix.set('progress', 0);
       });   
     }
@@ -106,6 +107,10 @@ export default Ember.Controller.extend({
       this.stopCurrentMix();
       this.transitionToRoute('broadcasts');
     }
+
+    console.log(this.currentPart);
+    console.log(this.get('model.mixes').objectAt(this.currentPart).get('background_image'));
+    this.get('model.mixes').objectAt(this.currentPart).set('isCurrentBG', true);
 
     if(this.get('audioOptIn')) {
       this.startStream();

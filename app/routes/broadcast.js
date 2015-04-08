@@ -19,28 +19,19 @@ export default Ember.Route.extend({
     // may have clicked the nowplaying link to get here while a mix is playing...
     // so check if current playing model is the same as the one we're navigating to
     if (model === controller.get('model')) {
-      console.log('000');
       return false;
     }
 
     if(window.MyNewApp.mixPlaying) {
-      console.log('111');
       controller.stopCurrentMix(true);
     }
 
-      // // hasn't played any audio yet
-      //   if(!controller.get('audioOptIn')){
-      //     return false;
-      //   }
-
     if(!model.get('mixes').get('length')) {
-      console.log('222');
       model.reload().then(function(){
         controller.set('model', model);
         controller.setCurrentMix();
       });
     } else {
-      console.log('333');
       controller.set('model', model);
       controller.setCurrentMix();
     }
