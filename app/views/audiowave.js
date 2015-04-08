@@ -109,16 +109,6 @@ export default Ember.View.extend({
     var increase = (Math.PI / ((wave*2)/spacer)); // if you change this you also need to change ui <= 30 && ui >= -30 and for(var i = 1; i <= w; i += 3) {
     var barHeightAdjuster = 0;
 
-    // use media query to draw the full audio wave at larger screen sizes only
-    if(!this.get('isOverSixHundred')) {
-      // draw thin line
-      ctx.beginPath();
-      ctx.moveTo(0, h-radius);
-      ctx.lineTo(w, h-radius);
-      ctx.stroke();
-      return false;
-    }
-
   	// wipe canvas ready for next frame
     this._empty();
  
@@ -136,6 +126,16 @@ export default Ember.View.extend({
   	  ctx.stroke();
   	}
 
+    // use media query to draw the full audio wave at larger screen sizes only
+    if(!this.get('isOverSixHundred')) {
+      // // draw thin line
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+      ctx.beginPath();
+      ctx.moveTo(0, h-radius);
+      ctx.lineTo(w, h-radius);
+      ctx.stroke();
+      return false;
+    } 
     // for each bopping line (6 px apart)
 	  for(var i = -wave; i <= w; i += spacer) {
   		ctx.beginPath();
@@ -169,6 +169,7 @@ export default Ember.View.extend({
   		ctx.lineTo(i, barPoint);
   		ctx.stroke();
 	  }
+    
 	}.observes('controller.model.progress'),
 
   _empty: function(){

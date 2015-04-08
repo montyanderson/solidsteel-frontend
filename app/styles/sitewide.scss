@@ -53,6 +53,23 @@ a,
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+noscript {
+	display: block;
+	color: #333;
+	width: 300px;
+	margin: 32px;
+}
+
+noscript a {
+	color: #333;
+}
+
+@media (max-width: 600px) {
+	noscript {
+		width: 80%;
+	}
+}
+
 @media (max-width: 600px) {
 
 	.a-z #extra,

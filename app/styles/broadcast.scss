@@ -24,6 +24,40 @@
 	height: 120px;
 }
 
+svg {
+	opacity: 0.8;
+	transition: opacity .25s ease-in-out;
+   	-moz-transition: opacity .25s ease-in-out;
+   	-webkit-transition: opacity .25s ease-in-out;
+}
+
+svg:hover,
+.active svg {
+	opacity: 1;
+}
+
+#featured-section svg {
+	color: #fff;
+	fill: currentColor;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -16px;
+	margin-left: -16px;
+	display: none;
+	opacity: 0.8;
+}
+
+@media (min-width: 601px) {
+	#featured-section div:hover svg {
+		display: block;
+	}
+
+	#featured-section svg:hover {
+		opacity: 1;
+	}
+}
+
 @media (max-width: 600px) {
 
 	.broadcasts #timelineMixImageCell {
