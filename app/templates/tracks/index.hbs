@@ -13,25 +13,34 @@
 		<p {{bind-attr class="showingTracks::current"}}{{ action 'toggleSynopsis'}}>Synopsis</p>
 	</div>
 	<div {{bind-attr class="showingTracks:disabled:enabled"}}>
+		{{#if model.altnotes}}
 		{{break-lines model.altnotes}}
+		{{else}}
+		No mix notes yet…
+		{{/if}}
 		<div class="sc-links">
+			
+			{{#if model.mixes.firstObject.soundcloudId}}
 			<p>You can also listen to this mix on</p>
 			<p>
-			{{#if model.mixes.firstObject.soundcloudId}}
 			<a target="_blank" href="http://soundcloud.com/ninja-tune">SOUNDCLOUD (HOUR 1)</a>
+			</p>
 			{{/if}}
 			{{#if model.mixes.lastObject.soundcloudId}}
-			 &ndash; <a target="_blank" href="http://soundcloud.com/ninja-tune">SOUNDCLOUD (HOUR 2)</a>
-			{{/if}}
-			</p>
 			<p>
+			<a target="_blank" href="http://soundcloud.com/ninja-tune">SOUNDCLOUD (HOUR 2)</a>
+			</p>
+			{{/if}}
 			{{#if model.mixes.firstObject.mixcloudId}}
-			 &ndash; <a target="_blank" href="http://mixcloud.com/">MIXCLOUD (HOUR 1)</a> &ndash;
+			<p>
+			<a target="_blank" href="http://mixcloud.com/">MIXCLOUD (HOUR 1)</a> &ndash;
+			</p>
 			{{/if}}
 			{{#if model.mixes.lastObject.mixcloudId}}
-			 &ndash; <a target="_blank" href="http://mixcloud.com/">MIXCLOUD (HOUR 2)</a>
+			<p>
+			<a target="_blank" href="http://mixcloud.com/">MIXCLOUD (HOUR 2)</a>
+			 </p>
 			{{/if}}
-			</p>
 		</div>
 	</div>
 
