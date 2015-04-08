@@ -18,7 +18,7 @@ export default Ember.Controller.extend({
     if(this.get('model.isCurrent')) {
 
       SC.whenStreamingReady(function() {
-        SC.stream("/tracks/"+self.get('model.soundcloudId'), {
+        SC.stream("/tracks/"+self.get('model.soundcloudId')+"?secret_token="+self.get('model.secret'), {
           useHTML5Audio: true,
           preferFlash: false
         }, function(sound){

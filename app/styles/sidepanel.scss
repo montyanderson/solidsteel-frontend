@@ -221,8 +221,10 @@
 	display: none;
 }
 
-.mix-in-sidepanel:hover svg {
-	display: block;
+@media (min-width: 601px) {
+	.mix-in-sidepanel:hover svg {
+		display: block;
+	}
 }
 
 @media (max-width: 600px) {
@@ -231,6 +233,7 @@
 		top: 0;
 		right: -12px;
 		margin-top: 12px;
+		display: block;
 	}
 }
 

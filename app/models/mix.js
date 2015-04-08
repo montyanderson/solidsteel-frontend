@@ -8,7 +8,8 @@ var Mix = DS.Model.extend({
   mix_image: DS.attr(),
   broadcast: DS.belongsTo('broadcast', { async: true}),
   tracks: DS.hasMany('track', { async: true}),
-  isCurrent: false
+  isCurrent: false,
+  secret: DS.attr()
 });
 
 Mix.reopenClass({FIXTURES : [
