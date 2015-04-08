@@ -66,38 +66,41 @@ export default Ember.Controller.extend({
     this.setCurrentMix(this.currentPart);
   },
 
+  switchMix: function(mix){
+    if(mix.get('part')-1 === this.currentPart) {
+      // do nothing, this mix is already playing
+    } else {
+      // mix models have parts 1 & 2, so we need to convert to mixes array indices 0 and 1
+      this.setCurrentMix(mix.get('part')-1);
+    }
+  },
+
   setCurrentMix: function(mixNumber){
 
     // increment current mix, or play the first one if none specified
-    if (mixNumber) {
-      console.log('111');
-      console.log(mixNumber);
-      this.stopCurrentMix();
+    if (mixNumber === 0 || mixNumber === 1) {
+        this.stopCurrentMix();
 
-      if(this.currentPart < this.get('model.mixes').get('length')-1) {
-        console.log('222');
-        this.get('model.mixes').objectAt(this.currentPart).set('complete', true);
-      }   
-
-      this.currentPart = mixNumber;
+        // make sure we draw a full progress line for 'completely played' mixes
+        // so check if current playing mix is the first one and if it 
+        // is then we draw a line. don;t do this for the second part because
+        // it looks weird.
+        if(this.currentPart < this.get('model.mixes').get('length')-1) {
+          this.get('model.mixes').objectAt(this.currentPart).set('complete', true);
+        }   
+        this.currentPart = mixNumber;
     } else {
-      console.log(mixNumber);
-      console.log('333');
-      if (this.currentPart === null) {
-        console.log('444');
-        // first mix played
-        this.currentPart = 0;
-      } else {
-        console.log('555');
-        // this means a mix has been playing at somoe point
-        console.log('666');
-        this.currentPart++;
-      }
+        if (this.currentPart === null) {
+          // first mix played
+          this.currentPart = 0;
+        } else {
+          // this means a mix has been playing at somoe point
+          this.currentPart++;
+        }
     }
 
     // don't try to play a mix that doesn't exist
     if(this.currentPart >= this.get('model.mixes').get('length')){
-      console.log('777');
       this.transitionToRoute('broadcasts');
     }
 

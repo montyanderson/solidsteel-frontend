@@ -76,11 +76,13 @@ export default Ember.Controller.extend({
         this.set('model.searching', false);
     },
 
+    // switches from the current mix to the supplied mix
     makeCurrent: function(mix){
-      console.log('here');
-      this.get('controllers.broadcast').setCurrentMix(mix.get('part')-1);
+      this.get('controllers.broadcast').switchMix(mix);
     },
 
+    // this function is for skipping within a track, or skipping to another track,
+    // in response to a click on the audio wave
     skip: function(model, position){
       if(!this.get('model.isCurrent')) {
         this.send('makeCurrent', model);

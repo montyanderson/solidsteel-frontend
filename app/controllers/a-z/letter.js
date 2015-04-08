@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
 
     swipe: function(){
 
-        if(this.dist === undefined) {
+        if(!this.dist) {
             this.dist = Ember.$('.alpha-index').width();
         }
 

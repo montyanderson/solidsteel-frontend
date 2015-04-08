@@ -31,8 +31,21 @@ svg {
    	-webkit-transition: opacity .25s ease-in-out;
 }
 
+body.broadcast .active svg {
+	opacity: 0.8;
+}
+
 svg:hover,
+body.broadcast .active svg:hover,
 .active svg {
+	opacity: 1;
+}
+
+body.broadcast nav.wide span:nth-of-type(1) svg {
+	opacity: 1;
+}
+
+body.broadcasts-index nav.wide span:nth-of-type(3) svg {
 	opacity: 1;
 }
 
