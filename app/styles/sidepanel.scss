@@ -550,49 +550,52 @@ p.sc-meta {
 	width: 24px;
 }
 
-@media (min-width: 600px) {
-
-	#featured-section {
-		padding: 0 0 8px 8px;
+#featured-section {
 		background: #fff;
 		height: 100%;
 		position: absolute;
 		left: auto;
-		width: 208px;
 		overflow-y: scroll;
 		-webkit-overflow-scrolling: touch;
+	}
+
+.featured-panel-open {
+	-webkit-animation-name: featured;
+    -webkit-animation-duration: 0.5s;
+	-webkit-animation-iteration-count: 1;
+    right: 0;
+}
+
+#featured-section p,
+#featured-section p a {
+	color: #333;
+}
+
+.btn-panel-open #buttons {
+	-webkit-animation-name: buttons1;
+    -webkit-animation-duration: 0.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
+    right: 50%;
+}
+
+.btn-panel-open #btn-featured {
+	display: none;
+}
+
+@media (min-width: 600px) {
+
+	#featured-section {
+  		padding: 0 0 8px 8px;
+  		width: 208px;
 	}
 
 	#featured-section>div {
 		margin-bottom: 24px;
 	}
 
-	#featured-section p,
-	#featured-section p a {
-		color: #333;
-	}
-
-	.featured-panel-open {
-		-webkit-animation-name: featured;
-	    -webkit-animation-duration: 0.5s;
-    	-webkit-animation-iteration-count: 1;
-	    right: 0;
-	}
-
 	@-webkit-keyframes featured {
     	from {right:-208px;}
     	to {right:0}
-	}
-
-	.featured-panel-closed {
-		-webkit-animation-name: featured2;
-	    -webkit-animation-duration: 0.5s;
-	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
-	}
-
-	@-webkit-keyframes featured2 {
-	    from {right:0;}
-    	to {right: -208px;}
 	}
 
 	/* SIDEPANEL BUTTONS */
@@ -604,28 +607,7 @@ p.sc-meta {
 	    right: 208px;
 	}
 
-	.btn-featured-panel-closed #buttons {
-		-webkit-animation-name: buttons2;
-	    -webkit-animation-duration: 0.5s;
-	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
-	    right: 0;
-	}
-
-	.btn-panel-open #buttons {
-		-webkit-animation-name: buttons1;
-	    -webkit-animation-duration: 0.5s;
-	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
-	    right: 50%;
-	}
-
-	.btn-panel-open #btn-featured {
-		display: none;
-	}
-
 	.btn-panel-closed #buttons {
-		-webkit-animation-name: buttons2;
-	    -webkit-animation-duration: 0.5s;
-	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
 	    right: 0;
 	}
 
@@ -635,29 +617,67 @@ p.sc-meta {
 	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
 	    right: 50%;
 	}
+
+	@-webkit-keyframes buttons1 {
+	    from {right:0px;}
+	    to {right:208px}
+	}
 }
 
 @media (max-width: 600px) {
-	#featured-section {
-		display: none;
-	}
 
 	#buttons {
+		width: 44px;
 		right: 0;
 	}
 
+	/* SIDEPANEL BUTTONS */
+	.btn-featured-panel-open #buttons,
+	.btn-featured-panel-open.btn-panel-closed #buttons {
+		-webkit-animation-name: buttons1;
+	    -webkit-animation-duration: 0.5s;
+	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
+	    right: 50%;
+	}
+
+	.btn-panel-open #buttons {
+		-webkit-animation-name: buttons3;
+    	right: 67%;
+	}
+
 	#btn-tracklisting {
-		font-size: 12px;
-		top: 55%;
-		z-index: 10;
+	  font-size: 12px;
+	  top: 46%;
+	  z-index: 10;
+	  padding-bottom: 24px;
+  	}
+
+  	#btn-featured {
+	  top: auto;
+	  bottom: 80px;
+	  font-size: 12px;
+	  padding-bottom: 24px;
+  	}
+
+	#featured-section {
+  		padding: 0 0 4px 4px;
+  		width: 50%;
 	}
 
-	#btn-featured {
-		top: auto;
-		bottom: 80px;
-		font-size: 12px;
+	@-webkit-keyframes featured {
+    	from {right:-208px;}
+    	to {right:0}
 	}
 
+	@-webkit-keyframes buttons1 {
+	    from {right:0;}
+	    to {right:50%}
+	}
+
+	@-webkit-keyframes buttons3 {
+	    from {right:0;}
+	    to {right:67%}
+	}
 }
 
 /* END SIDEPANEL BUTTONS */
@@ -687,11 +707,6 @@ p.sc-meta {
 @-webkit-keyframes example2 {
     from {right:0;}
     to {right: -100%;}
-}
-
-@-webkit-keyframes buttons1 {
-    from {right:104px;}
-    to {right:208px}
 }
 
 @-webkit-keyframes buttons2 {

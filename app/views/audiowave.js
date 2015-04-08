@@ -26,9 +26,9 @@ export default Ember.View.extend({
   tagName: 'canvas',
 
   tap: function(e) {
-    var x, y;
+    var x;
     var canvas = Ember.$(this.get('element'));
-    if (e.originalEvent.gesture.srcEvent.offsetX != undefined && e.originalEvent.gesture.srcEvent.offsetY != undefined) {
+    if (e.originalEvent.gesture.srcEvent.offsetX !== undefined && e.originalEvent.gesture.srcEvent.offsetY !== undefined) {
       x = e.originalEvent.gesture.srcEvent.offsetX;
       x -= canvas[0].offsetLeft;
     }

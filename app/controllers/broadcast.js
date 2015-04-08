@@ -126,8 +126,10 @@ export default Ember.Controller.extend({
   		if (!this.showingTracks) {
   			this.transitionToRoute('tracks');
   			this.set('showingTracks', true);
+        this.set('showingFeaturedListing', false);
         this.get('controllers.application').set('showingTracks', true);
   			this.set('plusMinus', '–');
+        this.set('featuredPlusMinus', '+');
   		} else {
   			this.transitionToRoute('broadcast');
   			this.set('showingTracks', false);
