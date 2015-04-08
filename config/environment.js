@@ -23,13 +23,7 @@ module.exports = function(environment) {
 
     ENV.APP.LOG_TRANSITIONS = true;
     ENV.APP.API_HOST = 'http://46.101.29.151';
-
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-
+    
     ENV.contentSecurityPolicy = {
       'script-src': "'self' 'unsafe-eval' 'unsafe-inline' http://*:35729",
       'font-src': "'self' http://easy.myfonts.net",
@@ -38,9 +32,6 @@ module.exports = function(environment) {
       'img-src': "'self' 'unsafe-inline' *",
       'default-src': "'self' 'unsafe-inline' http://*"
     };
-
-    //ENV.APP.DEFAULT_IMAGE = '/assets/images/ss_bg.png';
-
   }
 
   if (environment === 'test') {

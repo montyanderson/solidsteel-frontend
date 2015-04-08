@@ -14,9 +14,6 @@ export default Ember.View.extend({
 
   top: false,
 
-  mouseEnter: function() { this.set('hover', true); },
-  mouseLeave: function() { this.set('hover', false); },
-
   tap: function(e){
 
     if(!this.get('top')){

@@ -213,6 +213,27 @@
 	float: left;
 }
 
+.mix-in-sidepanel svg {
+	float: right;
+	margin-top: 24px;
+	color: rgb(120, 120, 120);
+	fill: currentColor;
+	display: none;
+}
+
+.mix-in-sidepanel:hover svg {
+	display: block;
+}
+
+@media (max-width: 600px) {
+	.mix-in-sidepanel svg {
+		position: absolute;
+		top: 0;
+		right: -12px;
+		margin-top: 12px;
+	}
+}
+
 p.mixTitle {
 	font-family: $reg;
 	line-height: 24px;
@@ -227,10 +248,6 @@ p.sc-meta {
 	.mix-in-sidepanel img {
 		width: 40px;
 		height: 40px;
-	}
-
-	.play-button {
-		display: none;
 	}
 
 	p.mixTitle {
@@ -248,6 +265,18 @@ p.sc-meta {
 	margin-top: 8px;
 }
 
+@media (max-width: 1000px) {
+	.mix-in-sidepanel div:nth-of-type(2) {
+		max-width: 200px;
+	}
+}
+
+@media (min-width: 1001px) {
+	.mix-in-sidepanel div:nth-of-type(2) {
+		max-width: 300px;
+	}
+}
+
 .mix-in-sidepanel #add {
 	width: 32px;
 	height: 32px;
@@ -261,16 +290,30 @@ p.sc-meta {
 	width: 44px;
 	height: 44px;
 	margin: 18px 0 0 21px;
+	color: #aaa;
+	fill: currentColor;
+	opacity: 0.8;
+	float: none;
 }
 
 /* hover hack */
 @media (min-width: 601px) {
 	.play-button:hover svg {
-		width: 52px;
-		height: 52px;
-		margin: 14px 0 0 17px;
 		color: #7d7d7d;
 		fill: currentcolor;
+	}
+}
+
+@media (max-width: 600px) {
+	.play-button {
+		width: 40px;
+		height: 40px;
+	}
+	.play-button svg {
+		position: static;
+		width: 24px;
+		height: 24px;
+		margin: 9px;
 	}
 }
 

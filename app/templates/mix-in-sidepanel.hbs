@@ -1,10 +1,8 @@
 	<div class="mix-in-sidepanel">
 		<div {{action 'playBroadcast' model}}>
-			{{#if view.hover}}
 			<div class="play-button">
 				{{partial 'icons/play'}}
 			</div>
-			{{/if}}
 			<img src="{{unbound controller.rootpath}}{{unbound model.image}}" width="80" height="80"/>
 		</div>
 		<div>
@@ -14,9 +12,7 @@
 		{{#if view.hasTracks}}
 			{{partial 'icons/minus'}}
 		{{else}}
-			{{#if view.hover}}
 			{{partial 'icons/add'}}
-			{{/if}}
 		{{/if}}
 	</div>
 
