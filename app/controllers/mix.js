@@ -27,6 +27,7 @@ export default Ember.Controller.extend({
           window.MyNewApp.currentlyPlaying = sound;
           window.MyNewApp.isPlaying = true;
           window.MyNewApp.mixPlaying = true;
+          self.get('controllers.application').set('isPlaying', true);
           
           window.MyNewApp.currentlyPlaying.play({
             whileplaying: function() {
@@ -88,6 +89,7 @@ export default Ember.Controller.extend({
         this.send('makeCurrent', model);
       }
       window.MyNewApp.currentlyPlaying.setPosition( this.get('model.duration')*position);
+      this.get('controllers.application').set('isPlaying', true);
     }
 
   }

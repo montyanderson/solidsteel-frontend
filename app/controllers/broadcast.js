@@ -16,6 +16,8 @@ export default Ember.Controller.extend({
   featuredPlusMinus: "-",
 
   currentPart: null,
+
+  audioOptIn: false,
   
   hasBeenOpened: function(){
     return false;
@@ -101,11 +103,19 @@ export default Ember.Controller.extend({
 
     // don't try to play a mix that doesn't exist
     if(this.currentPart >= this.get('model.mixes').get('length')){
+      this.stopCurrentMix();
       this.transitionToRoute('broadcasts');
     }
 
-    // set current mix by setting an attribute on one of the Mix models - this
-    // will make the mix conttoller respond by playing its model's audio
+    if(this.get('audioOptIn')) {
+      this.startStream();
+    }
+  },
+
+  // set current mix by setting an attribute on one of the Mix models - this
+  // will make the mix conttoller respond by playing its model's audio
+  startStream: function(){
+    this.set('audioOptIn', true); // user only has to opt in once
     this.get('model.mixes').objectAt(this.currentPart).set('isCurrent', true);
   },
 

@@ -63,19 +63,6 @@ export default Ember.View.extend({
    	this.draw();
     },
 
-  mouseEnter: function() {
-    // var ctx = this.get('myCtx');
-    // ctx.strokeStyle = 'rgb(100, 100, 100, 0.5)';
-    // ctx.fillStyle = 'rgb(100, 100, 100, 0.5';
-  },
-
-  mouseLeave: function() {
-    // var ctx = this.get('myCtx');
-    // this.get('controller').send('stopWaveHover');
-    // ctx.fillStyle = 'rgb(255, 255, 255, 0.7)';
-    // ctx.strokeStyle = 'rgb(255, 255, 255, 0.7)';
-  },
-
   complete: function(){
     if(!this.get('myCtx')) {
       return;

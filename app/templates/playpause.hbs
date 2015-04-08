@@ -1,6 +1,6 @@
 {{#if controller.noPlayLink}}
     <p {{action 'doToggle' target=view }}>
-        {{#if view.isPlaying}}
+        {{#if controller.isPlaying}}
             {{partial 'icons/pause'}}
         {{else}}
             {{partial 'icons/play2'}}

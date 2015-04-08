@@ -5,21 +5,14 @@ export default Ember.View.extend({
   templateName: 'playpause',
 
   tagName: 'span',
-
-  hover: false,
-
-  isPlaying: true,
-
-  mouseEnter: function() { this.set('hover', true); },
-  mouseLeave: function() { this.set('hover', false); },
-
+  
   actions : {
     doToggle: function(){
-        if(window.MyNewApp.isPlaying) {
-            this.set('isPlaying', false);
+        if(this.get('controller.isPlaying')) {
+            this.set('controller.isPlaying', false);
             this.get('controller').send('pause');
         } else {
-            this.set('isPlaying', true);
+            this.set('controller.isPlaying', true);
             this.get('controller').send('play');
         }
     }

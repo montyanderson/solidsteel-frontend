@@ -18,6 +18,8 @@ export default Ember.Controller.extend({
     }
   },
 
+  isPlaying: false,
+
   bgImgPath: null,
 
   muted: false,
@@ -59,7 +61,12 @@ export default Ember.Controller.extend({
     },
 
     play: function(){
-      this.get('controllers.broadcast').playCurrentMix();
+      // if not sound is loaded, start a stream
+      if (!window.MyNewApp.currentlyPlaying) {
+        this.get('controllers.broadcast').startStream();
+      } else { // a stream is loaded but paused, so play it
+        this.get('controllers.broadcast').playCurrentMix();
+      }
     },
 
     doLink : function(){
