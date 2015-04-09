@@ -22,7 +22,7 @@ module.exports = function(environment) {
   if (environment === 'development') {
 
     ENV.APP.LOG_TRANSITIONS = true;
-    ENV.APP.API_HOST = 'http://46.101.29.151';
+    ENV.APP.API_HOST = 'http://178.62.62.19';
     
     ENV.contentSecurityPolicy = {
       'script-src': "'self' 'unsafe-eval' 'unsafe-inline' http://*:35729",

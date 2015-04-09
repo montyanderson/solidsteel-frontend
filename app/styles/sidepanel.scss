@@ -334,6 +334,7 @@ p.sc-meta {
 	float: left;
 	width: 50%;
 	display: block;
+	box-sizing: border-box;
 }
 
 #tracks-in-mix {
@@ -587,6 +588,7 @@ p.sc-meta {
 	#featured-section {
   		padding: 0 0 8px 8px;
   		width: 208px;
+  		box-sizing: border-box;
 	}
 
 	#featured-section>div {

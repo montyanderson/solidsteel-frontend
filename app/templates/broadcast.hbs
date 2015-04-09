@@ -19,7 +19,7 @@
 				{{#each featured in featureds}}
 				<div>
 					<div style="position: relative;">
-						{{#link-to 'broadcast' featured.id}}<img src="{{unbound controller.rootpath}}{{unbound featured.background_image}}" width="100%"/>
+						{{#link-to 'broadcast' featured.id}}<img src="{{unbound controller.rootpath}}{{unbound featured.background_image_thumb_url}}" width="100%"/>
 						{{ partial 'icons/play'}}
 						{{/link-to}}
 					</div>

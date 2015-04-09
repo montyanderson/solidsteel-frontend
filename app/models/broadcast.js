@@ -9,7 +9,8 @@ var Broadcast = DS.Model.extend({
   image: DS.attr(),
   background_image: DS.attr(),
   highlight: DS.attr(),
-  mixes: DS.hasMany('mix', { async: true})
+  mixes: DS.hasMany('mix', { async: true}),
+  background_image_thumb_url: DS.attr()
 });
 
 Broadcast.reopenClass({FIXTURES : [

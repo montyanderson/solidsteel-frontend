@@ -6,8 +6,8 @@ export default Ember.View.extend({
 
   tagName: 'div',
 
-  mouseLeave: function(){
-  	var yy = ( 44 * (2015 - this.get('controller.year') ) );
+  tap: function(e){
+  	var yy = ( 44 * (2015 - e.target.text) );
     Ember.$("#year-selector").animate({scrollTop : yy}, 0);
   },
 
