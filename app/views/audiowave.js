@@ -57,7 +57,7 @@ export default Ember.View.extend({
 
 	  var ctx = ele.getContext('2d');
   	ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
    	ctx.lineWidth = 2;
    	this.set('myCtx', ctx);
    	this.draw();
@@ -85,6 +85,7 @@ export default Ember.View.extend({
     // caluclate track play-progress to draw line
     var unit = w / this.get('controller.model.duration');
     var units = this.get('controller.model.progress') * unit;
+    var loadProgress = this.get('controller.model.loadProgress');
     var radius = 4;
     var bottomOfEqualizer = h-radius;
     var maxBarHeight = bottomOfEqualizer-h*0.4;
@@ -154,6 +155,12 @@ export default Ember.View.extend({
       }
   	  ctx.moveTo(i, bottomOfEqualizer);
   		ctx.lineTo(i, barPoint);
+
+      if( (i-wave)/w > loadProgress || !loadProgress) {
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+      } else {
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
+      }
   		ctx.stroke();
 	  }
     

@@ -57,6 +57,7 @@ export default Ember.Controller.extend({
             },
 
             whileloading: function() {
+              self.set('model.loadProgress', sound.bytesLoaded / sound.bytesTotal);
               self.set('model.duration', sound.durationEstimate);
             },
 

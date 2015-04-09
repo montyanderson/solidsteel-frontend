@@ -23,22 +23,30 @@
 	position: relative;
 }
 
+.yearImage img {
+	position: absolute;
+	top: 0;
+	left: 0;
+    -webkit-clip-path: circle(0px);
+    clip: rect(40px, 40px, 40px, 40px);
+    transition: all .3s;
+}
+
+/* hover hack */
+@media (min-width: 601px) {
+	.year:hover .yearImage img {
+		-webkit-clip-path: circle(39px);
+		clip: rect(0px, 80px, 80px, 0px);
+	}
+}
+
 .yearImage {
-	-webkit-clip-path: circle(0);
-	-webkit-transition: -webkit-clip-path 0.5s ease-out;
+	position: relative;
 }
 
 .year div,
 .year span {
 	font-family: 'DecimaMonoX';
-}
-
-/* hover hack */
-@media (min-width: 601px) {
-	.year:hover .yearImage {
-		-webkit-clip-path: circle(39px);
-		-webkit-transition: -webkit-clip-path 0.26s ease-out;
-	}
 }
 
 #highlights {
@@ -96,8 +104,6 @@
 	    width: 80px;
 	    bottom: -100%;
 	    left: 25%;
-	    background-image: url("/assets/images/ss_120_x_120.gif");
-	    background-size: cover;
 	    z-index: 10;
 	}
 
