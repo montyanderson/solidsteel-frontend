@@ -13,6 +13,7 @@ export default Ember.Controller.extend({
   actions: {
 
     subscribe: function(){
+        document.activeElement.blur();
         this.set('isProcessing', true); 
         this.set('subscribeFailed', false);
         var request = Ember.$.ajax({

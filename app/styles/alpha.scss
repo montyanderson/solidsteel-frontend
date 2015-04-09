@@ -27,6 +27,8 @@
     .alpha-index {
         -webkit-column-width: 215px;
         -webkit-column-gap: 4px;
+        -moz-column-width: 215px;
+        -moz-column-gap: 4px;
         height: 100%;
         position: relative;
     }
@@ -34,6 +36,8 @@
     .about {
         -webkit-column-width: 245px;
         -webkit-column-gap: 45px;
+        -moz-column-width: 245px;
+        -moz-column-gap: 45px;
     }
 
     .scroller,

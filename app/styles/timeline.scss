@@ -38,6 +38,9 @@
 		-webkit-clip-path: circle(39px);
 		clip: rect(0px, 80px, 80px, 0px);
 	}
+	.year:hover {
+		text-decoration: underline;
+	}
 }
 
 .yearImage {

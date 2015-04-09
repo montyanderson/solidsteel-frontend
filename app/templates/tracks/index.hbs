@@ -21,6 +21,7 @@
 		{{/if}}
 		<div class="sc-links">
 			
+			{{#if model.mixes.firstObject.secret}}{{else}}
 			{{#if model.mixes.firstObject.soundcloudId}}
 			<p>You can also listen to this mix on</p>
 			<p>
@@ -41,6 +42,7 @@
 			<p>
 			<a target="_blank" href="http://mixcloud.com/">MIXCLOUD (HOUR 2)</a>
 			 </p>
+			{{/if}}
 			{{/if}}
 		</div>
 	</div>
