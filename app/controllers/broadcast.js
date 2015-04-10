@@ -142,6 +142,12 @@ export default Ember.Controller.extend({
         this.set('showingFeaturedListing', false);
         this.set('featuredPlusMinus', '+');
       }
+    },
+
+    playBroadcast: function(model){
+        this.stopCurrentMix(true);
+        this.set('audioOptIn', true);
+        this.transitionToRoute('broadcast', model);
     }
 
   }

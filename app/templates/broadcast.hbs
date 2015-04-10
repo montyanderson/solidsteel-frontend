@@ -18,10 +18,9 @@
 			<div id="featured-section" {{bind-attr class="showingFeaturedListing:featured-panel-open:featured-panel-closed showingTracks:featured-panel-closed"}}>
 				{{#each featured in featureds}}
 				<div>
-					<div style="position: relative;">
-						{{#link-to 'broadcast' featured.id}}<img src="{{unbound controller.rootpath}}{{unbound featured.background_image_thumb_url}}" width="100%"/>
+					<div style="position: relative;" {{action 'playBroadcast' featured.id}}>
+						<img src="{{unbound controller.rootpath}}{{unbound featured.background_image_thumb_url}}" width="100%"/>
 						{{ partial 'icons/play'}}
-						{{/link-to}}
 					</div>
 					<div>
 						<p class="mixTitle">{{#link-to 'broadcast' featured.id}}{{featured.session_name}}{{/link-to}}</p>

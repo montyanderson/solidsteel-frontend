@@ -43,6 +43,7 @@ export default Ember.ArrayController.extend(Groupable, {
     
     playBroadcast: function(model){
         this.get('controllers.broadcast').stopCurrentMix(true);
+        this.set('controllers.broadcast.audioOptIn', true);
         this.transitionToRoute('broadcast', model);
     }
   }

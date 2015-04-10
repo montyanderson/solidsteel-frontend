@@ -36,9 +36,11 @@ export default Ember.Route.extend({
       controller.setCurrentMix();
     }
 
-    Ember.$.getJSON(ENV.APP.API_HOST + '/api/v1/broadcasts?featured=true').then(function(result){
-      controller.set('featureds', result.broadcasts);
-    });
+    if(!controller.get('featureds')) {
+      Ember.$.getJSON(ENV.APP.API_HOST + '/api/v1/broadcasts?featured=true').then(function(result){
+        controller.set('featureds', result.broadcasts);
+      });
+    }
   }
   
 });

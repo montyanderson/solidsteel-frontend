@@ -10,6 +10,7 @@ export default Ember.Controller.extend({
 
     playBroadcast: function(model){
         this.get('controllers.broadcast').stopCurrentMix(true);
+        this.set('controllers.broadcast.audioOptIn', true);
         this.transitionToRoute('broadcast', model);
         // to transition to tracklist do....
         //this.transitionToRoute('tracks', model);
