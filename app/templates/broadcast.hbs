@@ -10,7 +10,7 @@
 	<div id="inner-container" style="display: block; height: 100%;">
 		<div id="players" style="display: table; height: 100%;">
 			<div id="mixImageCell">
-				{{partial 'icons/logo'}}
+				{{ view 'logoplaypause' }}
 			</div>
 			{{#each mix in model.mixes}}
 			{{ render 'mix' mix }}
