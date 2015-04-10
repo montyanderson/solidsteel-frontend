@@ -6,9 +6,16 @@ export default Ember.View.extend({
 
   tagName: 'div',
 
+  hover: false,
+
   tap: function(e){
-  	var yy = ( 44 * (2015 - e.target.text) );
-    Ember.$("#year-selector").animate({scrollTop : yy}, 0);
+    if(this.get('hover')) {
+      var yy = ( 44 * (2015 - e.target.text) );
+      this.set('hover', false);
+      Ember.$("#year-selector").animate({scrollTop : yy}, 0);
+    } else {
+      this.set('hover', true);
+    }
   },
 
   didInsertElement: function(){

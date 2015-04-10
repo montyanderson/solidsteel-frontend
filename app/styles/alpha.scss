@@ -29,6 +29,8 @@
         -webkit-column-gap: 4px;
         -moz-column-width: 215px;
         -moz-column-gap: 4px;
+        column-width: 215px;
+        column-gap: 4px;
         height: 100%;
         position: relative;
     }
@@ -38,6 +40,8 @@
         -webkit-column-gap: 45px;
         -moz-column-width: 245px;
         -moz-column-gap: 45px;
+        column-width: 245px;
+        column-gap: 45px;
     }
 
     .scroller,
@@ -47,13 +51,13 @@
         right: 0;
         bottom: 0;
         width: 176px;
-        cursor: pointer;
+        cursor: e-resize;
     }
 
     .backscroller {
         left: 0;
         right: auto;
-        cursor: pointer;
+        cursor: w-resize;
     }
 }
 

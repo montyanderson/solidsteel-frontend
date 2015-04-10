@@ -1,4 +1,4 @@
-<div id="year-selector">
+<div id="year-selector" {{bind-attr class="view.hover"}}>
       <p>{{#link-to "broadcasts" (query-params year="2015") }}2015{{/link-to}}</p>
       <p>{{#link-to "broadcasts" (query-params year="2014") }}<span>20</span>14{{/link-to}}</p>
       <p>{{#link-to "broadcasts" (query-params year="2013") }}<span>20</span>13{{/link-to}}</p>

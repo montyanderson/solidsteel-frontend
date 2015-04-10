@@ -35,12 +35,12 @@
 		background-position: 80% 50%;
 	}
 
-	#year-selector:hover p a {
+	#year-selector.hover p a {
 		color: $mainGreyText;
 		text-decoration: none;
 	}
 
-	#year-selector:hover {
+	#year-selector.hover {
 		background: rgba(255 ,255, 255, 0.7);
 		position: absolute;
 		top: 0;
@@ -55,8 +55,13 @@
 		font-family: 'DecimaMonoX';
 	}
 
-	#year-selector p:hover {
-		background: #fff;
+	#year-selector p:hover, {
+		background: rgba(255 ,255, 255, 0.7);
+		color: $mainGreyText;
+	}
+
+	#year-selector p:hover a {
+		text-decoration: none;
 	}
 }
 
