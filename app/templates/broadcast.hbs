@@ -11,6 +11,7 @@
 		<div id="players" style="display: table; height: 100%;">
 			<div id="mixImageCell">
 				{{ view 'logoplaypause' }}
+				<div id="mobilelogo">{{ partial 'icons/logo' }}</div>
 			</div>
 			{{#each mix in model.mixes}}
 			{{ render 'mix' mix }}

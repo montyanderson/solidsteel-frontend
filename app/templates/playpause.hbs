@@ -1,13 +1,3 @@
-{{#if controller.noPlayLink}}
-    <p {{action 'doToggle' target=view }}>
-        {{#if controller.isPlaying}}
-            {{partial 'icons/pause'}}
-        {{else}}
-            {{partial 'icons/play2'}}
-        {{/if}}
-    </p>
-{{else}}
-    <p {{action 'doLink' }}>
-        {{partial 'icons/nowplaying'}}
-    </p>
-{{/if}}
+<p {{action 'doLink' }}>
+    {{partial 'icons/nowplaying'}}
+</p>

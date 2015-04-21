@@ -5,7 +5,7 @@ import Groupable from '../../mixins/groupable';
 
 export default Ember.ArrayController.extend(Groupable, {
   
-  needs: ['broadcast'],
+  needs: ['broadcast', 'application'],
 
   ungroupedContentBinding: 'content', //tell Groupable where your default content is
 

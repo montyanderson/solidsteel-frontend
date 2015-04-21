@@ -99,20 +99,32 @@ export default Ember.View.extend({
 
   	// wipe canvas ready for next frame
     this._empty();
- 
+    
+    if(!this.get('isOverSixHundred')) {
+      ctx.beginPath();
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+      ctx.moveTo(1, h/3);
+      ctx.lineTo(1, h);
+      ctx.strokeWidth = spacer;
+      ctx.stroke();
+    }
+    
   	if(units !== 0) {
   		// draw progress circle
+      ctx.fillStyle = 'rgba(255, 255, 255, 1)';
   		ctx.beginPath();
   		ctx.arc(units, bottomOfEqualizer, radius, 0, Math.PI*2, true);
   		ctx.fill();
 
   		// draw progress line
-      ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
   		ctx.beginPath();
   	  ctx.moveTo(0, bottomOfEqualizer);
   	  ctx.lineTo(units, bottomOfEqualizer);
   	  ctx.stroke();
   	}
+
+
 
     // for each bopping line (6 px apart)
 	  for(var i = -wave; i <= w; i += spacer) {

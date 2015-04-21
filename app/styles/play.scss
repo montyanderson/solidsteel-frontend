@@ -53,7 +53,7 @@
 	position: relative;
 	top: -4px;
 	line-height: 12px;
-	border-left: 2px solid rgba(255, 255, 255, 0.7);
+	border-left: 2px solid rgba(255, 255, 255, 0.3);
 	padding-top: 12px;
 }
 
@@ -79,6 +79,10 @@
 		top: 64px;
 		font-size: 16px;
 		line-height: 18px;
+	}
+
+	.player p:nth-child(2) {
+		display: none;
 	}
 
 	.player {
