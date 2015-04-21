@@ -114,16 +114,6 @@ export default Ember.View.extend({
   	  ctx.stroke();
   	}
 
-    // use media query to draw the full audio wave at larger screen sizes only
-    if(!this.get('isOverSixHundred')) {
-      // // draw thin line
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-      ctx.beginPath();
-      ctx.moveTo(0, h-radius);
-      ctx.lineTo(w, h-radius);
-      ctx.stroke();
-      return false;
-    } 
     // for each bopping line (6 px apart)
 	  for(var i = -wave; i <= w; i += spacer) {
   		ctx.beginPath();

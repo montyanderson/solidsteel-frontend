@@ -211,6 +211,7 @@
 
 .mix-in-sidepanel img {
 	float: left;
+	-webkit-clip-path: circle(40px);
 }
 
 .mix-in-sidepanel svg {
@@ -251,6 +252,7 @@ p.sc-meta {
 	.mix-in-sidepanel img {
 		width: 40px;
 		height: 40px;
+		-webkit-clip-path: circle(20px);
 	}
 
 	p.mixTitle {
@@ -639,7 +641,7 @@ p.sc-meta {
 		-webkit-animation-name: buttons1;
 	    -webkit-animation-duration: 0.5s;
 	    -webkit-transition-timing-function: cubic-bezier(0.660, 0.020, 0.940, -0.035);
-	    right: 50%;
+	    right: 35%;
 	}
 
 	.btn-panel-open #buttons {
@@ -656,14 +658,15 @@ p.sc-meta {
 
   	#btn-featured {
 	  top: auto;
-	  bottom: 80px;
+	  bottom: 120px;
 	  font-size: 12px;
 	  padding-bottom: 24px;
   	}
 
 	#featured-section {
   		padding: 0 0 4px 4px;
-  		width: 50%;
+  		width: 35%;
+  		z-index: 1;
 	}
 
 	@-webkit-keyframes featured {
@@ -673,7 +676,7 @@ p.sc-meta {
 
 	@-webkit-keyframes buttons1 {
 	    from {right:0;}
-	    to {right:50%}
+	    to {right:35%}
 	}
 
 	@-webkit-keyframes buttons3 {

@@ -19,6 +19,7 @@
 	top: auto;
 	bottom: 32px;
 	left: 88px;
+	z-index: 0;
 }
 
 #linksout {
@@ -38,8 +39,7 @@
 	margin-left: 0;
 }
 
-#extra a:nth-child(1),
-#extra a:nth-child(2) {
+#extra a:nth-child(1) {
 	margin-bottom: 16px;
 }
 
@@ -87,6 +87,10 @@
 	#linksout {
 		bottom: 12px;
 		left: 12px;
+	}
+
+	#featured {
+		left: 56px;
 	}
 
 	.subscribe #featured {

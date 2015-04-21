@@ -90,6 +90,14 @@ body.broadcasts-index nav.wide span:nth-of-type(3) svg {
 	}
 
 	.player p {
+		border-left: 2px solid rgba(255, 255, 255, 0.3);
+	}
+
+	.player p b {
+		display: none;
+	}
+
+	.player p:nth-of-type(n+2) {
 		display: none;
 	}
 

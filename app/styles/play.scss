@@ -84,13 +84,4 @@
 	.player {
 		position: relative;
 	}
-
-	.player:after {
-        content: '';
-        position: absolute;
-        height: 10px;
-        bottom: -1px;
-        left: 0;
-        border-left: 1px solid #fff;
-    }
 }

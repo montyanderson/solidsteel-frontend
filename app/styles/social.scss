@@ -3,7 +3,8 @@
 	position: absolute;
 	top: auto;
 	bottom: 32px;
-	left: 80px;
+	right: 32px;
+	left: auto;
 }
 
 #social svg {
@@ -15,7 +16,8 @@
 @media (max-width: 600px) {
 	#social {
 		bottom: 16px;
-		left: 58px;
+		right: 8px;
+		z-index: 0;
 	}
 
 	#social svg {
