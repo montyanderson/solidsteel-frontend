@@ -222,6 +222,10 @@
 	display: none;
 }
 
+.mix-in-sidepanel svg.minus {
+	display: block;
+}
+
 @media (min-width: 601px) {
 	.mix-in-sidepanel:hover svg {
 		display: block;

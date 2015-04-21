@@ -5,7 +5,7 @@
 			</div>
 			<img src="{{unbound controller.rootpath}}{{unbound model.image}}" width="80" height="80"/>
 		</div>
-		<div>
+		<div {{action 'playBroadcast' model}}>
 			<p>{{ formatted-date model.broadcast_date 'DD-MM-YY' }}</p>
 			<p class="mixTitle">{{model.session_name}}</p>
 		</div>
