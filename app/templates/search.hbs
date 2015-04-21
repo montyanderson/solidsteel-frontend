@@ -1,11 +1,11 @@
 <div id="container" {{bind-attr class="showingResults"}}>
   <div id="inner-container" style="display: block; height: 100%;">
-		<div style="display: table; height: 100%; table-layout: fixed; width: 100%">
+		<div class="centered-container">
 			<div id="mixImageCell">
 				{{ view 'logoplaypause' }}
 			</div>
   	
-		  	<div id="search-form" {{bind-attr class="searching"}} style="display: table-cell; vertical-align: middle; width: 100%">
+		  	<div id="search-form" {{bind-attr class="searching"}} style="display: table-cell; vertical-align: middle; width: 100%;">
 			  {{input type="text" placeholder=controller.placeholder value=search action="query"}}
 			  <span></span>
 		    </div>

@@ -24,6 +24,14 @@ body {
 	position: relative;
 }
 
+.centered-container {
+	display: table;
+	height: 100%;
+	table-layout: fixed;
+	width: 100%;
+	margin-left: 0;
+}
+
 nav svg {
 	color: #fff;	
 	fill: currentColor;
@@ -96,6 +104,10 @@ noscript a {
 	.broadcast #featured,
 	.broadcast #extra {
 		display: block;
+	}
+
+	.centered-container {
+		margin-left: 12px;
 	}
 
 	.mobdisabled {
