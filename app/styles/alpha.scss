@@ -163,19 +163,19 @@
       width: auto;
     }
 
-    .subscribe #social,
-    .subscribe #extra {
+    .contact #social,
+    .contact #extra {
       display: none;
     }
 }
 
 @media (min-width: 601px) {
-  .subscribe input[type="text"] {
+  .contact input[type="text"] {
     border-bottom: 2px solid #333;
   }  
 }
 
-.subscribe input[type="text"] {
+.contact input[type="text"] {
   font-size: 16px;
   margin-top: 36px;
   margin-bottom: 36px;
@@ -184,7 +184,7 @@
   background: none;
 }
 
-.subscribe {
+.contact {
   ::-webkit-input-placeholder {
      color: #333;
   }

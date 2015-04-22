@@ -9,7 +9,7 @@ Router.map(function() {
   
   this.route('top50', {path: 'featured'});
   this.route('about');
-  this.route('subscribe');
+  this.route('contact');
   this.resource('a-z', function(){
     this.route('letter', {path: ':letter'});
   });
