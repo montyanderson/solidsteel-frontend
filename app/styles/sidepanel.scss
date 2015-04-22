@@ -616,7 +616,7 @@ p.sc-meta {
 	}
 
 	.btn-panel-closed #buttons {
-	    right: 0;
+	    right: 8px;
 	}
 
 	.btn-featured-panel-open.btn-panel-open #buttons {
@@ -627,7 +627,7 @@ p.sc-meta {
 	}
 
 	@-webkit-keyframes buttons1 {
-	    from {right:0px;}
+	    from {right:8px;}
 	    to {right:208px}
 	}
 }

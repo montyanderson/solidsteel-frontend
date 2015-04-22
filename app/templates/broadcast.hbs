@@ -32,8 +32,9 @@
 		</div>
 
 		<div id="buttons" {{bind-attr class="showingTracks showingFeatured"}}>
-			<p {{action 'toggleTrax'}} id="btn-tracklisting"><span>{{plusMinus}}TRACKLIST</span></p>
-			<p {{action 'toggleFeatured'}} id="btn-featured"><span>{{featuredPlusMinus}}FEATURED</span></p>
+			<p {{action 'toggleTrax'}} id="btn-tracklisting"><span><b>{{plusMinus}}TRACKLIST</b></span></p>
+			<p {{action 'toggleFeatured'}} id="btn-featured"><span><b>{{featuredPlusMinus}}FEATURED</b></span></p>
+			{{partial 'icons/sponsor'}}
 		</div>
 	</div>
 </div>

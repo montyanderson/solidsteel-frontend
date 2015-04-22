@@ -8,19 +8,24 @@ export default Ember.View.extend({
 
   hover: false,
 
+  year: function(){
+    return this.yy
+  }.property('yy'),
+
   tap: function(e){
     if(this.get('hover')) {
-      var yy = ( 44 * (2015 - e.target.text) );
+      console.log(Ember.$(e.target).closest('p').find('a').text());
+      this.set('yy', Ember.$(e.target).closest('p').find('a').text());
       this.set('hover', false);
-      Ember.$("#year-selector").animate({scrollTop : yy}, 0);
+      //Ember.$("#year-selector").animate({scrollTop : yy}, 0);
     } else {
       this.set('hover', true);
     }
   },
 
   didInsertElement: function(){
-  	var yy = ( 44 * (2015 - this.get('controller.year')) );
-    Ember.$("#year-selector").animate({scrollTop : yy}, 0);
+  	this.set('yy', this.get('controller.year'));
+    //Ember.$("#year-selector").animate({scrollTop : yy}, 0);
   }
 
 });

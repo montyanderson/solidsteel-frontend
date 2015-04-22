@@ -20,6 +20,10 @@ body {
 	float: left;
 }
 
+.search #container {
+	display: block;
+}
+
 #inner-container {
 	display: table-cell;
 	vertical-align: middle;
@@ -34,11 +38,23 @@ body {
 	margin-left: 0;
 }
 
-nav svg {
+nav svg,
+#buttons svg {
 	color: #fff;	
 	fill: currentColor;
 }
 
+#buttons svg {
+	width: 67px;
+	height: 16px;
+	position: absolute;
+	left: -59px;
+	bottom: 24px;
+}
+
+.broadcast #social {
+	display: none;
+}
 .a-z nav svg,
 .about nav svg,
 .subscribe nav svg,
