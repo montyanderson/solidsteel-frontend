@@ -6,6 +6,10 @@ export default Ember.View.extend({
 
   tagName: 'span',
   
+  isPlaying: function(){
+    return this.get('controller.controllers.application.isPlaying');
+  }.property('controller.controllers.application.isPlaying'),
+
   actions : {
     doToggle: function(){
         if(this.get('controller.controllers.application.isPlaying')) {

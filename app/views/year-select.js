@@ -9,7 +9,7 @@ export default Ember.View.extend({
   hover: false,
 
   year: function(){
-    return this.yy
+    return this.yy;
   }.property('yy'),
 
   tap: function(e){
