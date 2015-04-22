@@ -115,6 +115,10 @@
 		box-sizing: border-box;
 	}
 
+	p.display {
+		display: none;
+	}
+
 	#year-selector p:after {
         content: '';
         position: absolute;

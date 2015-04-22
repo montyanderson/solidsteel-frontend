@@ -99,6 +99,15 @@ noscript a {
 
 @media (max-width: 600px) {
 
+	#buttons svg {
+		height: 11px;
+		position: fixed;
+		bottom: 20px;
+		right: 12px;
+		left: auto;
+		width: auto;
+	}
+
 	.a-z #extra,
 	.a-z #featured,
 	.a-z #social,
