@@ -193,6 +193,11 @@ a {
 	visibility: hidden;
 }
 
+#tracks-in-mix .disabled {
+	visibility: visible;
+	display: none;
+}
+
 .enabled {
 	display: block;
 }
