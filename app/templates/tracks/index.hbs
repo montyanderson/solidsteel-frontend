@@ -21,29 +21,17 @@
 		{{/if}}
 		<div class="sc-links">
 			
-			{{#if model.mixes.firstObject.secret}}{{else}}
-			{{#if model.mixes.firstObject.soundcloudId}}
-			<p>You can also listen to this mix on</p>
-			<p>
-			<a target="_blank" href="http://soundcloud.com/ninja-tune">SOUNDCLOUD (HOUR 1)</a>
-			</p>
-			{{/if}}
-			{{#if model.mixes.lastObject.soundcloudId}}
-			<p>
-			<a target="_blank" href="http://soundcloud.com/ninja-tune">SOUNDCLOUD (HOUR 2)</a>
-			</p>
-			{{/if}}
-			{{#if model.mixes.firstObject.mixcloudId}}
-			<p>
-			<a target="_blank" href="http://mixcloud.com/">MIXCLOUD (HOUR 1)</a> &ndash;
-			</p>
-			{{/if}}
-			{{#if model.mixes.lastObject.mixcloudId}}
-			<p>
-			<a target="_blank" href="http://mixcloud.com/">MIXCLOUD (HOUR 2)</a>
-			 </p>
-			{{/if}}
-			{{/if}}
+			
+				{{#if model.mixes.firstObject.permalink}}
+					<p>You can also listen to this mix on</p>
+					<p><a target="_blank" href="{{model.mixes.firstObject.permalink}}">SOUNDCLOUD (HOUR 1)</a></p>
+				{{/if}}
+				{{#if model.mixes.lastObject.permalink}}
+					<p><a target="_blank" href="{{model.mixes.lastObject.permalink}}">SOUNDCLOUD (HOUR 2)</a></p>
+				{{/if}}
+				<p><a href="{{model.mixes.firstObject.downloadlink}}?client_id=ab4a60b41abdd45663bc085f22134d4f">Download Hour 1</a></p>
+				<p><a href="{{model.mixes.lastObject.downloadlink}}?client_id=ab4a60b41abdd45663bc085f22134d4f">Download Hour 2</a></p>
+			
 		</div>
 	</div>
 

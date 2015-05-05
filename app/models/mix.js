@@ -10,7 +10,9 @@ var Mix = DS.Model.extend({
   tracks: DS.hasMany('track', { async: true}),
   isCurrent: false,
   secret: DS.attr(),
-  isCurrentBG: false
+  isCurrentBG: false,
+  permalink: DS.attr(),
+  downloadlink: DS.attr()
 });
 
 Mix.reopenClass({FIXTURES : [
