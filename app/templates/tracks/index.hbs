@@ -20,18 +20,19 @@
 		No mix notes yet…
 		{{/if}}
 		<div class="sc-links">
-			
-			
-				{{#if model.mixes.firstObject.permalink}}
-					<p>You can also listen to this mix on</p>
-					<p><a target="_blank" href="{{model.mixes.firstObject.permalink}}">SOUNDCLOUD (HOUR 1)</a></p>
-				{{/if}}
-				{{#if model.mixes.lastObject.permalink}}
-					<p><a target="_blank" href="{{model.mixes.lastObject.permalink}}">SOUNDCLOUD (HOUR 2)</a></p>
-				{{/if}}
+			{{#if model.mixes.firstObject.permalink}}
+				<p>You can also listen to this mix on</p>
+				<p><a target="_blank" href="{{model.mixes.firstObject.permalink}}">SOUNDCLOUD (HOUR 1)</a></p>
+			{{/if}}
+			{{#if model.mixes.lastObject.permalink}}
+				<p><a target="_blank" href="{{model.mixes.lastObject.permalink}}">SOUNDCLOUD (HOUR 2)</a></p>
+			{{/if}}
+			{{#if model.mixes.firstObject.downloadlink}}
 				<p><a href="{{model.mixes.firstObject.downloadlink}}?client_id=ab4a60b41abdd45663bc085f22134d4f">Download Hour 1</a></p>
+			{{/if}}
+			{{#if model.mixes.lastObject.downloadlink}}
 				<p><a href="{{model.mixes.lastObject.downloadlink}}?client_id=ab4a60b41abdd45663bc085f22134d4f">Download Hour 2</a></p>
-			
+			{{/if}}
 		</div>
 	</div>
 

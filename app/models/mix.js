@@ -12,7 +12,8 @@ var Mix = DS.Model.extend({
   secret: DS.attr(),
   isCurrentBG: false,
   permalink: DS.attr(),
-  downloadlink: DS.attr()
+  downloadlink: DS.attr(),
+  playbackcount: DS.attr()
 });
 
 Mix.reopenClass({FIXTURES : [
