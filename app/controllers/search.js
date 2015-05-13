@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
     if(this.showingResults){
         return "Search...";
     } else {
-        return "Search by artist, track, date...";
+        return "Search by artist...";
     }
   }.property('showingResults'),
 
