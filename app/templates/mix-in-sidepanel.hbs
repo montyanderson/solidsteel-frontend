@@ -8,6 +8,7 @@
 		<div {{action 'playBroadcast' model}}>
 			<p>{{ formatted-date model.broadcast_date 'DD-MM-YY' }}</p>
 			<p class="mixTitle">{{model.session_name}}</p>
+			<p class="mixTitle playcount">{{ add-together model.mixes.firstObject.playbackcount model.mixes.lastObject.playbackcount }}</p>
 		</div>
 		{{#if view.hasTracks}}
 			{{partial 'icons/minus'}}
