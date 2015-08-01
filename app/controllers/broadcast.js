@@ -121,6 +121,9 @@ export default Ember.Controller.extend({
       this.set('hasBeenOpened', true);
   		if (!this.showingTracks) {
   			this.transitionToRoute('tracks');
+        if(this.get('model.mixes.firstObject.tracks.length') === 0) {
+          this.model.reload();
+        }
   			this.set('showingTracks', true);
         this.set('showingFeaturedListing', false);
         this.get('controllers.application').set('showingTracks', true);

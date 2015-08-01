@@ -15,7 +15,6 @@ export default Ember.View.extend({
   top: false,
 
   tap: function(e){
-
     if(!this.get('top')){
       // scroll element to top of sidepanel
       var nearestMix = Ember.$(e.target).closest('.mix-in-sidepanel').offset().top;

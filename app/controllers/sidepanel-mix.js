@@ -9,7 +9,9 @@ export default Ember.Controller.extend({
 
   actions: {
     sneakTracks: function(){
-        this.model.reload();
+        if(this.get('model.mixes.firstObject.tracks.length') === 0) {
+          this.model.reload();
+        }
     }
 
   }
